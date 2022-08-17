@@ -1,4 +1,5 @@
 import DashboardPage from "../pages/dashboard.page"
+import LoginPage from "../pages/login.page"
 
 export const PRIVATE_ROUTES = [
     {
@@ -8,7 +9,7 @@ export const PRIVATE_ROUTES = [
 ]
 export const PUBLIC_ROUTES = [
     {
-        path:"/home",
-        component:<DashboardPage />
+        path:"/login",
+        component:<LoginPage />
     }
 ]

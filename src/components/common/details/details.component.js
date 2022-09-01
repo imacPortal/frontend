@@ -1,6 +1,6 @@
 import React from "react";
-import Logo1 from "../../assets/SRMLogo.png";
-import Login from "../../assets/loginimg.png";
+import Logo1 from "../../../assets/SRMLogo.png";
+import Login from "../../../assets/loginimg.png";
 import classes from "./details.module.css";
 function DetailComponent() {
   return (

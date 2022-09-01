@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom"
 import { PRIVATE_ROUTES, PUBLIC_ROUTES } from '../constants/routes.constant';
 
 function Navigate() {
-    const [isLoggedIn, setIsLoggedIn] = useState(false);
+    const [isLoggedIn, setIsLoggedIn] = useState(true);
 
 
     return (

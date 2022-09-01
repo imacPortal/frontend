@@ -1,0 +1,30 @@
+.slide{
+    display: grid;
+    position: fixed;
+    font-family: Quicksand;
+    color: #707070;
+    width:300px;
+    height:fit-content;
+    bottom: 20px;
+    right: 30px;
+    background-color: #D0D0D0;
+    z-index: 100;
+    
+}
+.allot{
+    font-family: Poppins;
+    
+}
+.i1{
+    color: #D0D0D0;
+}
+.i2{
+    color: #FFC659;
+}
+.i3{
+    color: #80ED99;
+}
+.i4{
+    color: #FC8898;
+}
+

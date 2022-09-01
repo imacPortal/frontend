@@ -4,14 +4,12 @@
     justify-content: space-between;
      height: 56px;
      border: 100%;
-     position: fi;
      box-sizing: border-box;
      gap: 30px;
 }
 .line{
     width: 3.5%;
-    height: 100%;
-    position: absolute;
+    height: calc( 100vh - 45px);
     border-right: 1px solid rgb(231, 231, 231);
     box-sizing: border-box;
 }

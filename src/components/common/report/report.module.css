@@ -1,0 +1,40 @@
+.rectangle{
+    width:230px
+}
+.rectangle h3{
+    text-align: left;
+    margin-left: 15px;
+    color: #666666;
+    font-family: Quicksand;
+}
+.booking{
+    font-family:Poppins;
+    display: block; 
+    height: 100%;
+    width: 100%; 
+    font-size: 15px;
+    text-align: left;
+    margin-left: 15px;
+    color: #666666;
+/* margin-right: 50px; */
+}
+.ReportCtn{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.ReportCtn div{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap:10px;
+}
+.counter{
+    font-size: 13px;
+    font-weight: 600;
+    padding: 1px 6px;
+    border-radius: 4px;
+    background-color: #80ED99;
+}

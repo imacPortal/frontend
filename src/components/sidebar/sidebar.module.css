@@ -1,11 +1,12 @@
 .icons{
-    padding: 150% 20%; 
+    padding: 350% 30%; 
     width: 20%;
     justify-content: space-between;
      height: 56px;
      border: 100%;
      box-sizing: border-box;
      gap: 30px;
+   
 }
 .line{
     width: 3.5%;
@@ -29,4 +30,5 @@
 }
 .icon1:hover{
     color: yellow;
+    
 }

@@ -1,5 +1,15 @@
 .rectangle{
-    width:230px
+    width:230px;
+    display:grid;
+    top:50px;
+    position: absolute;
+    right: 20px;
+    border-left: 1px solid rgb(199, 201, 199);
+    height: calc( 100vh - 45px);
+    font-size: 17px;
+    /* box-sizing: border-box; */
+    grid-template-rows: 1fr 4fr 4fr;
+   
 }
 .rectangle h3{
     text-align: left;
@@ -8,7 +18,7 @@
     font-family: Quicksand;
 }
 .booking{
-    font-family:Poppins;
+    font-family:Poppin;
     display: block; 
     height: 100%;
     width: 100%; 
@@ -16,9 +26,9 @@
     text-align: left;
     margin-left: 15px;
     color: #666666;
-/* margin-right: 50px; */
 }
 .ReportCtn{
+    gap: 40px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -31,10 +41,34 @@
     align-items: center;
     gap:10px;
 }
+/* .ReportCtn hr{
+ color: 
+ #EFEFEF;
+ 
+} */
 .counter{
     font-size: 13px;
     font-weight: 600;
     padding: 1px 6px;
     border-radius: 4px;
     background-color: #80ED99;
+}
+.counter1{
+    font-size: 13px;
+    font-weight: 600;
+    padding: 1px 6px;
+    border-radius: 4px;
+    background-color: #FFC659;
+}
+.counter2{
+    font-size: 13px;
+    font-weight: 600;
+    padding: 1px 6px;
+    border-radius: 4px;
+    background-color: #FF6176;
+}
+hr{
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
 }

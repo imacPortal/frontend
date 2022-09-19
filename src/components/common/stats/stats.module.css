@@ -2,29 +2,44 @@
     display: grid;
     position: fixed;
     font-family: Quicksand;
-    color: #707070;
+    background-color:#FFFFFF;
+   
+    border-radius: 7px;
     width:300px;
-    height:fit-content;
+    height: 200px;
     bottom: 20px;
     right: 30px;
-    background-color: #D0D0D0;
     z-index: 100;
     
 }
+.slide h2{
+    text-align: left;
+    margin-left: 20px;
+}
 .allot{
     font-family: Poppins;
+    line-height: 10px;
+    top:0px;
+    text-align: left;
+    margin-left: 20px;
+    /* margin-top: -40px; */
     
 }
 .i1{
     color: #D0D0D0;
+    margin-right: 10px;
+     margin-right: 10px;
 }
 .i2{
     color: #FFC659;
+    margin-right: 10px;
 }
 .i3{
     color: #80ED99;
+    margin-right: 10px;
 }
 .i4{
     color: #FC8898;
+    margin-right: 10px;
 }
 

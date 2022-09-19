@@ -1,6 +1,7 @@
 import React from "react";
 import classes from "./stats.module.css";
 import { HiOutlineDesktopComputer } from "react-icons/hi";
+
 const StatsComponent = () => {
   return (
  <div className={classes.slide}>
@@ -24,7 +25,10 @@ const StatsComponent = () => {
     </p>
   </div>
  </div>
+
+ 
   );
 };
+
 
 export default StatsComponent;

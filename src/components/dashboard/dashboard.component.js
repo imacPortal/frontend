@@ -11,7 +11,7 @@ function DashboardComponent() {
       <SidebarComponent/>
       <ReportComponent/>
       <StatsComponent/>
-      <Header2Component/>
+      <Header2Component/>    
     </div>
  
     )

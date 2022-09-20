@@ -1,5 +1,5 @@
 .rectangle{
-    width:230px;
+    width:235px;
     display:grid;
     top:50px;
     position: absolute;
@@ -29,19 +29,14 @@
 .ReportCtn{
     align-items: center;
     margin-left: 5px;
-    position: fixed;
+    /* position: fixed; */
 }
 .ReportCtn div{
     display: flex;
     /* flex-direction: row; */
     align-items: center;
     margin-left: 5px;
-    gap:7px;
-}
-.ReportCtn p{
-    margin-top: 0;
-    
-    
+    gap:10px;
 }
 
 .counter{
@@ -62,4 +57,3 @@
     border-radius: 4px;
     background-color: #FF6176;
 }
-

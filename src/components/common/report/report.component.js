@@ -16,16 +16,23 @@ export default function Example() {
     <div className={classes.rectangle}>
       {/* <div className={classes.booking}> */}
         <h3>Report</h3>
-        <Accordion>
+        <Accordion allowZeroExpanded={true}>
           <AccordionItem>
             <AccordionItemHeading>
               <AccordionItemButton>
-                <div className={classes.ReportCtn}>
-                  <div>
-                    <p>Upcoming Booking</p>
-                    <p className={classes.counter}>2</p>
-                  </div>
-                </div>
+                    Upcoming Booking{'  '}
+                    <a className={classes.counter}>2</a>
+              </AccordionItemButton>
+            </AccordionItemHeading>
+            <AccordionItemPanel>
+              <p>this is the accordian</p>
+            </AccordionItemPanel>
+          </AccordionItem>
+          <AccordionItem>
+            <AccordionItemHeading>
+              <AccordionItemButton>
+              Booking History{'  '}
+                    <a className={classes.counter1}>6</a>
               </AccordionItemButton>
             </AccordionItemHeading>
             <AccordionItemPanel></AccordionItemPanel>
@@ -33,25 +40,8 @@ export default function Example() {
           <AccordionItem>
             <AccordionItemHeading>
               <AccordionItemButton>
-                <div className={classes.ReportCtn}>
-                  <div>
-                    <p>Booking History</p>
-                    <p className={classes.counter1}>6</p>
-                  </div>
-                </div>
-              </AccordionItemButton>
-            </AccordionItemHeading>
-            <AccordionItemPanel></AccordionItemPanel>
-          </AccordionItem>
-          <AccordionItem>
-            <AccordionItemHeading>
-              <AccordionItemButton>
-                <div className={classes.ReportCtn}>
-                  <div>
-                    <p>Cancelled Booking</p>
-                    <p className={classes.counter2}>1</p>
-                  </div>
-                </div>
+              Cancelled Booking{'  '}
+                    <a className={classes.counter2}>1</a>
               </AccordionItemButton>
             </AccordionItemHeading>
             <AccordionItemPanel></AccordionItemPanel>

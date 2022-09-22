@@ -1,6 +1,6 @@
 import React from 'react'
 import { Helmet } from 'react-helmet'
-import Booking1Component from '../components/booking1/booking1.component'
+import BookingComponent from '../components/booking1/booking1.component'
 
 function BookingPage() {
   return (
@@ -10,7 +10,7 @@ function BookingPage() {
                 iMac Portal | login
             </title>
         </Helmet>
-        <Booking1Component />
+        <BookingComponent />
     </>
   )
 }

@@ -27,7 +27,7 @@ function FormComponent() {
         </div>
       </div>
       <div className={classes.half}>
-        {/* <h1>Details</h1> */}
+        <h1>Details</h1>
         <div className={classes.sub}>
           <p>Enter the details to finish on boarding</p>
         </div>

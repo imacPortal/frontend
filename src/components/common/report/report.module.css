@@ -1,0 +1,59 @@
+.rectangle{
+    width:235px;
+    display:grid;
+    top:50px;
+    position: absolute;
+    right: 20px;
+    border-left: 1px solid rgb(199, 201, 199);
+    height: calc( 100vh - 45px);
+    font-size: 17px;
+    grid-template-rows: 1fr 4fr 4fr;
+   
+}
+.rectangle h3{
+    text-align: left;
+    margin-left: 15px;
+    color: #666666;
+    font-family: Quicksand;
+}
+/* .booking{
+    font-family:Poppin;
+    display: block; 
+    height: 100%;
+    width: 100%; 
+    font-size: 15px;
+    text-align: left;
+    margin-left: 15px;
+    color: #666666;
+} */
+.ReportCtn{
+    align-items: center;
+    margin-left: 5px;
+    /* position: fixed; */
+}
+.ReportCtn div{
+    display: flex;
+    /* flex-direction: row; */
+    align-items: center;
+    margin-left: 5px;
+    gap:10px;
+}
+
+.counter{
+    font-size: 13px;
+    padding: 1px 6px;
+    border-radius: 4px;
+    background-color: #80ED99;
+}
+.counter1{
+    font-size: 13px;
+    padding: 1px 6px;
+    border-radius: 4px;
+    background-color: #FFC659;
+}
+.counter2{
+    font-size: 13px;
+    padding: 1px 6px;
+    border-radius: 4px;
+    background-color: #FF6176;
+}

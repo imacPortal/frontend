@@ -1,4 +1,4 @@
-.majorContainer{
+ .majorContainer{
     font-family: 'Quicksand';
     display: grid;
     grid-template-columns: 1fr 2fr;
@@ -40,7 +40,7 @@
     justify-content: space-between;
     align-items: center;
     flex-direction: column;
-    gap: 15px;
+gap: 15px;
 }
 .text p{
     opacity: 0.5;
@@ -82,15 +82,14 @@
     justify-content: center;
     z-index: 10;
     background-color: #fffcf7;
-
  } 
 .entry{
   border:2px solid #FFB830;
   float: left;
   display: flex;
   margin-left: 30px;
-  width: 450px;
-  height: 30px;
+  width: 500px;
+  height: 40px;
   gap: 50px;
   border-radius: 5px;
   background-color:#FFB8300A ;
@@ -99,17 +98,19 @@
 }
 .allignment p{
   margin-top: 40px;
+  
 }
-.color{
+/* .color{
     color:  #C17F00;
     font-family: Poppins;
-}
+} */
 button{
     background-color: #FFB830;
     border-radius: 5px;
    margin-right: 90px;
    width: 130px;
-   height: 30px;   
+   height: 30px;  
+   border: 0; 
 }
 
 .button{
@@ -117,4 +118,12 @@ button{
     border-color: #FFB830;
     bottom: 2%;
     right: 0px;
+}
+Datepicker{
+    position:relative;
+    margin-bottom: -12px;
+    width: fit-content;
+    justify-content: center;
+    z-index: 10;
+    background-color: #fffcf7;
 }

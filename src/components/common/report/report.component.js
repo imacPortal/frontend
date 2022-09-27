@@ -16,7 +16,7 @@ export default function Example() {
     <div className={classes.rectangle}>
       {/* <div className={classes.booking}> */}
         <h3>Report</h3>
-        <Accordion allowZeroExpanded={true}>
+        <Accordion allowZeroExpanded={true} className={classes.accordianContainer}>
           <AccordionItem>
             <AccordionItemHeading>
               <AccordionItemButton>

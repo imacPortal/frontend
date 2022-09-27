@@ -1,50 +1,24 @@
 .short{
-    font-family: Quicksand;
-    font-size: 20px;
-    height: 10px;
     display: flex;
-    position: absolute;
-    top: 40px;
-    left: 60px;
-
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Quicksand';
+    font-weight: 600;
+    padding: 0px 10px;
 }
-.txt p{
-    font-family: Quicksand;
-text-align: right;
-
-}
-
-button{
-    background-color: 
-    #FFC659;
-    text-align: center;
-}
-.btns button{
-    background-color: 
-    #FFFFFF;
-    margin-top: 25px;
-    margin-left: 10px;
-    font-family: 
-    Quicksand;
-    height: 20px;
-   width: 65px;
-  position: fixed;
-  z-index: 1;
-  right:230px;
-}
-
-.btns1 button{
-   right: 170px;
-   font-family: 
-   Quicksand;
-   margin-top: 20px;
-   position: fixed;
-   padding-left: 75px;
-   width: 130px;
-  
-}
-
 .main{
-    position: absolute;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: #FFC659;
+    padding: 6px;
+    border-radius: 5px;
 }
-
+.main button{
+    background-color: transparent;
+    border-radius: 4px;
+    border:none;
+    font-size: 15px;
+}

@@ -104,7 +104,7 @@ gap: 15px;
     color:  #C17F00;
     font-family: Poppins;
 } */
-button{
+.button button{
     background-color: #FFB830;
     border-radius: 5px;
    margin-right: 90px;

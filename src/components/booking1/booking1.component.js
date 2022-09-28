@@ -21,7 +21,7 @@ const BookingComponent = () => {
         <div>
           <TimelineComponent/>    
           <div className={classes.mainArea}>
-            <Step2 />
+            <Step3 />
           </div>
         </div>
         <ReportComponent/>

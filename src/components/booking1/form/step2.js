@@ -9,11 +9,11 @@ function Step2() {
             <div className={classes.labLayout}>
                 <div className={classes.mapCtn}>
                     <div className={classes.mapMain}> 
+                        <div className={classes.door1}></div>
+                        <div className={classes.door2}></div>
+                        <div className={classes.door3}></div>
+                        <div className={classes.door4}></div>
                         <div className={classes.labRow1}>
-                            <div className={classes.door1}></div>
-                            <div className={classes.door2}></div>
-                            <div className={classes.door3}></div>
-                            <div className={classes.door4}></div>
                             <div className={classes.lab}>
                                 <h2>Lab 1</h2>
                             </div>

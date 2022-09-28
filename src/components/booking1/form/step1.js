@@ -47,7 +47,7 @@ function Step1() {
                         </select>
                     </div> */}
                 </div>
-                <button className={classes.button}>Next</button>
+                {/* <button className={classes.button}>Next</button> */}
             </form>
         </div>
     )

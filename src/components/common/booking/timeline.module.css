@@ -23,12 +23,13 @@
     justify-content: space-between;
     align-items: center;
     width:75%;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
 }
 .lables span{
     text-align: center;
     width:150px;
     background-color: transparent;
+    font-size: 13px;
 }
 
 .progress{

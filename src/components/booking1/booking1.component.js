@@ -7,6 +7,8 @@ import StatsComponent from '../common/stats/stats.component'
 import TimelineComponent from '../common/booking/timeline.component'
 
 import Step1 from './form/step1'
+import Step2 from './form/step2'
+import Step3 from './form/step3'
 
 import classes from './booking1.module.css';
 
@@ -19,7 +21,7 @@ const BookingComponent = () => {
         <div>
           <TimelineComponent/>    
           <div className={classes.mainArea}>
-            <Step1 />
+            <Step3 />
           </div>
         </div>
         <ReportComponent/>

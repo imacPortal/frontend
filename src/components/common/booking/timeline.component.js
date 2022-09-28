@@ -7,8 +7,8 @@ function TimelineComponent() {
     
       <div className={classes.all}>
         <div className={classes.lables}>
-          <span>Select time slot</span>
-          <span>Select lab</span>
+          <span>Enter Booking Details</span>
+          <span>Select lab and slot</span>
           <span>Select devices</span>
           <span>Await confirmation</span>
         </div>

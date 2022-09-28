@@ -10,7 +10,7 @@ const Header2Component = () => {
       </div>
       <div className={classes.main}>
         <div className={classes.btns}>
-          <button>Map</button>
+          <button style={{backgroundColor:'white'}}>Map</button>
         </div>
         <div className={classes.btns1}>
           <button>List</button>

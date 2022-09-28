@@ -6,14 +6,25 @@ import StatsComponent from '../common/stats/stats.component'
 // import Header2Component from '../common/header2/header2.component'
 import TimelineComponent from '../common/booking/timeline.component'
 
+import Step1 from './form/step1'
+
+import classes from './booking1.module.css';
+
 const BookingComponent = () => {
   return (
     <div>
       <HeaderComponent/>
-      <SidebarComponent/>
-      <ReportComponent/>
+      <div className={classes.mainCtn}>
+        <SidebarComponent/>
+        <div>
+          <TimelineComponent/>    
+          <div className={classes.mainArea}>
+            <Step1 />
+          </div>
+        </div>
+        <ReportComponent/>
+      </div>
       <StatsComponent/>
-      <TimelineComponent/>    
     </div>
   )
 }

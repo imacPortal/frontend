@@ -1,20 +1,18 @@
 .rectangle{
-    width:235px;
-    display:grid;
-    top:50px;
-    position: absolute;
-    right: 20px;
+    width:100%;
     border-left: 1px solid rgb(199, 201, 199);
     height: calc( 100vh - 45px);
     font-size: 17px;
-    grid-template-rows: 1fr 4fr 4fr;
-   
 }
 .rectangle h3{
     text-align: left;
     margin-left: 15px;
     color: #666666;
     font-family: Quicksand;
+}
+.accordianContainer{
+    border:none;
+    width: 100%;
 }
 /* .booking{
     font-family:Poppin;

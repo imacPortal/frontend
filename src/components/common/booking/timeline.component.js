@@ -6,13 +6,21 @@ function TimelineComponent() {
   return (
     
       <div className={classes.all}>
-      
-        <ul className={classes.bar}>
-          <li className={classes.active}>Select Time Slot</li>
-          <li className={classes.active}>Select Lab</li>
-          <li className={classes.active}>Select devices</li>
-          <li className={classes.active}>Await Confirmation</li>
-        </ul>
+        <div className={classes.lables}>
+          <span>Select time slot</span>
+          <span>Select lab</span>
+          <span>Select devices</span>
+          <span>Await confirmation</span>
+        </div>
+        <div className={classes.dots}>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div className={classes.progress}>
+          <div className={classes.progressBar}></div>
+        </div>
       </div>
     
     )

@@ -8,13 +8,11 @@ import { CgProfile }  from "react-icons/cg"
 const SidebarComponent = () => {
   return (
     <div className={classes.line}>
-    <div className={classes.icons}>
-        <MdSpaceDashboard className={classes.icon1}/>
-        <HiOutlineDesktopComputer className={classes.icon1}/>
-        <RiSettings3Line className={classes.icon1}/>
-        <CgProfile className={classes.icon1}/>
-      </div>
-      </div>
+      <MdSpaceDashboard className={classes.icon1}/>
+      <HiOutlineDesktopComputer className={classes.icon1}/>
+      <RiSettings3Line className={classes.icon1}/>
+      <CgProfile className={classes.icon1}/>
+    </div>
   )
 }
 

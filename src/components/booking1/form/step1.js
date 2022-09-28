@@ -37,7 +37,7 @@ function Step1() {
                         <label>Ending Date</label>
                         <input type="date" placeholder="(Approximate) Ex. 10-20"/>
                     </div>
-                    <div className={classes.inputCtn}>
+                    {/* <div className={classes.inputCtn}>
                         <label>Select Time Slot</label>
                         <select>
                             <option>First hour</option>
@@ -45,8 +45,9 @@ function Step1() {
                             <option>Third Hour</option>
                             <option>Fourth Hour</option>
                         </select>
-                    </div>
+                    </div> */}
                 </div>
+                <button className={classes.button}>Next</button>
             </form>
         </div>
     )

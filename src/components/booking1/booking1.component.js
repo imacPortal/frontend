@@ -8,6 +8,7 @@ import TimelineComponent from '../common/booking/timeline.component'
 
 import Step1 from './form/step1'
 import Step2 from './form/step2'
+import Step3 from './form/step3'
 
 import classes from './booking1.module.css';
 

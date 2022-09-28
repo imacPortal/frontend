@@ -32,6 +32,74 @@ function Step2() {
                             </div>
                         </div>
                     </div>
+                    <div className={classes.info}>
+                        <h5>
+                            Lab description:
+                        </h5>
+                        <table>
+                            <tr>
+                                <td>
+                                    <b>
+                                    Computer Model
+                                    </b>
+                                </td>
+                                <td>
+                                    Apple Imac M1
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <b>
+                                    Chipset
+                                    </b>
+                                </td>
+                                <td>
+                                    Apple M1
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <b>
+                                    Computer OS
+                                    </b>
+                                </td>
+                                <td>
+                                    macOS Monterey
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <b>
+                                    Ram
+                                    </b>
+                                </td>
+                                <td>
+                                   16 GB
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <b>
+                                    No of Devices
+                                    </b>
+                                </td>
+                                <td>
+                                    16
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <b>
+                                    Laboratory Coordinator
+                                    </b>
+                                </td>
+                                <td>
+                                    Faculty Name
+                                </td>
+                            </tr>
+                        </table>
+
+                    </div>
                 </div>
             </div>
             <form className={classes.form}>

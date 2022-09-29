@@ -19,8 +19,7 @@ const HeaderComponent = () => {
         <IoMdSettings className={classes.icon1}/>
         <RiNotification4Fill className={classes.icon1}/>
         <Link to='/home' className={classes.btn}> 
-          
-          Login 
+          Welcome User!
         </Link>
       </div>
     </header>

@@ -1,0 +1,55 @@
+.labMain{
+    margin: 0px auto;
+    height:550px;
+    width:1008px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    gap:7px;
+    background-color: #ffb73044;
+    border-radius: 5px;
+}
+
+.cubicleCtn{
+    width: 80%;
+    height:15%;
+    background-color: rgba(255, 255, 255, 0.747);
+    border-radius: 4px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.cubicle{
+    width: 15%;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.devices{
+    height:40%;
+    width:100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.devices svg{
+    font-size: 20px;
+    color: #a0a0a0;
+    cursor: pointer;
+    transition-duration: 0.1s;
+}
+.devices svg:hover{
+    font-size: 20px;
+    color: #747474;
+    transform: scale(1.062);
+}
+.hL{
+    height: 2px;
+    width: 80%;
+    background-color: #BCBCBC;
+}

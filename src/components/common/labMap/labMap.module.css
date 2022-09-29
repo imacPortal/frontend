@@ -1,0 +1,75 @@
+.mapMain{
+    height:400px;
+    width:560px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap:7px
+}
+.labRow1{
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 0.8fr;
+    gap:7px;
+}
+.lab{
+    background-color: #ffb73081;
+    border-radius: 5px;
+    cursor: pointer;
+    transition-duration: 0.2s;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.lab:hover{
+    background-color:#FFB830;
+}
+.labRow2{
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 0.9fr;
+    gap:7px;
+}
+.pathRow{
+    background-color: #ffb73081;
+    height:24%;
+    width: 100%;
+    border-radius: 5px;
+}
+
+.door1{
+    position: absolute;
+    width: 20px;
+    height: 7px;
+    background-color: #ffb73081;
+    margin-top: 172px;
+    margin-left: 240px;
+}
+.door2{
+    position: absolute;
+    width: 20px;
+    height: 7px;
+    background-color: #ffb73081;
+    margin-top: 172px;
+    margin-left: 350px;
+}
+.door3{
+    position: absolute;
+    width: 20px;
+    height: 7px;
+    background-color: #ffb73081;
+    margin-top: 220.5px;
+    margin-left: 240px;
+}
+.door4{
+    position: absolute;
+    width: 20px;
+    height: 7px;
+    background-color: #ffb73081;
+    margin-top: 220.5px;
+    margin-left: 350px;
+}

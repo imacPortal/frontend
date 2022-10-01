@@ -10,7 +10,9 @@ function Step2() {
             <h2>Select Lab</h2>
             <div className={classes.labLayout}>
                 <div className={classes.mapCtn}>
-                    <LabMap />
+                    <div className={classes.mapM}>
+                        <LabMap />
+                    </div>
                     <div className={classes.info}>
                         <h5>
                             Lab description:

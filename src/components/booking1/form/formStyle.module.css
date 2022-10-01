@@ -97,6 +97,10 @@
     align-items: flex-start;
     gap:40px;
 }
+.mapM{
+    height:400px;
+    width:560px;
+}
 .info{
     width:40%;
     height: 400px;

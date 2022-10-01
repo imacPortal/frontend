@@ -27,7 +27,7 @@ function DashboardComponent() {
                 <option>Third Hour</option>
                 <option>Fourth Hour</option>
             </select>
-            <button> status </button>
+            <button> check status </button>
           </div>
         </div>
         <ReportComponent/>

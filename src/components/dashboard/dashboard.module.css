@@ -52,6 +52,8 @@
 }
 .statusMain{
     padding: 40px;
+    text-align: right;
+    font-family: 'quicksand';
 }
 .labCtn{
     width: 100%;
@@ -61,4 +63,21 @@
     overflow: scroll;
     gap:40px;
     padding: 20px;
+}
+.miniMap{
+    width: 200px;
+    height: 120px;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.247);
+    position: absolute;
+    margin-top: -1.7%;
+    margin-left: -1.7%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(3px);
+}
+.mapM{
+    width:80%;
+    height:80%;
 }

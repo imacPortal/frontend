@@ -3,6 +3,7 @@ import LoginPage from "../pages/login.page"
 import DetailPage from "../pages/details.page"
 import BookingPage from "../pages/booking.page"
 import Step1Page from "../pages/step1.page"
+import SettingsPage from "../pages/settings.page"
 
 export const PRIVATE_ROUTES = [
     {
@@ -16,6 +17,10 @@ export const PRIVATE_ROUTES = [
     {
         path:"/booking",
         component:<BookingPage />
+    },
+    {
+        path:"/settings",
+        component:<SettingsPage />
     },
     {
         path:"/step1",

@@ -2,6 +2,14 @@
     padding: 20px 30px;
     text-align: left;
 }
+.majorCtnConfP{
+    padding: 20px 30px;
+    text-align: center;
+}
+.majorCtnConfP h2{
+    font-family: 'quicksand';
+    margin: 8px 0px;
+}
 .majorCtn h2{
     font-family: 'quicksand';
     margin: 8px 0px;

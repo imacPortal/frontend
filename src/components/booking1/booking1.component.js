@@ -9,6 +9,7 @@ import TimelineComponent from '../common/booking/timeline.component'
 import Step1 from './form/step1'
 import Step2 from './form/step2'
 import Step3 from './form/step3'
+import Step4 from './form/step4'
 
 import classes from './booking1.module.css';
 
@@ -16,7 +17,8 @@ const Step = (n) => {
   switch(n){
     case 1: return <Step1 />
     case 2: return <Step2 />
-    default: return <Step3 />
+    case 3: return <Step3 />
+    case 4: return <Step4 />
   }
 }
 
@@ -28,7 +30,7 @@ const BookingComponent = () => {
       <div className={classes.mainCtn}>
         <SidebarComponent/>
         <div>
-          <TimelineComponent/>    
+          <TimelineComponent stepCounter={stepCounter}/>    
           <div className={classes.mainArea}>
             {
               stepCounter &&
@@ -36,8 +38,11 @@ const BookingComponent = () => {
             }
           </div>
           <div className={classes.BtnCtn}>
-            <button onClick={()=>stepCounter !== 1? setstepCounter(stepCounter-1):setstepCounter(1)}> Back </button>
-            <button onClick={()=>setstepCounter(stepCounter+1)}> Next </button>
+            {
+              stepCounter < 4 &&
+                <button onClick={()=>stepCounter !== 1? setstepCounter(stepCounter-1):setstepCounter(1)}> Back </button>
+              }
+              <button onClick={()=>stepCounter !== 4? setstepCounter(stepCounter+1):setstepCounter(4)}> Next </button>
           </div>
         </div>
         <ReportComponent/>

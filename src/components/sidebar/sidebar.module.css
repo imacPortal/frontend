@@ -19,3 +19,6 @@
 .icon1:hover{
     color: #FFC659;
 }
+.icon1Selected{
+    color: #FFC659 !important;
+}

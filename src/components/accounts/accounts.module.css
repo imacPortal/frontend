@@ -1,0 +1,123 @@
+.mainCtn{
+    display: grid;
+    grid-template-columns: 50px calc(100vw - 50px - 250px) 250px;
+}
+.mainArea{
+    height: calc(100vh - 166px);
+    width: 100%;
+    background-color: #f1f1f1;
+    overflow: scroll;
+}
+.BtnCtn{
+    width: 100%;
+    height:60px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0px 30px;
+}
+.BtnCtn button{
+    padding: 10px;
+    width: 140px;
+    border-radius: 4px;
+    border:none;
+    cursor: pointer;
+    transition-duration: 0.2s;
+    margin-right: 20px;
+}
+.BtnCtn button:hover{
+    background-color: #f1ac2a;
+}
+
+
+/* form to display profile */
+.majorCtn{
+    max-height: 100%;
+    padding: 20px 30px;
+    text-align: left;
+}
+.majorCtn h2{
+    font-family: 'quicksand';
+    margin: 8px 0px;
+}
+
+.form{
+    max-height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap:20px;
+    width: 90%;
+}
+
+.inputCtn{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 8px;
+    width:400px;
+}
+.inputCtn label{
+    background-color: #f1f1f1;
+    font-size: 16px;
+    font-weight: 500;
+    margin-left: 16px;
+    padding: 0px 6px;
+    position: relative;
+    margin-bottom: -23px;
+}
+.inputCtn textarea{
+    border:2px solid #FFB830;
+    resize: none;
+    border-radius: 5px;
+    background-color: transparent;
+    width: 100%;
+    height: 127px;
+    margin-top: 10px;
+    padding: 14px 14px;
+    font-size: 14px;
+    font-family: 'poppins';
+}
+.inputCtn input{
+    border:2px solid #FFB830;
+    resize: none;
+    border-radius: 5px;
+    background-color: transparent;
+    width: 100%;
+    height: 50px;
+    margin-top: 10px;
+    padding: 0px 14px;
+    font-size: 14px;
+}
+.inputCtn select{
+    border:2px solid #FFB830;
+    resize: none;
+    border-radius: 5px;
+    background-color: transparent;
+    width: 100%;
+    height: 50px;
+    margin-top: 10px;
+    padding: 0px 14px;
+    font-size: 14px;
+}
+
+.button{
+    height:40px;
+    margin: 0px 8px;
+    border-radius: 5px;
+    border:none;
+    width: 200px;
+    font-size: 16px;
+    transition-duration: 0.1s;
+}
+.button:hover{
+    background-color: #f1ac2a;
+    cursor: pointer;
+}
+
+

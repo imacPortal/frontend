@@ -15,7 +15,7 @@ function DashboardComponent() {
       <div className={classes.mainCtn}>
         <SidebarComponent/>
         <div>
-          <Header2Component/>    
+          <Header2Component content={'iLab Current Status'} showBtn={true}/>    
           <div className={classes.mainArea}>
             <LabStatus />
           </div>

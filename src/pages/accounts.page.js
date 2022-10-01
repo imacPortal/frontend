@@ -1,17 +1,18 @@
 import React from 'react'
 import { Helmet } from 'react-helmet'
+import AccountComponent from '../components/accounts/accounts.component'
 
-function SettingsPage() {
+function AccountsPage() {
     return (
         <div>
             <Helmet>
                 <title>
-                    iMac Portal | Settings
+                    iMac Portal | Accounts
                 </title>
             </Helmet>
-            Settings Page
+            <AccountComponent />
         </div>
     )
 }
 
-export default SettingsPage
+export default AccountsPage

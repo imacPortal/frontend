@@ -28,16 +28,16 @@ function LoginComponent() {
           <p>Enter the credentials to access the portal</p>
         </div>
         <div className={classes.allignment}>
-          <div className={classes.entryText}>
-            <p>Email</p>
+          <div className={classes.inputCtn}>
+              <label>Email</label>
+              <input placeholder="Ex. John Doe"/>
           </div>
-          <input className={classes.entry}></input>
-          <div className={classes.entryText}>
-            <p>Password</p>
+          <div className={classes.inputCtn}>
+              <label>Password</label>
+              <input placeholder="Enter your password"/>
           </div>
-          <input className={classes.entry}></input>
-          <div className={classes.color}>
-            <p>Forgot Password?</p>
+          <div className={classes.link}>
+            <a>Forgot Password?</a>
           </div>
         </div>
         <div className={classes.button}>

@@ -1,8 +1,45 @@
-import React from "react";
+import React, { useState } from "react";
 import Logo1 from "../../assets/SRMLogo.png";
 import Login from "../../assets/loginimg.png";
 import classes from "./login.module.css";
+import axios from "axios";
+import { API_URI } from "../../constants/apiUrl.constant";
+
+import { useDispatch, useSelector } from "react-redux";
+import { bindActionCreators } from 'redux'
+import { actionCreators } from '../../state';
+
+import { useNavigate } from "react-router";
+
+import Cookies from 'js-cookie'
+
 function LoginComponent() {
+
+  const [email, setEmail] = useState(null)
+  const [password, setPassword] = useState(null)
+
+  const dispatch = useDispatch()
+  const navigate = useNavigate()
+
+  const { setUser } = bindActionCreators(actionCreators, dispatch);
+
+
+  const handleLogin = () =>{
+    const data = {
+      email,
+      password
+    }
+    axios.post(`${API_URI}/auth/login`, data)
+      .then(res=>{
+        console.log(res.data)
+        setUser(res.data.data)
+        Cookies.set('uid', res.data.data.id)
+        navigate('/')
+      }).catch(err=>{
+        console.log(err)
+      })
+  }
+
   return (
     <div className={classes.majorContainer}>
       <div className={classes.infoCtn}>
@@ -30,18 +67,18 @@ function LoginComponent() {
         <div className={classes.allignment}>
           <div className={classes.inputCtn}>
               <label>Email</label>
-              <input placeholder="Ex. John Doe"/>
+              <input type="email" placeholder="Ex. John Doe" onChange={(e)=>setEmail(e.target.value)} />
           </div>
           <div className={classes.inputCtn}>
               <label>Password</label>
-              <input placeholder="Enter your password"/>
+              <input type="password" placeholder="Enter your password" onChange={(e)=>setPassword(e.target.value)} />
           </div>
           <div className={classes.link}>
             <a>Forgot Password?</a>
           </div>
         </div>
         <div className={classes.button}>
-          <button>Login</button>
+          <button onClick={()=>{handleLogin()}}>Login</button>
         </div>
       </div>
     </div>

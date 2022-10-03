@@ -1,12 +1,8 @@
-export const setUser = (userId, uName, email) => {
+export const setUser = user => {
     return dispatch => {
         dispatch({
             type: "set_user",
-            payload: {
-                userId,
-                uName,
-                email
-            }
+            payload: user
         })
     }
 }

@@ -25,7 +25,7 @@ function DashboardComponent() {
     setDate(today)
     setToday(today)
     // console.log(today)
-  })
+  },[])
 
   return (
     date &&

@@ -24,8 +24,23 @@
     justify-content: center;
     align-items: center;
 }
+.labSec{
+    background-color:#FFB830;
+    border-radius: 0.1rem;
+    cursor: pointer;
+    transition-duration: 0.2s;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 .lab:hover{
     background-color:#FFB830;
+}
+.labSec h2{
+    font-size: 1rem;
+    line-height: 0px;
+    margin: 0px;
 }
 .lab h2{
     font-size: 1rem;

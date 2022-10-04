@@ -37,13 +37,37 @@
     justify-content: space-evenly;
     align-items: center;
 }
-.devices svg{
+.DeviceAvailable svg{
     font-size: 20px;
     color: #a0a0a0;
     cursor: pointer;
     transition-duration: 0.1s;
 }
-.devices svg:hover{
+.DeviceAvailable svg:hover{
+    font-size: 20px;
+    color: #747474;
+    transform: scale(1.062);
+}
+
+.DeviceNotAvailable svg{
+    font-size: 20px;
+    color: #a0a0a0;
+    cursor: pointer;
+    transition-duration: 0.1s;
+}
+.DeviceNotAvailable svg:hover{
+    font-size: 20px;
+    color: #747474;
+    transform: scale(1.062);
+}
+
+.DeviceSelected svg{
+    font-size: 20px;
+    color: #a0a0a0;
+    cursor: pointer;
+    transition-duration: 0.1s;
+}
+.DeviceSelected svg:hover{
     font-size: 20px;
     color: #747474;
     transform: scale(1.062);

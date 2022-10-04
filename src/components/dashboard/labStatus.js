@@ -4,17 +4,17 @@ import LabMap from '../common/labMap/labMap.component'
 
 import classes from './dashboard.module.css'
 
-function LabStatus() {
+function LabStatus({setLab,lab}) {
     return (
         <div className={classes.statusMain}>
             <div className={classes.miniMap}>
                 <div className={classes.mapM}>
-                    <LabMap />
+                    <LabMap setLab={setLab} lab={lab}/>
                 </div>
             </div>
             <h2>Lab 1 (Imac M1 16GB)</h2>
             <div className={classes.labCtn}>
-                <LabLayout />
+                <LabLayout lab={lab}/>
             </div>
         </div>
     )

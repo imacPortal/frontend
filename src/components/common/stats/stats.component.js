@@ -19,10 +19,10 @@ const StatsComponent = () => {
     <HiOutlineDesktopComputer className={classes.i3} />
     Selected
     </p>
-    <p>
+    {/* <p>
     <HiOutlineDesktopComputer className={classes.i4} />
     Not Working
-    </p>
+    </p> */}
   </div>
  </div>
 

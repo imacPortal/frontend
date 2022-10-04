@@ -39,19 +39,19 @@
 }
 .DeviceAvailable svg{
     font-size: 20px;
-    color: #a0a0a0;
+    color: #FFC659;
     cursor: pointer;
     transition-duration: 0.1s;
 }
 .DeviceAvailable svg:hover{
     font-size: 20px;
-    color: #747474;
+    color: #e0a433;
     transform: scale(1.062);
 }
 
 .DeviceNotAvailable svg{
     font-size: 20px;
-    color: #a0a0a0;
+    color: #cecece;
     cursor: pointer;
     transition-duration: 0.1s;
 }
@@ -63,13 +63,13 @@
 
 .DeviceSelected svg{
     font-size: 20px;
-    color: #a0a0a0;
+    color: #80ED99;
     cursor: pointer;
     transition-duration: 0.1s;
 }
 .DeviceSelected svg:hover{
     font-size: 20px;
-    color: #747474;
+    color: #80ED99;
     transform: scale(1.062);
 }
 .hL{

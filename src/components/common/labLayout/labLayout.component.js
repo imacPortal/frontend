@@ -6,31 +6,46 @@ import { API_URI } from "../../../constants/apiUrl.constant";
 
 import classes from './labLayout.module.css'
 
-function LabLayout({lab}) {
+function LabLayout({lab,date,slot}) {
     const [devices, setDevices] = useState(null)
+    const [systemsBooked, setSystemsBooked] = useState([])
 
-    useEffect(()=>console.log(devices),[devices])
+    useEffect(()=>console.log(systemsBooked),[systemsBooked])
 
     useEffect(()=>{
         setDevices(null)
         axios.post(`${API_URI}/system/labFetch`,{labNo:lab})
         .then(res=>{
-            setDevices(res.data.data)
+            axios.post(`${API_URI}/bookingConf/fetch`,{lab,date,slots:slot})
+                .then(statusRes=>{
+                    if(statusRes.data.data){
+                        setSystemsBooked(statusRes.data.data.system)
+                    }else{
+                        setSystemsBooked([])
+                    }
+                    setDevices(res.data.data)
+                }).catch(err=>{
+                    console.log(err)
+                })
         }).catch(err=>{
             console.log(err)
         })
-    },[lab])
+    },[lab,date,slot])
     
     const Device = ({serialNo})=>{
         return(
+            systemsBooked.includes(serialNo) ?
+            <div className={classes.DeviceNotAvailable}>
+                <HiOutlineDesktopComputer onClick={()=>alert("already booked!")}/>
+            </div> :
             <div className={classes.DeviceAvailable}>
-                <HiOutlineDesktopComputer className={classes.DeviceAvailable} onClick={()=>console.log(serialNo)}/>
+                <HiOutlineDesktopComputer onClick={()=>console.log(serialNo)}/>
             </div>
         )
     }
 
     return (
-        devices?
+        (devices&&systemsBooked)?
         <div className={classes.labMain}> 
             <div className={classes.cubicleCtn}>
                 <div className={classes.cubicle}>

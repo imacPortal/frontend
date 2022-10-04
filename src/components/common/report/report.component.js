@@ -25,7 +25,7 @@ export default function Example() {
               </AccordionItemButton>
             </AccordionItemHeading>
             <AccordionItemPanel>
-              <p>this is the accordian</p>
+              <p>coming soon...</p>
             </AccordionItemPanel>
           </AccordionItem>
           <AccordionItem>
@@ -35,7 +35,9 @@ export default function Example() {
                     <a className={classes.counter1}>6</a>
               </AccordionItemButton>
             </AccordionItemHeading>
-            <AccordionItemPanel></AccordionItemPanel>
+            <AccordionItemPanel>
+              <p>coming soon...</p>
+            </AccordionItemPanel>
           </AccordionItem>
           <AccordionItem>
             <AccordionItemHeading>
@@ -44,7 +46,9 @@ export default function Example() {
                     <a className={classes.counter2}>1</a>
               </AccordionItemButton>
             </AccordionItemHeading>
-            <AccordionItemPanel></AccordionItemPanel>
+            <AccordionItemPanel>
+              <p>coming soon...</p>
+            </AccordionItemPanel>
           </AccordionItem>
         </Accordion>
       {/* </div> */}

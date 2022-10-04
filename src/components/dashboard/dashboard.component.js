@@ -24,9 +24,11 @@ function DashboardComponent() {
     today = yyyy+ '-' + mm + '-' + dd ;
     setDate(today)
     setToday(today)
+    // console.log(today)
   })
 
   return (
+    date &&
     <div>
       <HeaderComponent/>
       <div className={classes.mainCtn}>
@@ -34,13 +36,10 @@ function DashboardComponent() {
         <div>
           <Header2Component content={'iLab Current Status'} showBtn={true}/>    
           <div className={classes.mainArea}>
-            <LabStatus setLab={setLab} lab={lab}/>
+            <LabStatus setLab={setLab} lab={lab} date={date} slot={slot} />
           </div>
           <div className={classes.BtnCtn}>
-            {
-              date &&
               <input value={date} type="date" onChange={(e)=>{setDate(e.target.value)}} min={today}></input>
-            }
             <select onChange={(e)=>{setSlot(e.target.value)}}>
                 <option>1</option>
                 <option>2</option>

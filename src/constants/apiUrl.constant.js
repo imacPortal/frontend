@@ -1,2 +1,2 @@
-export const API_URI = 'https://imacp.herokuapp.com'
-// export const API_URI = 'http://localhost:5000'
+// export const API_URI = 'https://imacp.herokuapp.com'
+export const API_URI = 'http://localhost:5000'

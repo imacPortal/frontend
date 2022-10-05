@@ -6,11 +6,18 @@ import { API_URI } from "../../../constants/apiUrl.constant";
 
 import classes from './labLayout.module.css'
 
-function LabLayout({lab,date,slot}) {
+function LabLayout({lab,date,slot,setSystem,system}) {
     const [devices, setDevices] = useState(null)
     const [systemsBooked, setSystemsBooked] = useState([])
 
-    useEffect(()=>console.log(systemsBooked),[systemsBooked])
+    // useEffect(()=>console.log(systemsBooked),[systemsBooked])
+    // useEffect(()=>{
+    //     if(setSystem){
+    //         console.log('fonund')
+    //     }else{
+    //         console.log('not found')
+    //     }
+    // },[])
 
     useEffect(()=>{
         setDevices(null)
@@ -31,16 +38,27 @@ function LabLayout({lab,date,slot}) {
             console.log(err)
         })
     },[lab,date,slot])
+
+    const AddDevice = ()=>{
+
+    }
+    const removeDevice = ()=>{
+        
+    }
     
     const Device = ({serialNo})=>{
         return(
-            systemsBooked.includes(serialNo) ?
+            serialNo ?
+                systemsBooked.includes(serialNo) ?
+                <div className={classes.DeviceNotAvailable}>
+                    <HiOutlineDesktopComputer onClick={()=>alert("already booked!")}/>
+                </div> :
+                <div className={classes.DeviceAvailable}>
+                    <HiOutlineDesktopComputer onClick={()=>setSystem? setSystem([...system, serialNo]):alert(serialNo)}/>
+                </div> :
             <div className={classes.DeviceNotAvailable}>
-                <HiOutlineDesktopComputer onClick={()=>alert("already booked!")}/>
-            </div> :
-            <div className={classes.DeviceAvailable}>
-                <HiOutlineDesktopComputer onClick={()=>console.log(serialNo)}/>
-            </div>
+                <HiOutlineDesktopComputer onClick={()=>alert("No devices registered!")}/>
+            </div> 
         )
     }
 
@@ -77,8 +95,8 @@ function LabLayout({lab,date,slot}) {
                     </div>
                     <span className={classes.hL}></span>
                     <div className={classes.devices}>
-                        <Device serialNo={devices[0].serialNo} />
-                        <Device serialNo={devices[0].serialNo} />
+                        <Device />
+                        <Device />
                     </div>
                 </div>
                 <div className={classes.cubicle}>

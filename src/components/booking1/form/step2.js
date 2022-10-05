@@ -4,14 +4,14 @@ import classes from "./formStyle.module.css"
 
 import LabMap from '../../common/labMap/labMap.component'
 
-function Step2() {
+function Step2({lab, setLab, slots, setSlots}) {
     return (
         <div className={classes.majorCtn}>
             <h2>Select Lab</h2>
             <div className={classes.labLayout}>
                 <div className={classes.mapCtn}>
                     <div className={classes.mapM}>
-                        <LabMap />
+                        <LabMap lab={lab} setLab={setLab} />
                     </div>
                     <div className={classes.info}>
                         <h5>
@@ -35,7 +35,7 @@ function Step2() {
                                     </b>
                                 </td>
                                 <td>
-                                    Apple M1
+                                    {(lab==1 || lab==2)?`Apple M1`:`intel`}
                                 </td>
                             </tr>
                             <tr>
@@ -87,11 +87,11 @@ function Step2() {
                 <div>
                     <div className={classes.inputCtn}>
                         <label>Select Time Slot</label>
-                        <select>
-                            <option>First hour</option>
-                            <option>Second Hour</option>
-                            <option>Third Hour</option>
-                            <option>Fourth Hour</option>
+                        <select onChange={(e)=>{setSlots(e.target.value)}}>
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
                         </select>
                     </div>
                 </div>

@@ -15,7 +15,7 @@ import { actionCreators } from './state';
 function App() {
 
   const state = useSelector(s=>s)
-  const [isLoggedIn, setIsLoggedIn] = useState(false)
+  const [isLoggedIn, setIsLoggedIn] = useState(true)
 
 
   const dispatch = useDispatch()
@@ -41,9 +41,10 @@ function App() {
     console.log("Redux State",state)
     if(state.user != null){
       setIsLoggedIn(true)
-    }else{
-      setIsLoggedIn(false)
     }
+    // else{
+    //   setIsLoggedIn(false)
+    // }
   },[state])
 
   return (

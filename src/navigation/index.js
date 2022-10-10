@@ -1,9 +1,9 @@
 import React, {useState} from 'react'
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom"
+import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom"
 
 import { PRIVATE_ROUTES, PUBLIC_ROUTES } from '../constants/routes.constant';
 
-function Navigate({isLoggedIn}) {
+function Navigation({isLoggedIn}) {
 
 
     return (
@@ -23,15 +23,15 @@ function Navigate({isLoggedIn}) {
                 }
                 {
                     isLoggedIn &&
-                    <Route path="*" element={<div>Already logged in! <Link to="/">Redirect to dashboard</Link></div>} />
+                    <Route path="*" element={<Navigate to="/" />} />
                 }
                 {
                     !isLoggedIn &&
-                    <Route path="*" element={<div>Not Found! <Link to="/login">Redirect to Login</Link></div>} />
+                    <Route path="*" element={<Navigate to="/login" />} />
                 }
             </Routes>
         </Router>
     )
 }
 
-export default Navigate
+export default Navigation

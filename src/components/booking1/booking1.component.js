@@ -13,13 +13,16 @@ import Step4 from './form/step4'
 
 import classes from './booking1.module.css';
 
+import axios from 'axios'
+import { API_URI } from '../../constants/apiUrl.constant'
+
 const BookingComponent = () => {
   const [stepCounter, setstepCounter] = useState(1)
   const [lab, setLab] = useState(1)
   const [subject, setSubject] = useState("")
   const [noOfStuds, setNoOfStuds] = useState("")
   const [reason, setReason] = useState("")
-  const [system, setSystem] = useState("")
+  const [system, setSystem] = useState([])
   const [slots, setSlots] = useState(1)
   const [date, setDate] = useState(()=>{
     var today = new Date();
@@ -48,6 +51,10 @@ const BookingComponent = () => {
     console.log(system)
     console.log(slots)
     console.log(date)
+  }
+
+  const handleSubmit = ()=>{
+    setstepCounter(4)
   }
 
   const Step = (n) => {
@@ -93,12 +100,18 @@ const BookingComponent = () => {
             }
           </div>
           <div className={classes.BtnCtn}>
-            {
-              stepCounter < 4 &&
+              {
+                stepCounter < 4 &&
                 <button onClick={()=>stepCounter !== 1? setstepCounter(stepCounter-1):setstepCounter(1)}> Back </button>
               }
-              <button onClick={()=>stepCounter !== 4? setstepCounter(stepCounter+1):setstepCounter(4)}> Next </button>
-              <button onClick={()=>display()}> display </button>
+              {
+                stepCounter < 3 &&
+                <button onClick={()=>stepCounter !== 3? setstepCounter(stepCounter+1):setstepCounter(3)}> Next </button>
+              }
+              {
+                stepCounter === 3 &&
+                <button onClick={()=>{handleSubmit()}}> Submit </button> 
+              }
           </div>
         </div>
         <ReportComponent/>

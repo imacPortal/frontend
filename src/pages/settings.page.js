@@ -1,5 +1,6 @@
 import React from 'react'
 import { Helmet } from 'react-helmet'
+import SettingsComponent from '../components/settingsForAdmin/settings.component'
 
 function SettingsPage() {
     return (
@@ -9,7 +10,7 @@ function SettingsPage() {
                     iMac Portal | Settings
                 </title>
             </Helmet>
-            Settings Page
+            <SettingsComponent />
         </div>
     )
 }

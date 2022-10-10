@@ -15,7 +15,7 @@ import { actionCreators } from './state';
 function App() {
 
   const state = useSelector(s=>s)
-  const [isLoggedIn, setIsLoggedIn] = useState(true)
+  const [isLoggedIn, setIsLoggedIn] = useState(false)
 
 
   const dispatch = useDispatch()
@@ -42,9 +42,9 @@ function App() {
     if(state.user != null){
       setIsLoggedIn(true)
     }
-    // else{
-    //   setIsLoggedIn(false)
-    // }
+    else{
+      setIsLoggedIn(false)
+    }
   },[state])
 
   return (

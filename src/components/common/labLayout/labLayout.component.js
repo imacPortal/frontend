@@ -43,53 +43,55 @@ function LabLayout({lab,date,slot,setSystem,system}) {
         }).catch(err=>{
             console.log(err)
         })
-        setSystemsBooked([])
-        setDevices([
-            {
-                systemNo:1,
-                serialNo:"12312"
-            },
-            {
-                systemNo:30,
-                serialNo:"12312"
-            },
-            {
-                systemNo:3,
-                serialNo:"12312"
-            },
-            {
-                systemNo:4,
-                serialNo:"12312"
-            },
-            {
-                systemNo:5,
-                serialNo:"12312"
-            },
-            {
-                systemNo:6,
-                serialNo:"12312"
-            },
-            {
-                systemNo:7,
-                serialNo:"12312"
-            },
-            {
-                systemNo:8,
-                serialNo:"12312"
-            },
-            {
-                systemNo:20,
-                serialNo:"12312"
-            },
-            {
-                systemNo:10,
-                serialNo:"12312"
-            },
-            {
-                systemNo:11,
-                serialNo:"12312"
-            }
-        ])
+
+        // temporary variable for working offline
+        // setSystemsBooked([])
+        // setDevices([
+        //     {
+        //         systemNo:1,
+        //         serialNo:"12312"
+        //     },
+        //     {
+        //         systemNo:30,
+        //         serialNo:"12312"
+        //     },
+        //     {
+        //         systemNo:3,
+        //         serialNo:"12312"
+        //     },
+        //     {
+        //         systemNo:4,
+        //         serialNo:"12312"
+        //     },
+        //     {
+        //         systemNo:5,
+        //         serialNo:"12312"
+        //     },
+        //     {
+        //         systemNo:6,
+        //         serialNo:"12312"
+        //     },
+        //     {
+        //         systemNo:7,
+        //         serialNo:"12312"
+        //     },
+        //     {
+        //         systemNo:8,
+        //         serialNo:"12312"
+        //     },
+        //     {
+        //         systemNo:20,
+        //         serialNo:"12312"
+        //     },
+        //     {
+        //         systemNo:10,
+        //         serialNo:"12312"
+        //     },
+        //     {
+        //         systemNo:11,
+        //         serialNo:"12312"
+        //     }
+        // ])
     },[lab,date,slot])
 
     const AddDevice = (serialNo)=>{

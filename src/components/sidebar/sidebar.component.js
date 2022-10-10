@@ -24,9 +24,9 @@ const SidebarComponent = () => {
       <Link to={'/booking'}>
         <HiOutlineDesktopComputer className={loc == '/booking'?classes.icon1Selected:classes.icon1}/>
       </Link>
-      {/* <Link to={'/settings'}>
-        <RiSettings3Line className={classes.icon1}/>
-      </Link> */}
+      <Link to={'/settings'}>
+        <RiSettings3Line className={loc == '/settings'?classes.icon1Selected:classes.icon1}/>
+      </Link>
       <Link to={'/accounts'}>
         <CgProfile className={loc == '/accounts'?classes.icon1Selected:classes.icon1}/>
       </Link>

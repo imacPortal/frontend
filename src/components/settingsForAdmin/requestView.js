@@ -8,6 +8,7 @@ function RequestView() {
     const [reqs, setReqs] = useState([])
     
     const fetchData = ()=>{
+        setReqs(null)
         axios.get(`${API_URI}/bookingReq/fetch`)
         .then(res=>{
             setReqs(res.data.data)
@@ -21,7 +22,7 @@ function RequestView() {
     const confirmReqs = (data, id) => {
         let a = window.confirm("Are you sure?")
         if(a){
-            console.log(data)
+            // console.log(data)
             axios.post(`${API_URI}/bookingConf/add/${id}`, data)
                 .then(req=>{
                     if(req.data.status === "Request granted"){
@@ -36,9 +37,27 @@ function RequestView() {
 
     }
 
+    const deleteReqs = (id) => {
+        let a = window.confirm("Are you sure?")
+        if(a){
+            axios.get(`${API_URI}/bookingReq/delete/${id}`)
+                .then(req=>{
+                    if(req.data.status === "deleted"){
+                        alert("Request rejected")
+                        fetchData()
+                    }
+                })
+                .catch(err=>console.log(err))
+        }
+        else
+            console.log("prevented")
+
+    }
+
     return (
         <div className={classes.req_majorCtn}>
         {
+            reqs ?
             reqs.length > 0 ?
             reqs.map((req,index) => (
                     <div className={classes.req_tokenCtn}>
@@ -52,10 +71,12 @@ function RequestView() {
                         </div>   
                         <div>
                             <button onClick={()=>confirmReqs({ date:req.date, slots:req.slots, lab:req.lab, system:req.system},req._id)}>confirm</button>
-                            <button>reject</button>
+                            <button onClick={()=>deleteReqs(req._id)}>reject</button>
                         </div>
                     </div>
-            )) : <p>Loading...</p>
+            )) : <p>No pending Requests</p>
+            : <p>loading...</p>
+
         }
         </div>
     )

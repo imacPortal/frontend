@@ -13,6 +13,8 @@ import Step4 from './form/step4'
 
 import classes from './booking1.module.css';
 
+import { useSelector } from 'react-redux'
+
 import axios from 'axios'
 import { API_URI } from '../../constants/apiUrl.constant'
 
@@ -43,18 +45,48 @@ const BookingComponent = () => {
     return(today)
   })
 
-  const display = ()=>{
-    console.log(lab)
-    console.log(subject)
-    console.log(noOfStuds)
-    console.log(reason)
-    console.log(system)
-    console.log(slots)
-    console.log(date)
-  }
+  const user = useSelector(s=>s.user)
 
   const handleSubmit = ()=>{
-    setstepCounter(4)
+    const data = {
+      name:user.name,
+      regNo:user.regno,
+      lab,
+      subject,
+      noOfStuds,
+      reason,
+      system,
+      slots,
+      date
+    }
+    console.log(data)
+
+    axios.post(`${API_URI}/bookingReq/add`,data)
+      .then(res=>{
+        const msg = res.data.status
+        if(msg === "Request added successfully"){
+          setstepCounter(4)
+        }else{
+          alert("request was not processed try again")
+        }
+      }).catch(err => alert("something went wrong!"))
+  }
+
+  const incrementStep = ()=>{
+    if(stepCounter !== 3){
+      if(stepCounter === 1){
+        if(subject !== "" && reason !== "" && date !== "" && noOfStuds !== ""){
+          setstepCounter(stepCounter+1)
+        }else{
+          setstepCounter(1)
+          alert("enter all data!")
+        }
+      }else{
+        setstepCounter(stepCounter+1)
+      }
+    }else{
+      setstepCounter(3)
+    }
   }
 
   const Step = (n) => {
@@ -106,7 +138,7 @@ const BookingComponent = () => {
               }
               {
                 stepCounter < 3 &&
-                <button onClick={()=>stepCounter !== 3? setstepCounter(stepCounter+1):setstepCounter(3)}> Next </button>
+                <button onClick={()=>incrementStep()}> Next </button>
               }
               {
                 stepCounter === 3 &&

@@ -7,13 +7,21 @@ import { CgProfile }  from "react-icons/cg"
 import { Link } from 'react-router-dom'
 import { useParams } from 'react-router'
 
+import { useSelector } from 'react-redux'
+
 const SidebarComponent = () => {
+
+  const userDesig = useSelector(s=>s.user.designation)
 
   const [loc, setLoc] = useState(window.location.pathname)
 
   useEffect(() => {
     setLoc(window.location.pathname);
   }, [window.location.pathname])
+
+  // useEffect(() => {
+  //   console.log(userDesig);
+  // }, [userDesig])
 
 
   return (
@@ -24,9 +32,12 @@ const SidebarComponent = () => {
       <Link to={'/booking'}>
         <HiOutlineDesktopComputer className={loc == '/booking'?classes.icon1Selected:classes.icon1}/>
       </Link>
-      <Link to={'/settings'}>
-        <RiSettings3Line className={loc == '/settings'?classes.icon1Selected:classes.icon1}/>
-      </Link>
+      {
+        userDesig==="superadmin" &&
+          <Link to={'/settings'}>
+            <RiSettings3Line className={loc == '/settings'?classes.icon1Selected:classes.icon1}/>
+          </Link>
+      }
       <Link to={'/accounts'}>
         <CgProfile className={loc == '/accounts'?classes.icon1Selected:classes.icon1}/>
       </Link>

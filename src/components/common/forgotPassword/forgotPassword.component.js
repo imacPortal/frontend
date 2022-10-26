@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Logo1 from "../../../assets/SRMLogo.png";
 import Login from "../../../assets/loginimg.png";
-import classes from "./details.module.css";
+import classes from "./forgotPassword.module.css";
 import axios from "axios";
 import { API_URI } from "../../../constants/apiUrl.constant";
 
@@ -12,12 +12,13 @@ import { actionCreators } from '../../../state';
 import { useNavigate } from "react-router";
 
 import Cookies from 'js-cookie'
+import { Link } from "react-router-dom";
 
-function DetailComponent() {
+function ForgotPasswordComponent() {
 
-  const [name, setName] = useState(null)
-  const [registrationnumber, setRegistrationNumber] = useState(null)
-  const [password, setPassword] = useState(null)
+  const [email, setEmail] = useState(null)
+//   const [registrationnumber, setRegistrationNumber] = useState(null)
+//   const [password, setPassword] = useState(null)
   
   const dispatch = useDispatch()
   const navigate = useNavigate()
@@ -27,7 +28,7 @@ function DetailComponent() {
 
   const handleLogin = () =>{
     const data = {
-      name,registrationnumber,password
+      email
     }
     axios.post(`${API_URI}/auth/login`, data)
       .then(res=>{
@@ -60,25 +61,17 @@ function DetailComponent() {
         </div>
       </div>
       <div className={classes.half}>
-        <h1>Details</h1>
+        <h1>Forgot Password</h1>
         <div className={classes.sub}>
-          <p>Enter the details to finish on boarding</p>
+          <p>Enter the Email </p>
         </div>
         <div className={classes.allignment}>
           <div className={classes.inputCtn}>
-              <label>Name</label>
-              <input type="name" placeholder="Ex. John Doe" onChange={(e)=>setName(e.target.value)} />
-          </div>
-          <div className={classes.inputCtn}>
-              <label>Registration Number</label>
-              <input type="registration number" placeholder="Enter your Registration Number" onChange={(e)=>setRegistrationNumber(e.target.value)} />
-          </div>
-          <div className={classes.inputCtn}>
-              <label>Password</label>
-              <input type="password" placeholder="Enter your password" onChange={(e)=>setPassword(e.target.value)} />
+              <label>Email</label>
+              <input type="email" placeholder="Ex. John Doe" onChange={(e)=>setEmail(e.target.value)} />
           </div>
           <div className={classes.link}>
-            <a>Forgot Password?</a>
+            <Link to="/login">Go Back to Login</Link>
           </div>
         </div>
         <div className={classes.button}>
@@ -89,4 +82,4 @@ function DetailComponent() {
   );
 }
 
-export default DetailComponent;
+export default ForgotPasswordComponent;

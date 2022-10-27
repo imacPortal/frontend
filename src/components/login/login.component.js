@@ -12,6 +12,7 @@ import { actionCreators } from '../../state';
 import { useNavigate } from "react-router";
 
 import Cookies from 'js-cookie'
+import { Link } from "react-router-dom";
 
 function LoginComponent() {
 
@@ -74,7 +75,7 @@ function LoginComponent() {
               <input type="password" placeholder="Enter your password" onChange={(e)=>setPassword(e.target.value)} />
           </div>
           <div className={classes.link}>
-            <a>Forgot Password?</a>
+            <Link to="/forgotpassword">Forgot Password?</Link>
           </div>
         </div>
         <div className={classes.button}>

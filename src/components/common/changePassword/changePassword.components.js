@@ -1,22 +1,22 @@
 import React, { useState } from "react";
-import Logo1 from "../../../assets/SRMLogo.png";
-import Login from "../../../assets/loginimg.png";
-import classes from "./details.module.css";
+import Logo1 from "../../assets/SRMLogo.png";
+import Login from "../../assets/loginimg.png";
+import classes from "./changePassword.module.css";
 import axios from "axios";
-import { API_URI } from "../../../constants/apiUrl.constant";
+import { API_URI } from "../../constants/apiUrl.constant";
 
 import { useDispatch, useSelector } from "react-redux";
 import { bindActionCreators } from 'redux'
-import { actionCreators } from '../../../state';
+import { actionCreators } from '../../state';
 
 import { useNavigate } from "react-router";
 
 import Cookies from 'js-cookie'
 
-function DetailComponent() {
+function ChangePasswordComponent() {
 
-  const [name, setName] = useState(null)
-  const [registrationnumber, setRegistrationNumber] = useState(null)
+//   const [name, setName] = useState(null)
+//   const [registrationnumber, setRegistrationNumber] = useState(null)
   const [password, setPassword] = useState(null)
   
   const dispatch = useDispatch()
@@ -27,7 +27,8 @@ function DetailComponent() {
 
   const handleLogin = () =>{
     const data = {
-      name,registrationnumber,password
+      
+      password
     }
     axios.post(`${API_URI}/auth/login`, data)
       .then(res=>{
@@ -60,25 +61,21 @@ function DetailComponent() {
         </div>
       </div>
       <div className={classes.half}>
-        <h1>Details</h1>
+        <h1>Change Password</h1>
         <div className={classes.sub}>
-          <p>Enter the details to finish on boarding</p>
+          <p>Enter the password to finish the details</p>
         </div>
         <div className={classes.allignment}>
           <div className={classes.inputCtn}>
-              <label>Name</label>
-              <input type="name" placeholder="Ex. John Doe" onChange={(e)=>setName(e.target.value)} />
+              <label>New Password</label>
+              <input type="new password" placeholder="Enter your new password" onChange={(e)=>setName(e.target.value)} />
           </div>
           <div className={classes.inputCtn}>
-              <label>Registration Number</label>
-              <input type="registration number" placeholder="Enter your Registration Number" onChange={(e)=>setRegistrationNumber(e.target.value)} />
-          </div>
-          <div className={classes.inputCtn}>
-              <label>Password</label>
-              <input type="password" placeholder="Enter your password" onChange={(e)=>setPassword(e.target.value)} />
+              <label>Conform Password</label>
+              <input type="conform password" placeholder="Conform your password" onChange={(e)=>setPassword(e.target.value)} />
           </div>
           <div className={classes.link}>
-            <a>Forgot Password?</a>
+            <a>Go Back to Login</a>
           </div>
         </div>
         <div className={classes.button}>
@@ -89,4 +86,4 @@ function DetailComponent() {
   );
 }
 
-export default DetailComponent;
+export default ChangePasswordComponent;

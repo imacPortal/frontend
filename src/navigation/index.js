@@ -3,33 +3,42 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-d
 
 import { PRIVATE_ROUTES, PUBLIC_ROUTES } from '../constants/routes.constant';
 
-function Navigation({isLoggedIn}) {
+import DetailPage from '../pages/details.page';
 
+function Navigation({isLoggedIn, onBoarding}) {
+
+    console.log("onBoarding", onBoarding)
 
     return (
         <Router>
-            <Routes>
-                {
-                    isLoggedIn &&
-                    PRIVATE_ROUTES.map(route=>
-                        <Route path={route.path} element={route.component} key={route.path}/>
-                    )
-                }
-                {
-                    !isLoggedIn &&
-                    PUBLIC_ROUTES.map(route=>
-                        <Route path={route.path} element={route.component} key={route.path}/>
-                    )
-                }
-                {
-                    isLoggedIn &&
-                    <Route path="*" element={<Navigate to="/" />} />
-                }
-                {
-                    !isLoggedIn &&
-                    <Route path="*" element={<Navigate to="/login" />} />
-                }
-            </Routes>
+            {
+                onBoarding ?
+                <Routes>
+                    <Route path="*" element={<DetailPage/>} />
+                </Routes>:
+                <Routes>
+                    {
+                        isLoggedIn &&
+                        PRIVATE_ROUTES.map(route=>
+                            <Route path={route.path} element={route.component} key={route.path}/>
+                        )
+                    }
+                    {
+                        !isLoggedIn &&
+                        PUBLIC_ROUTES.map(route=>
+                            <Route path={route.path} element={route.component} key={route.path}/>
+                        )
+                    }
+                    {
+                        isLoggedIn &&
+                        <Route path="*" element={<Navigate to="/" />} />
+                    }
+                    {
+                        !isLoggedIn &&
+                        <Route path="*" element={<Navigate to="/login" />} />
+                    }
+                </Routes>
+            }
         </Router>
     )
 }

@@ -16,6 +16,7 @@ function App() {
 
   const state = useSelector(s=>s)
   const [isLoggedIn, setIsLoggedIn] = useState(false)
+  const [onBoarding, setIsOnBoarding] = useState(true)
 
 
   const dispatch = useDispatch()
@@ -41,15 +42,22 @@ function App() {
     console.log("Redux State",state)
     if(state.user != null){
       setIsLoggedIn(true)
+      const userId = state.user.id;
+      if(userId === null){
+        setIsOnBoarding(true)
+      }else{
+        setIsOnBoarding(false)
+      }
     }
     else{
       setIsLoggedIn(false)
+      setIsOnBoarding(false)
     }
   },[state])
 
   return (
     <div className="App">
-      <Navigate isLoggedIn={isLoggedIn}/>
+      <Navigate isLoggedIn={isLoggedIn} onBoarding={onBoarding}/>
     </div>
   );
 }

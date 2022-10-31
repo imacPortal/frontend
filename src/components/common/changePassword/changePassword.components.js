@@ -1,13 +1,13 @@
 import React, { useState } from "react";
-import Logo1 from "../../assets/SRMLogo.png";
-import Login from "../../assets/loginimg.png";
+import Logo1 from "../../../assets/SRMLogo.png";
+import Login from "../../../assets/loginimg.png";
 import classes from "./changePassword.module.css";
 import axios from "axios";
-import { API_URI } from "../../constants/apiUrl.constant";
+import { API_URI } from "../../../constants/apiUrl.constant";
 
 import { useDispatch, useSelector } from "react-redux";
 import { bindActionCreators } from 'redux'
-import { actionCreators } from '../../state';
+import { actionCreators } from '../../../state';
 
 import { useNavigate } from "react-router";
 
@@ -15,7 +15,7 @@ import Cookies from 'js-cookie'
 
 function ChangePasswordComponent() {
 
-//   const [name, setName] = useState(null)
+  const [name, setName] = useState(null)
 //   const [registrationnumber, setRegistrationNumber] = useState(null)
   const [password, setPassword] = useState(null)
   

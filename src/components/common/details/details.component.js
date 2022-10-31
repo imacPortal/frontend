@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Logo1 from "../../../assets/SRMLogo.png";
 import Login from "../../../assets/loginimg.png";
 import classes from "./details.module.css";
@@ -15,9 +15,18 @@ import Cookies from 'js-cookie'
 
 function DetailComponent() {
 
+  const user = useSelector(s=>s.user)
+
   const [name, setName] = useState(null)
   const [registrationnumber, setRegistrationNumber] = useState(null)
-  const [password, setPassword] = useState(null)
+  const [department, setDepartment] = useState(null)
+  const [phoneNumber, setPhoneNumber] = useState(null)
+  const [email, setEmail] = useState(null)
+
+  useEffect(() => {
+    if(user)
+      setEmail(user.email)
+  }, [user])
   
   const dispatch = useDispatch()
   const navigate = useNavigate()
@@ -25,19 +34,19 @@ function DetailComponent() {
   const { setUser } = bindActionCreators(actionCreators, dispatch);
 
 
-  const handleLogin = () =>{
-    const data = {
-      name,registrationnumber,password
+  const handleSubmit = () =>{
+    const data = {name,registrationnumber,department, phoneNumber, email}
+    if(window.confirm("The Details Entered are not reversible. Are you sure?")){
+      axios.post(`${API_URI}/auth/setup`,data)
+        .then(res=>{
+          console.log(res.data)
+          setUser(res.data.data)
+          Cookies.set('uid', res.data.data.id)
+          navigate('/')
+        }).catch(err=>{
+          console.log(err)
+        })
     }
-    axios.post(`${API_URI}/auth/login`, data)
-      .then(res=>{
-        console.log(res.data)
-        setUser(res.data.data)
-        Cookies.set('uid', res.data.data.id)
-        navigate('/')
-      }).catch(err=>{
-        console.log(err)
-      })
   }
 
   return (
@@ -74,15 +83,16 @@ function DetailComponent() {
               <input type="registration number" placeholder="Enter your Registration Number" onChange={(e)=>setRegistrationNumber(e.target.value)} />
           </div>
           <div className={classes.inputCtn}>
-              <label>Password</label>
-              <input type="password" placeholder="Enter your password" onChange={(e)=>setPassword(e.target.value)} />
+              <label>Department</label>
+              <input type="password" placeholder="Enter your password" onChange={(e)=>setDepartment(e.target.value)} />
           </div>
-          <div className={classes.link}>
-            <a>Forgot Password?</a>
+          <div className={classes.inputCtn}>
+              <label>Phone Number</label>
+              <input type="password" placeholder="Enter your password" onChange={(e)=>setPhoneNumber(e.target.value)} />
           </div>
         </div>
         <div className={classes.button}>
-          <button onClick={()=>{handleLogin()}}>Login</button>
+          <button onClick={()=>{handleSubmit()}}>Continue</button>
         </div>
       </div>
     </div>

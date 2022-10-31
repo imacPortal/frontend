@@ -101,3 +101,94 @@
 .req_tokenCtn hr{
     margin: 0px;
 }
+
+
+/* form to display profile */
+.add_majorCtn{
+    max-height: 100%;
+    padding: 20px 30px;
+    text-align: left;
+}
+.add_majorCtn h2{
+    font-family: 'quicksand';
+    margin: 8px 0px;
+}
+
+.add_form{
+    max-height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap:20px;
+    width: 90%;
+}
+
+.add_inputCtn{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 8px;
+    width:400px;
+}
+.add_inputCtn label{
+    background-color: #f1f1f1;
+    font-size: 16px;
+    font-weight: 500;
+    margin-left: 16px;
+    padding: 0px 6px;
+    position: relative;
+    margin-bottom: -23px;
+}
+.add_inputCtn textarea{
+    border:2px solid #FFB830;
+    resize: none;
+    border-radius: 5px;
+    background-color: transparent;
+    width: 100%;
+    height: 127px;
+    margin-top: 10px;
+    padding: 14px 14px;
+    font-size: 14px;
+    font-family: 'poppins';
+}
+.add_inputCtn input{
+    border:2px solid #FFB830;
+    resize: none;
+    border-radius: 5px;
+    background-color: transparent;
+    width: 100%;
+    height: 50px;
+    margin-top: 10px;
+    padding: 0px 14px;
+    font-size: 14px;
+}
+.add_inputCtn select{
+    border:2px solid #FFB830;
+    resize: none;
+    border-radius: 5px;
+    background-color: transparent;
+    width: 100%;
+    height: 50px;
+    margin-top: 10px;
+    padding: 0px 14px;
+    font-size: 14px;
+}
+
+.add_button{
+    height:40px;
+    margin: 0px 8px;
+    border-radius: 5px;
+    border:none;
+    width: 200px;
+    font-size: 16px;
+    transition-duration: 0.1s;
+}
+.add_button:hover{
+    background-color: #f1ac2a;
+    cursor: pointer;
+}
+
+

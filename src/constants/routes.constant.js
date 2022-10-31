@@ -6,6 +6,7 @@ import Step1Page from "../pages/step1.page"
 import SettingsPage from "../pages/settings.page"
 import AccountsPage from "../pages/accounts.page"
 import ForgotPasswordPage from "../pages/forgotPassword.page"
+import ChangePasswordPage from "../pages/changePassword.page"
 
 export const PRIVATE_ROUTES = [
     {
@@ -35,11 +36,11 @@ export const PUBLIC_ROUTES = [
         component:<LoginPage />
     },
     {
-        path:"/setup",
-        component:<DetailPage />
-    },
-    {
         path:"/forgotpassword",
         component:<ForgotPasswordPage />
+    },
+    {
+        path:"/changepassword",
+        component:<ChangePasswordPage />
     }
 ]

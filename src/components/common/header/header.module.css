@@ -67,10 +67,16 @@ span{
 }
 .btn{
     background-color: #FFB830;
-    padding: 5px 20px;
+    border:none;
+    padding: 9px 20px;
     text-decoration: none;
     color: #000;
     border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    cursor: pointer;
 }
 .icons{
     display: flex;
@@ -81,6 +87,9 @@ span{
 /* .icon1{ */
 .icons svg{
     opacity: 0.25;
+}
+.icon2{
+    opacity: 1 !important;
 }
 .logoCtn{
     display: flex;

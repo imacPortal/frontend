@@ -6,6 +6,7 @@ import StatsComponent from '../common/stats/stats.component'
 import Header2Component from '../common/header2/header2.component'
 
 import RequestView from './requestView'
+import AddUser from './addUser'
 
 import classes from './settings.module.css';
 
@@ -23,14 +24,16 @@ function SettingsComponent() {
               {
                   compNo === 1? 
                   <RequestView />
-                  :
+                  : compNo === 2? 
                   <RequestView />
+                  :
+                  <AddUser />
               }
           </div>
           <div className={classes.BtnCtn}>
             <button onClick={()=>setCompNo(1)}> Requests </button>
             <button onClick={()=>setCompNo(2)}> Update lab systems </button>
-            <button onClick={()=>setCompNo(2)}> Add users </button>
+            <button onClick={()=>setCompNo(3)}> Add users </button>
           </div>
         </div>
         <ReportComponent/>

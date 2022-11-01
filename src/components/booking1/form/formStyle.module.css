@@ -1,35 +1,39 @@
-.majorCtn{
+.majorCtn {
     padding: 20px 30px;
     text-align: left;
 }
-.majorCtnConfP{
+
+.majorCtnConfP {
     padding: 20px 30px;
     text-align: center;
 }
-.majorCtnConfP h2{
-    font-family: 'quicksand';
-    margin: 8px 0px;
-}
-.majorCtn h2{
+
+.majorCtnConfP h2 {
     font-family: 'quicksand';
     margin: 8px 0px;
 }
 
-.form{
+.majorCtn h2 {
+    font-family: 'quicksand';
+    margin: 8px 0px;
+}
+
+.form {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap:16px;
+    gap: 16px;
     width: 90%;
 }
 
-.inputCtn{
+.inputCtn {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
     padding: 8px;
 }
-.inputCtn label{
+
+.inputCtn label {
     background-color: #f1f1f1;
     font-size: 16px;
     font-weight: 500;
@@ -38,8 +42,9 @@
     position: relative;
     margin-bottom: -23px;
 }
-.inputCtn textarea{
-    border:2px solid #FFB830;
+
+.inputCtn textarea {
+    border: 2px solid #FFB830;
     resize: none;
     border-radius: 5px;
     background-color: transparent;
@@ -50,19 +55,9 @@
     font-size: 14px;
     font-family: 'poppins';
 }
-.inputCtn input{
-    border:2px solid #FFB830;
-    resize: none;
-    border-radius: 5px;
-    background-color: transparent;
-    width: 100%;
-    height: 50px;
-    margin-top: 10px;
-    padding: 0px 14px;
-    font-size: 14px;
-}
-.inputCtn select{
-    border:2px solid #FFB830;
+
+.inputCtn input {
+    border: 2px solid #FFB830;
     resize: none;
     border-radius: 5px;
     background-color: transparent;
@@ -73,78 +68,100 @@
     font-size: 14px;
 }
 
-.button{
-    height:40px;
+.inputCtn select {
+    border: 2px solid #FFB830;
+    resize: none;
+    border-radius: 5px;
+    background-color: transparent;
+    width: 100%;
+    height: 50px;
+    margin-top: 10px;
+    padding: 0px 14px;
+    font-size: 14px;
+}
+
+.button {
+    height: 40px;
     margin: 0px 8px;
     border-radius: 5px;
-    border:none;
+    border: none;
     width: 200px;
     font-size: 16px;
     transition-duration: 0.1s;
 }
-.button:hover{
+
+.button:hover {
     background-color: #f1ac2a;
     cursor: pointer;
 }
 
 /* Lab layout */
 
-.labLayout{
+.labLayout {
     padding: 8px;
-    width:100%;
-    height: 55vh;
-}
-.mapCtn{
     width: 100%;
-    height: 100%;
+    /* height: 55vh; */
+}
+
+.mapCtn {
+    width: 100%;
+    height: fit-content;
     border-radius: 4px;
     overflow: scroll;
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
     align-items: flex-start;
-    gap:40px;
+    gap: 40px;
 }
-.mapM{
-    height:400px;
-    width:560px;
+
+.mapM {
+    height: 400px;
+    width: 560px;
 }
-.info{
-    width:40%;
+
+.info {
+    width: 40%;
     height: 400px;
     background-color: #fff;
     border-radius: 5px;
     padding: 15px;
 }
-.info h5{
+
+.info h5 {
     font-size: 17px;
     font-weight: 500;
     margin: 0px;
 }
-.info table{
+
+.info table {
     width: 100%;
     font-size: 12px;
 }
-.info table tr td{
+
+.info table tr td {
     padding: 5px 0px;
 }
-.mapMain{
-    height:400px;
-    width:560px;
+
+.mapMain {
+    height: 400px;
+    width: 560px;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
-    gap:7px
+    gap: 7px
 }
-.labRow1{
+
+.labRow1 {
     height: 100%;
     width: 100%;
     display: grid;
     grid-template-columns: 1fr 0.8fr;
-    gap:7px;
+    gap: 7px;
 }
-.lab{
+
+.lab {
     background-color: #ffb73081;
     border-radius: 5px;
     cursor: pointer;
@@ -154,24 +171,27 @@
     justify-content: center;
     align-items: center;
 }
-.lab:hover{
-    background-color:#FFB830;
+
+.lab:hover {
+    background-color: #FFB830;
 }
-.labRow2{
+
+.labRow2 {
     height: 100%;
     width: 100%;
     display: grid;
     grid-template-columns: 1fr 0.9fr;
-    gap:7px;
+    gap: 7px;
 }
-.pathRow{
+
+.pathRow {
     background-color: #ffb73081;
-    height:24%;
+    height: 24%;
     width: 100%;
     border-radius: 5px;
 }
 
-.door1{
+.door1 {
     position: absolute;
     width: 20px;
     height: 7px;
@@ -179,7 +199,8 @@
     margin-top: 172px;
     margin-left: 240px;
 }
-.door2{
+
+.door2 {
     position: absolute;
     width: 20px;
     height: 7px;
@@ -187,7 +208,8 @@
     margin-top: 172px;
     margin-left: 350px;
 }
-.door3{
+
+.door3 {
     position: absolute;
     width: 20px;
     height: 7px;
@@ -195,7 +217,8 @@
     margin-top: 220.5px;
     margin-left: 240px;
 }
-.door4{
+
+.door4 {
     position: absolute;
     width: 20px;
     height: 7px;
@@ -208,22 +231,22 @@
 /* single Lab map */
 
 
-.singleLabLayout{
+.singleLabLayout {
     padding: 8px;
-    width:100%;
+    width: 100%;
     height: fit-content;
 }
 
-.labCtn{
+.labCtn {
     width: 100%;
     height: 100%;
     border-radius: 4px;
     box-shadow: 0px 0px 3px 0px #00000027;
     overflow: scroll;
-    gap:40px;
+    gap: 40px;
     padding: 20px;
 }
 
-#opt{
-    width:300px !important;
+#opt {
+    width: 300px !important;
 }

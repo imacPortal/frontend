@@ -5,37 +5,26 @@ import classes from "./forgotPassword.module.css";
 import axios from "axios";
 import { API_URI } from "../../../constants/apiUrl.constant";
 
-import { useDispatch, useSelector } from "react-redux";
-import { bindActionCreators } from 'redux'
-import { actionCreators } from '../../../state';
 
 import { useNavigate } from "react-router";
 
-import Cookies from 'js-cookie'
 import { Link } from "react-router-dom";
 
 function ForgotPasswordComponent() {
 
   const [email, setEmail] = useState(null)
-  //   const [registrationnumber, setRegistrationNumber] = useState(null)
-  //   const [password, setPassword] = useState(null)
 
-  const dispatch = useDispatch()
   const navigate = useNavigate()
 
-  const { setUser } = bindActionCreators(actionCreators, dispatch);
 
-
-  const handleLogin = () => {
+  const handleSubmit = () => {
     const data = {
       email
     }
-    axios.post(`${API_URI}/auth/login`, data)
+    axios.post(`${API_URI}/auth/resetPassword`, data)
       .then(res => {
-        console.log(res.data)
-        setUser(res.data.data)
-        Cookies.set('uid', res.data.data.id)
-        navigate('/')
+        alert(res.data.status)
+        navigate('/login')
       }).catch(err => {
         console.log(err)
       })
@@ -68,14 +57,14 @@ function ForgotPasswordComponent() {
         <div className={classes.allignment}>
           <div className={classes.inputCtn}>
             <label>Email</label>
-            <input type="email" placeholder="Ex. John Doe" onChange={(e) => setEmail(e.target.value)} />
+            <input type="email" placeholder="Ex. xyz@email.com" onChange={(e) => setEmail(e.target.value)} />
           </div>
           <div className={classes.link}>
             <Link to="/login">Go Back to Login</Link>
           </div>
         </div>
         <div className={classes.button}>
-          <button onClick={() => { handleLogin() }}>Send</button>
+          <button onClick={() => { handleSubmit() }}>Reset Password</button>
         </div>
       </div>
     </div>

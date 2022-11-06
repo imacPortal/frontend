@@ -124,7 +124,9 @@ function LabLayout({ lab, date, slot, setSystem, system }) {
             return (
                 systemsBooked.includes(serialNo) ?
                     <div className={classes.DeviceNotAvailable}>
-                        <HiOutlineDesktopComputer onClick={() => toast("already booked!")} />
+                        <HiOutlineDesktopComputer onClick={() => toast("already booked!", {
+                            icon: '🖥️'
+                        })} />
                     </div> : system ?
                         system.includes(serialNo) ?
                             <div className={classes.DeviceSelected}>

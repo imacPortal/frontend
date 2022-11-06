@@ -6,6 +6,7 @@ import StatsComponent from '../common/stats/stats.component'
 // import Header2Component from '../common/header2/header2.component'
 import TimelineComponent from '../common/booking/timeline.component'
 
+import toast, { Toaster } from 'react-hot-toast';
 import Step1 from './form/step1'
 import Step2 from './form/step2'
 import Step3 from './form/step3'
@@ -26,31 +27,31 @@ const BookingComponent = () => {
   const [reason, setReason] = useState("")
   const [system, setSystem] = useState([])
   const [slots, setSlots] = useState(1)
-  const [date, setDate] = useState(()=>{
+  const [date, setDate] = useState(() => {
     var today = new Date();
     var dd = String(today.getDate()).padStart(2, '0');
     var mm = String(today.getMonth() + 1).padStart(2, '0');
     var yyyy = today.getFullYear();
 
-    today = yyyy+ '-' + mm + '-' + dd ;
-    return(today)
+    today = yyyy + '-' + mm + '-' + dd;
+    return (today)
   })
-  const [today, setToday] = useState(()=>{
+  const [today, setToday] = useState(() => {
     var today = new Date();
     var dd = String(today.getDate()).padStart(2, '0');
     var mm = String(today.getMonth() + 1).padStart(2, '0');
     var yyyy = today.getFullYear();
 
-    today = yyyy+ '-' + mm + '-' + dd ;
-    return(today)
+    today = yyyy + '-' + mm + '-' + dd;
+    return (today)
   })
 
-  const user = useSelector(s=>s.user)
+  const user = useSelector(s => s.user)
 
-  const handleSubmit = ()=>{
+  const handleSubmit = () => {
     const data = {
-      name:user.name,
-      regNo:user.regno,
+      name: user.name,
+      regNo: user.regno,
       lab,
       subject,
       noOfStuds,
@@ -61,70 +62,70 @@ const BookingComponent = () => {
     }
     console.log(data)
 
-    axios.post(`${API_URI}/bookingReq/add`,data)
-      .then(res=>{
+    axios.post(`${API_URI}/bookingReq/add`, data)
+      .then(res => {
         const msg = res.data.status
-        if(msg === "Request added successfully"){
+        if (msg === "Request added successfully") {
           setstepCounter(4)
-        }else{
-          alert("request was not processed try again")
+        } else {
+          toast.error("request was not processed try again")
         }
-      }).catch(err => alert("something went wrong!"))
+      }).catch(err => toast.error("something went wrong!"))
   }
 
-  const incrementStep = ()=>{
-    if(stepCounter !== 3){
-      if(stepCounter === 1){
-        if(subject !== "" && reason !== "" && date !== "" && noOfStuds !== ""){
-          setstepCounter(stepCounter+1)
-        }else{
+  const incrementStep = () => {
+    if (stepCounter !== 3) {
+      if (stepCounter === 1) {
+        if (subject !== "" && reason !== "" && date !== "" && noOfStuds !== "") {
+          setstepCounter(stepCounter + 1)
+        } else {
           setstepCounter(1)
-          alert("enter all data!")
+          toast("enter all data!", { icon: "⚠️" })
         }
-      }else{
-        setstepCounter(stepCounter+1)
+      } else {
+        setstepCounter(stepCounter + 1)
       }
-    }else{
+    } else {
       setstepCounter(3)
     }
   }
 
   const Step = (n) => {
-    switch(n){
-      case 1: return <Step1 
-                        subject={subject} 
-                        noOfStuds={noOfStuds} 
-                        reason={reason} 
-                        date={date} 
-                        today={today} 
-                        setSubject={setSubject}
-                        setNoOfStuds={setNoOfStuds}
-                        setReason={setReason}
-                        setDate={setDate}
-                      />
-      case 2: return <Step2 
-                        lab={lab}
-                        setLab={setLab}
-                        slots={slots}
-                        setSlots={setSlots}
-                      />
-      case 3: return <Step3 
-                        system={system}
-                        setSystem={setSystem}
-                        lab={lab}
-                        date={date}
-                        slots={slots}
-                      />
+    switch (n) {
+      case 1: return <Step1
+        subject={subject}
+        noOfStuds={noOfStuds}
+        reason={reason}
+        date={date}
+        today={today}
+        setSubject={setSubject}
+        setNoOfStuds={setNoOfStuds}
+        setReason={setReason}
+        setDate={setDate}
+      />
+      case 2: return <Step2
+        lab={lab}
+        setLab={setLab}
+        slots={slots}
+        setSlots={setSlots}
+      />
+      case 3: return <Step3
+        system={system}
+        setSystem={setSystem}
+        lab={lab}
+        date={date}
+        slots={slots}
+      />
       case 4: return <Step4 />
     }
   }
   return (
     <div>
-      <HeaderComponent/>
+      <HeaderComponent />
       <div className={classes.mainCtn}>
-        <SidebarComponent/>
+        <SidebarComponent />
         <div>
-          <TimelineComponent stepCounter={stepCounter}/>    
+          <TimelineComponent stepCounter={stepCounter} />
           <div className={classes.mainArea}>
             {
               stepCounter &&
@@ -132,23 +133,23 @@ const BookingComponent = () => {
             }
           </div>
           <div className={classes.BtnCtn}>
-              {
-                stepCounter < 4 &&
-                <button onClick={()=>stepCounter !== 1? setstepCounter(stepCounter-1):setstepCounter(1)}> Back </button>
-              }
-              {
-                stepCounter < 3 &&
-                <button onClick={()=>incrementStep()}> Next </button>
-              }
-              {
-                stepCounter === 3 &&
-                <button onClick={()=>{handleSubmit()}}> Submit </button> 
-              }
+            {
+              stepCounter < 4 &&
+              <button onClick={() => stepCounter !== 1 ? setstepCounter(stepCounter - 1) : setstepCounter(1)}> Back </button>
+            }
+            {
+              stepCounter < 3 &&
+              <button onClick={() => incrementStep()}> Next </button>
+            }
+            {
+              stepCounter === 3 &&
+              <button onClick={() => { handleSubmit() }}> Submit </button>
+            }
           </div>
         </div>
-        <ReportComponent/>
+        <ReportComponent />
       </div>
-      <StatsComponent/>
+      <StatsComponent />
     </div>
   )
 }

@@ -17,26 +17,26 @@ import { Link } from "react-router-dom";
 function ForgotPasswordComponent() {
 
   const [email, setEmail] = useState(null)
-//   const [registrationnumber, setRegistrationNumber] = useState(null)
-//   const [password, setPassword] = useState(null)
-  
+  //   const [registrationnumber, setRegistrationNumber] = useState(null)
+  //   const [password, setPassword] = useState(null)
+
   const dispatch = useDispatch()
   const navigate = useNavigate()
 
   const { setUser } = bindActionCreators(actionCreators, dispatch);
 
 
-  const handleLogin = () =>{
+  const handleLogin = () => {
     const data = {
       email
     }
     axios.post(`${API_URI}/auth/login`, data)
-      .then(res=>{
+      .then(res => {
         console.log(res.data)
         setUser(res.data.data)
         Cookies.set('uid', res.data.data.id)
         navigate('/')
-      }).catch(err=>{
+      }).catch(err => {
         console.log(err)
       })
   }
@@ -67,15 +67,15 @@ function ForgotPasswordComponent() {
         </div>
         <div className={classes.allignment}>
           <div className={classes.inputCtn}>
-              <label>Email</label>
-              <input type="email" placeholder="Ex. John Doe" onChange={(e)=>setEmail(e.target.value)} />
+            <label>Email</label>
+            <input type="email" placeholder="Ex. John Doe" onChange={(e) => setEmail(e.target.value)} />
           </div>
           <div className={classes.link}>
             <Link to="/login">Go Back to Login</Link>
           </div>
         </div>
         <div className={classes.button}>
-          <button onClick={()=>{handleLogin()}}>Login</button>
+          <button onClick={() => { handleLogin() }}>Send</button>
         </div>
       </div>
     </div>

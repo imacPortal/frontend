@@ -5,6 +5,7 @@ import classes from "./details.module.css";
 import axios from "axios";
 import { API_URI } from "../../../constants/apiUrl.constant";
 
+import toast, { Toaster } from 'react-hot-toast';
 import { useDispatch, useSelector } from "react-redux";
 import { bindActionCreators } from 'redux'
 import { actionCreators } from '../../../state';
@@ -15,7 +16,7 @@ import Cookies from 'js-cookie'
 
 function DetailComponent() {
 
-  const user = useSelector(s=>s.user)
+  const user = useSelector(s => s.user)
 
   const [name, setName] = useState(null)
   const [registrationnumber, setRegistrationNumber] = useState(null)
@@ -24,26 +25,45 @@ function DetailComponent() {
   const [email, setEmail] = useState(null)
 
   useEffect(() => {
-    if(user)
+    if (user)
       setEmail(user.email)
   }, [user])
-  
+
   const dispatch = useDispatch()
   const navigate = useNavigate()
 
   const { setUser } = bindActionCreators(actionCreators, dispatch);
 
+  const [Conform, setConform] = useState(false)
 
-  const handleSubmit = () =>{
-    const data = {name,registrationnumber,department, phoneNumber, email}
-    if(window.confirm("The Details Entered are not reversible. Are you sure?")){
-      axios.post(`${API_URI}/auth/setup`,data)
-        .then(res=>{
+  const handleSubmit = () => {
+    const data = { name, registrationnumber, department, phoneNumber, email }
+    toast.custom((t) => (
+      <span className='logoutToast'>
+        Are You Sure?
+        <div className='toastbtns'>
+
+          <button className='classes.toastbtn'
+            onClick={() => {
+              toast.dismiss(t.id)
+              setConform(true)
+            }}>
+            OK
+          </button>
+          <button onClick={() => toast.dismiss(t.id)}>
+            Dismiss
+          </button>
+        </div>
+      </span>
+    ));
+    if (Conform) {
+      axios.post(`${API_URI}/auth/setup`, data)
+        .then(res => {
           console.log(res.data)
           setUser(res.data.data)
           Cookies.set('uid', res.data.data.id)
           navigate('/')
-        }).catch(err=>{
+        }).catch(err => {
           console.log(err)
         })
     }
@@ -75,24 +95,24 @@ function DetailComponent() {
         </div>
         <div className={classes.allignment}>
           <div className={classes.inputCtn}>
-              <label>Name</label>
-              <input type="name" placeholder="Ex. John Doe" onChange={(e)=>setName(e.target.value)} />
+            <label>Name</label>
+            <input type="name" placeholder="Ex. John Doe" onChange={(e) => setName(e.target.value)} />
           </div>
           <div className={classes.inputCtn}>
-              <label>Registration Number</label>
-              <input type="registration number" placeholder="Enter your Registration Number" onChange={(e)=>setRegistrationNumber(e.target.value)} />
+            <label>Registration Number</label>
+            <input type="registration number" placeholder="Enter your Registration Number" onChange={(e) => setRegistrationNumber(e.target.value)} />
           </div>
           <div className={classes.inputCtn}>
-              <label>Department</label>
-              <input type="password" placeholder="Enter your password" onChange={(e)=>setDepartment(e.target.value)} />
+            <label>Department</label>
+            <input type="password" placeholder="Enter your password" onChange={(e) => setDepartment(e.target.value)} />
           </div>
           <div className={classes.inputCtn}>
-              <label>Phone Number</label>
-              <input type="password" placeholder="Enter your password" onChange={(e)=>setPhoneNumber(e.target.value)} />
+            <label>Phone Number</label>
+            <input type="password" placeholder="Enter your password" onChange={(e) => setPhoneNumber(e.target.value)} />
           </div>
         </div>
         <div className={classes.button}>
-          <button onClick={()=>{handleSubmit()}}>Continue</button>
+          <button onClick={() => { handleSubmit() }}>Continue</button>
         </div>
       </div>
     </div>

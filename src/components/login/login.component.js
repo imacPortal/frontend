@@ -13,6 +13,7 @@ import { useNavigate } from "react-router";
 
 import Cookies from 'js-cookie'
 import { Link } from "react-router-dom";
+import toast from "react-hot-toast";
 
 function LoginComponent() {
 
@@ -25,19 +26,21 @@ function LoginComponent() {
   const { setUser } = bindActionCreators(actionCreators, dispatch);
 
 
-  const handleLogin = () =>{
+  const handleLogin = () => {
     const data = {
       email,
       password
     }
     axios.post(`${API_URI}/auth/login`, data)
-      .then(res=>{
+      .then(res => {
         console.log(res.data)
         setUser(res.data.data)
         Cookies.set('uid', res.data.data.id)
+        toast.success(`Login Successful`)
         navigate('/')
-      }).catch(err=>{
+      }).catch(err => {
         console.log(err)
+        toast.error(`Login Failed`)
       })
   }
 
@@ -67,19 +70,19 @@ function LoginComponent() {
         </div>
         <div className={classes.allignment}>
           <div className={classes.inputCtn}>
-              <label>Email</label>
-              <input type="email" placeholder="Ex. John Doe" onChange={(e)=>setEmail(e.target.value)} />
+            <label>Email</label>
+            <input type="email" placeholder="Ex. John Doe" onChange={(e) => setEmail(e.target.value)} />
           </div>
           <div className={classes.inputCtn}>
-              <label>Password</label>
-              <input type="password" placeholder="Enter your password" onChange={(e)=>setPassword(e.target.value)} />
+            <label>Password</label>
+            <input type="password" placeholder="Enter your password" onChange={(e) => setPassword(e.target.value)} />
           </div>
           <div className={classes.link}>
             <Link to="/forgotpassword">Forgot Password?</Link>
           </div>
         </div>
         <div className={classes.button}>
-          <button onClick={()=>{handleLogin()}}>Login</button>
+          <button onClick={() => { handleLogin() }}>Login</button>
         </div>
       </div>
     </div>

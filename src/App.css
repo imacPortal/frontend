@@ -15,6 +15,11 @@
   display: none;
 }
 
+button:hover {
+  cursor: pointer;
+
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
@@ -44,4 +49,28 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.logoutToast {
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.25);
+  background-color: #FFFFFF;
+  width: 20vw;
+  height: 15vh;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 2vh;
+  gap: 1vh
+}
+
+.toastbtns {
+  display: flex;
+  width: 2vw;
+  gap: 1vw;
+}
+
+.toastbtn {
+  width: 10vw
 }

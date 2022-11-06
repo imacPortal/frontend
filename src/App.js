@@ -1,7 +1,7 @@
 import './App.css';
 import Navigate from './navigation';
 import Cookies from 'js-cookie'
-
+import toast, { Toaster } from 'react-hot-toast';
 import { useSelector } from 'react-redux';
 import { useEffect, useState } from 'react';
 
@@ -14,7 +14,7 @@ import { actionCreators } from './state';
 
 function App() {
 
-  const state = useSelector(s=>s)
+  const state = useSelector(s => s)
   const [isLoggedIn, setIsLoggedIn] = useState(false)
   const [onBoarding, setIsOnBoarding] = useState(true)
 
@@ -23,41 +23,50 @@ function App() {
 
   const { setUser } = bindActionCreators(actionCreators, dispatch);
 
-  useEffect(()=>{
+  useEffect(() => {
     let uid = Cookies.get('uid');
-  
-    if(uid != null){
+
+    if (uid != null) {
       axios.get(`${API_URI}/auth/getUser/${uid}`)
-        .then(res=>{
+        .then(res => {
           console.log(res.data)
           setUser(res.data.data)
-        }).catch(err=>{
+        }).catch(err => {
           console.log(err)
         })
     }
 
-  },[])
+  }, [])
 
-  useEffect(()=>{
-    console.log("Redux State",state)
-    if(state.user != null){
+  useEffect(() => {
+    console.log("Redux State", state)
+    if (state.user != null) {
       setIsLoggedIn(true)
       const userId = state.user.id;
-      if(userId === null){
+      if (userId === null) {
         setIsOnBoarding(true)
-      }else{
+      } else {
         setIsOnBoarding(false)
       }
     }
-    else{
+    else {
       setIsLoggedIn(false)
       setIsOnBoarding(false)
     }
-  },[state])
+  }, [state])
 
   return (
     <div className="App">
-      <Navigate isLoggedIn={isLoggedIn} onBoarding={onBoarding}/>
+      <Navigate isLoggedIn={isLoggedIn} onBoarding={onBoarding} />
+      <Toaster position="top-right"
+        toastOptions={{
+          style: {
+            width: "20vw",
+            border: '1px solid #000000',
+            padding: '16px',
+            color: '#000000',
+          },
+        }} />
     </div>
   );
 }

@@ -5,13 +5,12 @@ import { HiOutlineDesktopComputer }  from "react-icons/hi"
 import { RiSettings3Line }  from "react-icons/ri"
 import { CgProfile }  from "react-icons/cg"
 import { Link } from 'react-router-dom'
-import { useParams } from 'react-router'
 
 import { useSelector } from 'react-redux'
 
 const SidebarComponent = () => {
 
-  const userDesig = useSelector(s=>s.user.designation)
+  const userDesig = useSelector(s=>s.user && s.user.designation)
 
   const [loc, setLoc] = useState(window.location.pathname)
 
@@ -22,7 +21,6 @@ const SidebarComponent = () => {
   // useEffect(() => {
   //   console.log(userDesig);
   // }, [userDesig])
-
 
   return (
     <div className={classes.line}>

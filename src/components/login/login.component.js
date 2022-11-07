@@ -32,10 +32,16 @@ function LoginComponent() {
     }
     axios.post(`${API_URI}/auth/login`, data)
       .then(res=>{
-        console.log(res.data)
-        setUser(res.data.data)
-        Cookies.set('uid', res.data.data.id)
-        navigate('/')
+        if(res.data.status === 'password is incorrect'){
+          alert('password is incorrect');
+        }else if(res.data.status === 'User not found'){
+          alert('User not found');
+        }else{
+          console.log(res.data)
+          setUser(res.data.data)
+          Cookies.set('uid', res.data.data.id)
+          navigate('/')
+        }
       }).catch(err=>{
         console.log(err)
       })

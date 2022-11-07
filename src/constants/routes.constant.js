@@ -7,6 +7,7 @@ import SettingsPage from "../pages/settings.page"
 import AccountsPage from "../pages/accounts.page"
 import ForgotPasswordPage from "../pages/forgotPassword.page"
 import ChangePasswordPage from "../pages/changePassword.page"
+import ReportPage from "../pages/report.page"
 
 export const PRIVATE_ROUTES = [
     {
@@ -28,7 +29,11 @@ export const PRIVATE_ROUTES = [
     {
         path:"/step1",
         component:<Step1Page/>
-    }
+    },
+    {
+        path:"/report",
+        component:<ReportPage/>
+    },
 ]
 export const PUBLIC_ROUTES = [
     {
@@ -42,5 +47,9 @@ export const PUBLIC_ROUTES = [
     {
         path:"/changepassword",
         component:<ChangePasswordPage />
-    }
+    },
+    {
+        path:"/report",
+        component:<ReportPage/>
+    },
 ]

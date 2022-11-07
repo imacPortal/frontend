@@ -4,7 +4,7 @@ import classes from './accounts.module.css'
 
 import { useSelector } from 'react-redux'
 
-function FormDisplay() {
+function FormDisplay({setNewPassword, setConfirmPassword}) {
 
     const userDetails = useSelector(s=>s.user)
 
@@ -50,11 +50,11 @@ function FormDisplay() {
             <form className={classes.form}>
                 <div className={classes.inputCtn}>
                     <label>New Password</label>
-                    <input type="password" placeholder="Its secret!"/>
+                    <input type="password" placeholder="Its secret!" onChange={e=>setNewPassword(e.target.value)}/>
                 </div>
                 <div className={classes.inputCtn}>
                     <label>Confirm Password</label>
-                    <input type="password" placeholder="Its too secret!" />
+                    <input type="password" placeholder="Its too secret!" onChange={e=>setConfirmPassword(e.target.value)}/>
                 </div>
             </form>
         </div>

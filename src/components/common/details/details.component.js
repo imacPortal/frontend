@@ -79,7 +79,7 @@ function DetailComponent() {
               <input type="name" placeholder="Ex. John Doe" onChange={(e)=>setName(e.target.value)} />
           </div>
           <div className={classes.inputCtn}>
-              <label>Registration Number</label>
+              <label>Reg. No/Employee Id</label>
               <input type="registration number" placeholder="Enter your Registration Number" onChange={(e)=>setRegistrationNumber(e.target.value)} />
           </div>
           <div className={classes.inputCtn}>

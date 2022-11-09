@@ -27,7 +27,7 @@ function ReportComponent() {
             <div className={classes.mainCtn}>
                 <SidebarComponent/>
                 <div>
-                    <Header2Component content={'iLab Report'} showBtn={false}/> 
+                    <Header2Component content={'iLab Report'} showBtn={false} showPrintBtn={true}/>
                     <div className={classes.mainReportPanel}>
                         <table border='1'>
                             <tr>
@@ -35,7 +35,7 @@ function ReportComponent() {
                                     Name
                                 </td>
                                 <td>
-                                    Reg. No
+                                    Reg. No/Employee Id
                                 </td>
                                 <td>
                                     Date

@@ -61,15 +61,20 @@ const BookingComponent = () => {
     }
     console.log(data)
 
-    axios.post(`${API_URI}/bookingReq/add`,data)
-      .then(res=>{
-        const msg = res.data.status
-        if(msg === "Request added successfully"){
-          setstepCounter(4)
-        }else{
-          alert("request was not processed try again")
-        }
-      }).catch(err => alert("something went wrong!"))
+    if(system.length === 0){
+      alert('no systems selected.')
+    }else{
+      axios.post(`${API_URI}/bookingReq/add`,data)
+        .then(res=>{
+          const msg = res.data.status
+          if(msg === "Request added successfully"){
+            setstepCounter(4)
+          }else{
+            alert("request was not processed try again")
+          }
+        }).catch(err => alert("something went wrong!"))
+    }
+
   }
 
   const incrementStep = ()=>{

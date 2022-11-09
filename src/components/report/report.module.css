@@ -1,6 +1,7 @@
 .mainCtn{
     display: grid;
     grid-template-columns: 50px calc(100vw - 50px);
+    text-align: left;
 }
 .mainReportPanel{
     width:100%;

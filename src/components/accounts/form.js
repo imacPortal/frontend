@@ -18,7 +18,7 @@ function FormDisplay({setNewPassword, setConfirmPassword}) {
                     <input defaultValue={userDetails.name} placeholder="Ex. John Doe" disabled />
                 </div>
                 <div className={classes.inputCtn}>
-                    <label>Reg. Number</label>
+                    <label>Reg. Number/Employee Id</label>
                     <input defaultValue={userDetails.regno} placeholder="Ex. RA2011003010247" disabled />
                 </div>
                 <div className={classes.inputCtn}>

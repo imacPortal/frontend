@@ -6,6 +6,7 @@ import { IoMdSettings } from "react-icons/io"
 import { RiNotification4Fill } from "react-icons/ri"
 import { AiOutlinePoweroff } from "react-icons/ai"
 import Logo1 from "../../../assets/SRMLogo.png"
+import { Link } from "react-router-dom";
 
 import { useDispatch, useSelector } from "react-redux";
 import { bindActionCreators } from 'redux'
@@ -52,8 +53,8 @@ const HeaderComponent = () => {
     <header className={classes.majorCtn}>
       <div className={classes.logoCtn}>
         <img src={Logo1} className={classes.logo} />
-        <p>About</p>
-        <p>Gallery</p>
+        <p><Link to="/about">About</Link></p>
+        <p><Link to="/gallery">Gallery</Link></p>
       </div>
       <div className={classes.icons}>
         <TiClipboard className={classes.icon1} />

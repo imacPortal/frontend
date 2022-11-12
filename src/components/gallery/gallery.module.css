@@ -1,0 +1,32 @@
+.Slide{
+
+    align-items: center;
+}
+.Slide .img{
+    margin-left: 35%;
+}
+ .img{
+    width:30%;
+    height: 30%;
+    left: 200px;
+     /* margin-top: 50px;    */
+    margin-bottom: 50px;
+}
+.slider-wrapper{
+    width:10%;
+}
+
+.carousel .thumb{
+    width:5%;
+    height: 25px;
+}
+
+.carousel{
+   text-align: center;
+}
+
+.heading{
+    font-family:'Quicksand';
+    /* display: flex; */
+    text-align: center;
+}

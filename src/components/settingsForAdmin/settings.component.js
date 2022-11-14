@@ -32,7 +32,7 @@ function SettingsComponent() {
           </div>
           <div className={classes.BtnCtn}>
             <button onClick={()=>setCompNo(1)}> Requests </button>
-            <button onClick={()=>setCompNo(2)}> Update lab systems </button>
+            {/* <button onClick={()=>setCompNo(2)}> Update lab systems </button> */}
             <button onClick={()=>setCompNo(3)}> Add users </button>
           </div>
         </div>

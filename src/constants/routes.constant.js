@@ -9,6 +9,7 @@ import ForgotPasswordPage from "../pages/forgotPassword.page"
 import ChangePasswordPage from "../pages/changePassword.page"
 import GalleryPage from "../pages/gallery.page"
 import AboutPage from "../pages/about.page"
+import ReportPage from "../pages/report.page"
 
 export const PRIVATE_ROUTES = [
     {
@@ -38,8 +39,11 @@ export const PRIVATE_ROUTES = [
     {
         path:"/about",
         component:<AboutPage />
-    }
-
+    },
+    {
+        path:"/report",
+        component:<ReportPage/>
+    },
 ]
 export const PUBLIC_ROUTES = [
     {

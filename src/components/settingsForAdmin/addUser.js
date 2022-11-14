@@ -7,7 +7,6 @@ import { useState } from 'react';
 import toast from 'react-hot-toast';
 
 function AddUser() {
-    const [Conform, setConform] = useState(false)
     const [email, setEmail] = useState(null)
     const [password, setPassword] = useState(null)
 
@@ -25,7 +24,17 @@ function AddUser() {
                     <button className='classes.toastbtn'
                         onClick={() => {
                             toast.dismiss(t.id)
-                            setConform(true)
+                            axios.post(`${API_URI}/auth/add`, data)
+                                .then(res => {
+                                    console.log(res.data.status)
+                                    if (res.data.status === "user added") {
+                                        toast.success(res.data.status)
+                                    }
+
+                                }).catch(err => {
+                                    toast.error("Something went wrong")
+                                    console.log(err)
+                                })
                         }}>
                         OK
                     </button>
@@ -35,20 +44,6 @@ function AddUser() {
                 </div>
             </span>
         ));
-        if (Conform) {
-            // console.log(data)
-            axios.post(`${API_URI}/auth/add`, data)
-                .then(res => {
-                    console.log(res.data.status)
-                    if (res.data.status === "user added") {
-                        toast.success(res.data.status)
-                    }
-
-                }).catch(err => {
-                    toast.error("Something went wrong")
-                    console.log(err)
-                })
-        }
     }
     return (
         <div className={classes.add_majorCtn}>

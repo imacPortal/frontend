@@ -34,19 +34,27 @@ function DetailComponent() {
 
   const { setUser } = bindActionCreators(actionCreators, dispatch);
 
-  const [Conform, setConform] = useState(false)
 
   const handleSubmit = () => {
     const data = { name, registrationnumber, department, phoneNumber, email }
     toast.custom((t) => (
       <span className='logoutToast'>
-        Are You Sure?
+        The changes are not reversible, are you sure?
         <div className='toastbtns'>
 
           <button className='classes.toastbtn'
             onClick={() => {
               toast.dismiss(t.id)
-              setConform(true)
+              axios.post(`${API_URI}/auth/setup`, data)
+                .then(res => {
+                  console.log(res.data)
+                  setUser(res.data.data)
+                  Cookies.set('uid', res.data.data.id)
+                  toast.success("Account details saved!")
+                  navigate('/')
+                }).catch(err => {
+                  console.log(err)
+                })
             }}>
             OK
           </button>
@@ -56,17 +64,6 @@ function DetailComponent() {
         </div>
       </span>
     ));
-    if (Conform) {
-      axios.post(`${API_URI}/auth/setup`, data)
-        .then(res => {
-          console.log(res.data)
-          setUser(res.data.data)
-          Cookies.set('uid', res.data.data.id)
-          navigate('/')
-        }).catch(err => {
-          console.log(err)
-        })
-    }
   }
 
   return (
@@ -99,8 +96,8 @@ function DetailComponent() {
             <input type="name" placeholder="Ex. John Doe" onChange={(e) => setName(e.target.value)} />
           </div>
           <div className={classes.inputCtn}>
-            <label>Registration Number</label>
-            <input type="registration number" placeholder="Enter your Registration Number" onChange={(e) => setRegistrationNumber(e.target.value)} />
+              <label>Reg. No/Employee Id</label>
+              <input type="registration number" placeholder="Enter your Registration Number" onChange={(e)=>setRegistrationNumber(e.target.value)} />
           </div>
           <div className={classes.inputCtn}>
             <label>Department</label>

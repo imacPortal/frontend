@@ -1,0 +1,18 @@
+.mainCtn{
+    display: grid;
+    grid-template-columns: 50px calc(100vw - 50px);
+    text-align: left;
+}
+.mainReportPanel{
+    width:100%;
+    min-height: 100px;
+    padding: 20px;
+    overflow: scroll;
+}
+.mainReportPanel table{
+    width: 1300px;
+}
+.mainReportPanel table tr td{
+    padding: 5px;
+    max-width: 400px;
+}

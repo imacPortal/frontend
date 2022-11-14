@@ -6,7 +6,7 @@ import { IoMdSettings } from "react-icons/io"
 import { RiNotification4Fill } from "react-icons/ri"
 import { AiOutlinePoweroff } from "react-icons/ai"
 import Logo1 from "../../../assets/SRMLogo.png"
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom'
 
 import { useDispatch, useSelector } from "react-redux";
 import { bindActionCreators } from 'redux'
@@ -18,10 +18,11 @@ import { useEffect } from 'react'
 
 const HeaderComponent = () => {
 
+  const userDesig = useSelector(s=>s.user && s.user.designation)
+
   const dispatch = useDispatch()
   const navigate = useNavigate()
   const { setUser } = bindActionCreators(actionCreators, dispatch);
-  const [Conform, setConform] = useState(false)
   const handleLogout = (e) => {
     e.preventDefault();
     toast.custom((t) => (
@@ -32,7 +33,10 @@ const HeaderComponent = () => {
           <button className='classes.toastbtn'
             onClick={() => {
               toast.dismiss(t.id)
-              setConform(true)
+              setUser(null)
+              Cookies.remove('uid')
+              toast.success('Logged out!')
+              navigate('/login')
             }}>
             OK
           </button>
@@ -42,26 +46,29 @@ const HeaderComponent = () => {
         </div>
       </span>
     ));
-    if (Conform) {
-      setUser(null)
-      Cookies.remove('uid')
-      toast.success('Logged out!')
-      navigate('/login')
-    }
   }
   return (
     <header className={classes.majorCtn}>
       <div className={classes.logoCtn}>
-        <img src={Logo1} className={classes.logo} />
+        <img src={Logo1} className={classes.logo}/>
         <p><Link to="/about">About</Link></p>
         <p><Link to="/gallery">Gallery</Link></p>
       </div>
       <div className={classes.icons}>
-        <TiClipboard className={classes.icon1} />
-        <IoMdSettings className={classes.icon1} />
-        <RiNotification4Fill className={classes.icon1} />
-        <button onClick={e => handleLogout(e)} className={classes.btn}>
-          <AiOutlinePoweroff className={classes.icon2} />
+        {
+          userDesig==='superadmin' &&
+            <Link to="/report">
+              <TiClipboard className={classes.icon1}/>
+            </Link>
+        }
+        {
+          userDesig==='superadmin' && 
+            <Link to="/settings">
+              <IoMdSettings className={classes.icon1}/>
+            </Link>
+        }
+        <button onClick={e=>handleLogout(e)} className={classes.btn}> 
+          <AiOutlinePoweroff className={classes.icon2}/>
           Logout
         </button>
       </div>

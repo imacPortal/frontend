@@ -88,13 +88,27 @@ span {
     justify-content: end;
     gap: 10px;
 }
-
+.icons a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #000;
+}
 /* .icon1{ */
 .icons svg {
     opacity: 0.25;
 }
-
-.icon2 {
+.icon1{
+    font-size: 24px;
+    cursor: pointer;
+    transition-duration: 0.1s;
+}
+.icon1:hover{
+    transform: scale(1.15);
+    color: #FFB830;
+    opacity: 1;
+}
+.icon2{
     opacity: 1 !important;
 }
 

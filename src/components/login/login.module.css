@@ -29,6 +29,11 @@
    
     /* background-color: black; */
 }
+.aboutLink{
+    text-decoration: none;
+    color: #000000;
+    font-weight: 900;
+}
 .infoCtn div{
     width: 100%;
 }

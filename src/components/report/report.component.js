@@ -61,7 +61,7 @@ function ReportComponent() {
                             </tr>
                             {
                                 report.length !== 0 &&
-                                report.map().reverse(r=>
+                                report.reverse().map(r=>
                                     <tr align="left">
                                         <td>
                                             {r.name}

@@ -2,7 +2,7 @@
     font-family: 'Quicksand';
     display: grid;
     grid-template-columns: 2fr 1fr;
-    height:100vh;
+    height:calc(100vh - 50px);
     
 }
 .txt{
@@ -31,7 +31,12 @@
     background-color:#FFB8300A;
     width: 100%;
     align-items: center;
+    justify-content: center;
 }
+.right img{
+    border-radius: 5px;
+}
+
 .right p{
     display: flex;
     align-items: center;

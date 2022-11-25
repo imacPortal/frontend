@@ -25,7 +25,7 @@ function Step2({lab, setLab, slots, setSlots}) {
                                     </b>
                                 </td>
                                 <td>
-                                    Apple Imac M1
+                                    Apple Imac {(lab < 3)?'M1 Chip':'intel Chip'}
                                 </td>
                             </tr>
                             <tr>
@@ -55,7 +55,7 @@ function Step2({lab, setLab, slots, setSlots}) {
                                     </b>
                                 </td>
                                 <td>
-                                   16 GB
+                                    {(lab==1)?`16 GB`:`8 GB`}
                                 </td>
                             </tr>
                             <tr>
@@ -65,7 +65,7 @@ function Step2({lab, setLab, slots, setSlots}) {
                                     </b>
                                 </td>
                                 <td>
-                                    16
+                                    32
                                 </td>
                             </tr>
                             <tr>

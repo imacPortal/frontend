@@ -12,7 +12,7 @@ function LabStatus({setLab,lab,date,slot}) {
                     <LabMap setLab={setLab} lab={lab}/>
                 </div>
             </div>
-            <h2>Lab {lab} (Imac M1 16GB)</h2>
+            <h2>Lab {lab} ({(lab < 3)? 'M1':'Intel'} imac)</h2>
             <div className={classes.labCtn}>
                 <LabLayout lab={lab} date={date} slot={slot} />
             </div>

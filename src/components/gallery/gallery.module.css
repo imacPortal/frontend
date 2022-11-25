@@ -12,6 +12,9 @@
      /* margin-top: 50px;    */
     margin-bottom: 50px;
 }
+.Slide img{
+    border-radius: 8px;
+}
 .slider-wrapper{
     width:10%;
 }

@@ -2,6 +2,10 @@ import React from "react";
 import Header3Component from "../common/header3/header3.component";
 import classes from "./about.module.css";
 import Login from "../../assets/loginimg.png";
+
+import Img1 from "../../assets/photos/img1.jpeg"
+import Img2 from "../../assets/photos/img11.jpeg"
+
 const AboutComponent = () => {
   return (
     <div>
@@ -20,9 +24,9 @@ const AboutComponent = () => {
           </p>
         </div>
         <div className={classes.right}>
-          <img src={Login} className={classes.image} />
+          <img src={Img1} className={classes.image} />
           <div>
-            <img src={Login} className={classes.image} />
+            <img src={Img2} className={classes.image} />
           </div>
         </div>
       </div>

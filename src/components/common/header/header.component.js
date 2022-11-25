@@ -50,7 +50,7 @@ const HeaderComponent = () => {
   return (
     <header className={classes.majorCtn}>
       <div className={classes.logoCtn}>
-        <img src={Logo1} className={classes.logo}/>
+        <img src={Logo1} className={classes.logo} onClick={()=>{navigate('/')}}/>
         <p><Link to="/about">About</Link></p>
         <p><Link to="/gallery">Gallery</Link></p>
       </div>

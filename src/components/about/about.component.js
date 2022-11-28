@@ -18,9 +18,25 @@ const AboutComponent = () => {
           <p>
             This is the system reservation Portal designed for the Imac Lab
             which was constructed in 2022 and was developed by the students of
-            SRMIST under the supervision of Ms. Sowmya and Ms. B. Ida Seraphim.
+            SRMIST.
             Imac Portal has four labs where CTECH is Lab 1,CINTEL is Lab 2, DSBS
             as Lab 3 and NWC as Lab4.
+          </p>
+          <h3>Lab 1 ( CTECH )</h3>
+          <p>
+            The systems in this lab is equipt with the latest M1 Chipset, has 16GB on RAM and the operating system installed in them is macOS Monterey. 
+          </p>
+          <h3>Lab 2 ( CINTEL )</h3>
+          <p>
+            The systems in this lab is equipt with the latest M1 Chipset, has 8GB on RAM and the operating system installed in them is macOS Monterey. 
+          </p>
+          <h3>Lab 3 ( DSBS )</h3>
+          <p>
+            The systems in this lab is equipt with the intel Chipset, has 8GB on RAM and the operating system installed in them is macOS Monterey. 
+          </p>
+          <h3>Lab 4 ( NWC )</h3>
+          <p>
+            The systems in this lab is equipt with the intel Chipset, has 8GB on RAM and the operating system installed in them is macOS Monterey. 
           </p>
         </div>
         <div className={classes.right}>

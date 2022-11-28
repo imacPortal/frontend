@@ -1,15 +1,19 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import classes from './report.module.css'
+import ReactToPrint from "react-to-print";
 
 import HeaderComponent from '../common/header/header.component'
 import Header2Component from '../common/header2/header2.component'
 import SidebarComponent from '../sidebar/sidebar.component'
+import TableComponent from './table.report'
 
 import axios from 'axios'
 
 import { API_URI } from '../../constants/apiUrl.constant'
 
 function ReportComponent() {
+
+    var printRef = useRef()
 
     const [report, setReport] = useState([])
 
@@ -27,73 +31,13 @@ function ReportComponent() {
             <div className={classes.mainCtn}>
                 <SidebarComponent/>
                 <div>
-                    <Header2Component content={'iLab Report'} showBtn={false} showPrintBtn={true}/>
+                    <Header2Component content={'iLab Report'} showBtn={false} printRef={false}/>
                     <div className={classes.mainReportPanel}>
-                        <table border='1'>
-                            <tr>
-                                <td>
-                                    Name
-                                </td>
-                                <td>
-                                    Reg. No/Employee Id
-                                </td>
-                                <td>
-                                    Date
-                                </td>
-                                <td>
-                                    Slots
-                                </td>
-                                <td>
-                                    Lab
-                                </td>
-                                <td>
-                                    No. Of Students
-                                </td>
-                                <td>
-                                    Subject
-                                </td>
-                                <td>
-                                    Reason
-                                </td>
-                                <td>
-                                    System serial No.
-                                </td>
-                            </tr>
-                            {
-                                report.length !== 0 &&
-                                report.reverse().map(r=>
-                                    <tr align="left">
-                                        <td>
-                                            {r.name}
-                                        </td>
-                                        <td>
-                                            {r.regNo}
-                                        </td>
-                                        <td>
-                                            {r.date}
-                                        </td>
-                                        <td>
-                                            {r.slots}
-                                        </td>
-                                        <td>
-                                            {r.lab}
-                                        </td>
-                                        <td>
-                                            {r.noOfStuds}
-                                        </td>
-                                        <td>
-                                            {r.subject}
-                                        </td>
-                                        <td>
-                                            {r.reason}
-                                        </td>
-                                        <td>
-                                            {r.system.map(s=>`${s}, `)}
-                                        </td>
-                                    </tr>
-                                )
-                            }
-                        </table>
+                        <ReactToPrint
+                            trigger={() => <button style={{backgroundColor:'white',padding:'6px 2rem', marginBottom:'10px'}}>Print</button>}
+                            content={() => printRef}
+                            />
+                        <TableComponent report={report} ref={(el) => (printRef = el)}/>
                     </div>
                 </div>
             </div>

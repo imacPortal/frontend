@@ -11,7 +11,7 @@ function Step3({system,setSystem,lab,date,slots}) {
                 <label>Select Booking Type</label>
                 <select>
                     <option>Some devices</option>
-                    <option>Full Lab</option>
+                    {/* <option>Full Lab</option> */}
                 </select>
             </div>
             <div className={classes.singleLabLayout}>

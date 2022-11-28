@@ -1,6 +1,8 @@
 import React from "react";
 import classes from "./header2.module.css";
-const Header2Component = ({content, showBtn, showPrintBtn}) => {
+import ReactToPrint from "react-to-print";
+
+const Header2Component = ({content, showBtn, printRef}) => {
   return (
     <div className={classes.short}>
       <div className={classes.txt}>
@@ -20,10 +22,13 @@ const Header2Component = ({content, showBtn, showPrintBtn}) => {
         </div>
       }
       {
-        showPrintBtn &&
+        printRef &&
         <div className={classes.main}>
           <div className={classes.btns}>
-            <button style={{backgroundColor:'white'}} onClick={()=>{window.print()}}>Print</button>
+          <ReactToPrint
+          trigger={() => <button style={{backgroundColor:'white'}}>Print</button>}
+          content={() => printRef}
+        />
           </div>
           {/* <div className={classes.btns1}>
             <button>List</button>

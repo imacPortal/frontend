@@ -180,3 +180,29 @@
     bottom: 2%;
     right: 0px;
 }
+
+.message{
+    display:none;
+}
+
+
+@media screen and (max-width:730px) {
+    .majorContainer{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .half{
+        display: none;
+    }
+    .infoCtn{
+        display: none;
+    }
+    .message{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 5px 0px;
+    }
+}

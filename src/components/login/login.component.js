@@ -46,6 +46,12 @@ function LoginComponent() {
 
   return (
     <div className={classes.majorContainer}>
+      <div className={classes.message}>
+        <h2>
+          Imac Portal Mobile Interface coming soon... <br></br>
+          To use the application open it in desktop or tablet.
+        </h2>
+      </div>
       <div className={classes.infoCtn}>
         <div>
           <div className={classes.imgwrapper}>

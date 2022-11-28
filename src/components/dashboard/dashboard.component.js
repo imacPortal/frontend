@@ -46,7 +46,7 @@ function DashboardComponent() {
                 <option>3</option>
                 <option>4</option>
             </select>
-            <button> check status </button>
+            {/* <button> check status </button> */}
           </div>
         </div>
         <ReportComponent/>

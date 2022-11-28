@@ -130,17 +130,17 @@ function LabLayout({ lab, date, slot, setSystem, system }) {
                     </div> : system ?
                         system.includes(serialNo) ?
                             <div className={classes.DeviceSelected}>
-                                <HiOutlineDesktopComputer onClick={() => setSystem ? removeDevice(serialNo) : toast(`Sno:  ${serialNo}`, {
+                                <HiOutlineDesktopComputer onClick={() => setSystem ? removeDevice(serialNo) : toast(`Serial No.:  ${serialNo}`, {
                                     icon: '🖥️',
                                 })} />
                             </div> :
                             <div className={classes.DeviceAvailable}>
-                                <HiOutlineDesktopComputer onClick={() => setSystem ? AddDevice(serialNo) : toast(`Sno:  ${serialNo}`, {
+                                <HiOutlineDesktopComputer onClick={() => setSystem ? AddDevice(serialNo) : toast(`Serial No.:  ${serialNo}`, {
                                     icon: '🖥️',
                                 })} />
                             </div> :
                         <div className={classes.DeviceAvailable}>
-                            <HiOutlineDesktopComputer onClick={() => toast(`Sno:  ${serialNo}`, {
+                            <HiOutlineDesktopComputer onClick={() => toast(`Serial No.:  ${serialNo}`, {
                                 icon: '🖥️'
                             })} />
                         </div>

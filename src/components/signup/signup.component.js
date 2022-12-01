@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Logo1 from "../../assets/SRMLogo.png";
 import Login from "../../assets/loginimg.png";
-import classes from "./login.module.css";
+import classes from "./signup.module.css";
 import axios from "axios";
 import { API_URI } from "../../constants/apiUrl.constant";
 
@@ -15,10 +15,12 @@ import Cookies from 'js-cookie'
 import { Link } from "react-router-dom";
 import toast from "react-hot-toast";
 
-function LoginComponent() {
+function SignupComponent() {
 
   const [email, setEmail] = useState(null)
+  const [name, setName] = useState(null)
   const [password, setPassword] = useState(null)
+  const [department, setDepartment] = useState(null)
 
   const dispatch = useDispatch()
   const navigate = useNavigate()
@@ -26,24 +28,24 @@ function LoginComponent() {
   const { setUser } = bindActionCreators(actionCreators, dispatch);
 
 
-  const handleLogin = () => {
+  const handleSignup = () => {
     const data = {
-      email,
-      password
+      email,name,
+      password,department
     }
     axios.post(`${API_URI}/auth/login`, data)
       .then(res => {
         console.log(res.data)
         setUser(res.data.data)
         Cookies.set('uid', res.data.data.id)
-        toast.success(`Login Successful`)
+        toast.success(`Sign Up Successful`)
         navigate('/')
       }).catch(err => {
         console.log(err)
-        toast.error(`Login Failed`)
+        toast.error(`Sign Up Failed`)
       })
   }
- 
+
   return (
     <div className={classes.majorContainer}>
       <div className={classes.message}>
@@ -70,31 +72,46 @@ function LoginComponent() {
         </div>
       </div>
       <div className={classes.half}>
-        <h1>Login</h1>
+        <h1>Sign Up</h1>
         <div className={classes.sub}>
-          <p>Enter the credentials to access the portal</p>
+          <p>Enter the following details to sign up in the portal</p>
         </div>
         <div className={classes.allignment}>
+        <div className={classes.row1}>
+          <div className={classes.inputCtn}>
+            
+            <label>Name</label>
+            <input type="text" placeholder="Ex. John Doe" onChange={(e) => setName(e.target.value)} />
+          </div>
+          <div className={classes.inputCtn}>
+            <label>Department</label>
+            <input type="text" placeholder="Ex. Computer Networks" onChange={(e) => setDepartment(e.target.value)} />
+          </div>
+          </div>
+          <div className={classes.row1}>
           <div className={classes.inputCtn}>
             <label>Email</label>
-            <input type="email" placeholder="Ex. John Doe" onChange={(e) => setEmail(e.target.value)} />
+            <input type="email" placeholder="Ex. abc@gmail.com" onChange={(e) => setEmail(e.target.value)} />
           </div>
           <div className={classes.inputCtn}>
             <label>Password</label>
             <input type="password" placeholder="Enter your password" onChange={(e) => setPassword(e.target.value)} />
           </div>
-          <div className={classes.link}>
-            <Link to="/forgotpassword">Forgot Password?</Link>
           </div>
-          
+          <div className={classes.row1}>
+          <div className={classes.inputCtn}>
+            <label>Confirm Password</label>
+            <input type="password" placeholder="Enter password again" onChange={(e) => setPassword(e.target.value)} />
+          </div>
+          </div>
         </div>
         <div className={classes.button}>
-          <button onClick={() => { handleLogin() }}>Login</button>
-          <button><Link to="/signup">Sign Up</Link></button>
+          <button onClick={() => { handleSignup() }}>Sign Up</button>
+  
         </div>
       </div>
     </div>
   );
 }
 
-export default LoginComponent;
+export default SignupComponent;

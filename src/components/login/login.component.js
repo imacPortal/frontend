@@ -84,13 +84,13 @@ function LoginComponent() {
             <input type="password" placeholder="Enter your password" onChange={(e) => setPassword(e.target.value)} />
           </div>
           <div className={classes.link}>
-            <Link to="/forgotpassword">Forgot Password?</Link>
+            <Link to="/forgotpassword">Forgot Password?</Link><br></br>
+            <Link to="/signup">Request Access?</Link>
           </div>
           
         </div>
         <div className={classes.button}>
           <button onClick={() => { handleLogin() }}>Login</button>
-          <button><Link to="/signup">Sign Up</Link></button>
         </div>
       </div>
     </div>

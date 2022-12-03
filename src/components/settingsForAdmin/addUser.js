@@ -144,7 +144,7 @@ function AddUser() {
                     <input style={{ backgroundColor: "#FFB830" }} type="submit" value="Add User" />
                 </div>
             </form>
-            <h2>Add users and staffs to get access</h2>
+            <h2>Signup Requests made by the users</h2>
             <div className={classes.req_majorCtn}>
                 {
                     reqList.length > 0 ?

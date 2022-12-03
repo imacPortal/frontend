@@ -69,7 +69,7 @@ function LoginComponent() {
           </p>
         </div>
       </div>
-      <div className={classes.half}>
+      <form className={classes.half} onSubmit={(e)=>{e.preventDefault();handleLogin()}} >
         <h1>Login</h1>
         <div className={classes.sub}>
           <p>Enter the credentials to access the portal</p>
@@ -90,9 +90,9 @@ function LoginComponent() {
           
         </div>
         <div className={classes.button}>
-          <button onClick={() => { handleLogin() }}>Login</button>
+          <button type={'submit'}>Login</button>
         </div>
-      </div>
+      </form>
     </div>
   );
 }

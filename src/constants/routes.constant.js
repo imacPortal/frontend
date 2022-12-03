@@ -10,6 +10,7 @@ import ChangePasswordPage from "../pages/changePassword.page"
 import GalleryPage from "../pages/gallery.page"
 import AboutPage from "../pages/about.page"
 import ReportPage from "../pages/report.page"
+import SignupPage from "../pages/signup.page"
 
 export const PRIVATE_ROUTES = [
     {
@@ -65,6 +66,10 @@ export const PUBLIC_ROUTES = [
     {
         path:"/about",
         component:<AboutPage />
+    },
+    {
+        path:"/signup",
+        component:<SignupPage />
     }
 
 ]

@@ -101,6 +101,45 @@
 .req_tokenCtn hr{
     margin: 0px;
 }
+.userReq_tokenCtn{
+    width:340px;
+    height:170px;
+    box-shadow: 1px 1px 4px -1px rgba(0, 0, 0, 0.205);
+    border-radius: 6px;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+.userReq_tokenCtn div{
+    width:100%;
+}
+.userReq_tokenCtn div button{
+    margin:5px 5px;
+    border:none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.userReq_tokenCtn h3{
+    margin: 4px;
+    font-size: 17px;
+    font-family: "quicksand";
+}
+.userReq_tokenCtn p{
+    margin: 4px 20px;
+    font-size: 13px;
+    text-align: left;
+}
+.userReq_tokenCtn p i{
+    margin: 4px 20px;
+    font-size: 11px;
+    text-align: left;
+    text-align: justify;
+}
+.userReq_tokenCtn hr{
+    margin: 0px;
+}
 
 
 /* form to display profile */

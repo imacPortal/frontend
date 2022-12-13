@@ -31,9 +31,16 @@
 }
 .aboutLink{
     text-decoration: none;
-    color: #000000;
+    color: #000000c5;
     font-weight: 900;
+    font-size: 1.3em;
+    transition-duration: 0.2s;
 }
+.aboutLink:hover{
+    color: rgb(255, 123, 0);
+    opacity: 1;
+}
+
 .infoCtn div{
     width: 100%;
 }
@@ -51,7 +58,7 @@
     opacity: 0.5;
 }
 .stu{
-    font-size: small;
+    font-size: 0.96em;
 }
 .half{
     font-family: Quicksand;

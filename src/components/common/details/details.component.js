@@ -10,7 +10,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { bindActionCreators } from 'redux'
 import { actionCreators } from '../../../state';
 
-import { useNavigate } from "react-router";
+import { useNavigate, Link } from "react-router-dom";
 
 import Cookies from 'js-cookie'
 
@@ -79,7 +79,7 @@ function DetailComponent() {
         </div>
         <div className={classes.text}>
           <img src={Login} className={classes.image} />
-          <p>About | Gallery</p>
+          <p><Link to='/about' className={classes.aboutLink}>About</Link> | <Link to='/gallery' className={classes.aboutLink}>Gallery</Link></p>
           <p className={classes.stu}>
             Designed and Develpoed by students of SRM
           </p>

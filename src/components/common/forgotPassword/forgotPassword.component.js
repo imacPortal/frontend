@@ -43,7 +43,7 @@ function ForgotPasswordComponent() {
         </div>
         <div className={classes.text}>
           <img src={Login} className={classes.image} />
-          <p>About | Gallery</p>
+          <p><Link to='/about' className={classes.aboutLink}>About</Link> | <Link to='/gallery' className={classes.aboutLink}>Gallery</Link></p>
           <p className={classes.stu}>
             Designed and Develpoed by students of SRM
           </p>

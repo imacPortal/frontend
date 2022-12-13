@@ -65,7 +65,7 @@ function LoginComponent() {
           <img src={Login} className={classes.image} />
           <p><Link to='/about' className={classes.aboutLink}>About</Link> | <Link to='/gallery' className={classes.aboutLink}>Gallery</Link></p>
           <p className={classes.stu}>
-            Designed and Develpoed by students of SRM
+            Designed and Developed by students of SRM
           </p>
         </div>
       </div>

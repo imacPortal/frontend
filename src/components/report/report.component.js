@@ -30,7 +30,7 @@ function ReportComponent() {
             <HeaderComponent/>
             <div className={classes.mainCtn}>
                 <SidebarComponent/>
-                <div>
+                <div style={{maxHeight:'calc(100vh - 60px)',overflow:'scroll'}}>
                     <Header2Component content={'iLab Report'} showBtn={false} printRef={false}/>
                     <div className={classes.mainReportPanel}>
                         <ReactToPrint

@@ -31,6 +31,7 @@ function SignupComponent() {
         console.log(res.data)
         if(res.data.success){
           toast.success(res.data.status)
+          toast.success("You will be recieving a mail with the password once the admin approves the request")
         }else{
           toast(res.data.status, { icon: "⚠️" })
         }

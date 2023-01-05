@@ -68,6 +68,7 @@ function LoginComponent() {
             Designed and Developed by students of SRM
           </p>
         </div>
+        <div className={classes.copy}> &copy; Copyrights All Rights Reserved </div>
       </div>
       <form className={classes.half} onSubmit={(e)=>{e.preventDefault();handleLogin()}} >
         <h1>Login</h1>

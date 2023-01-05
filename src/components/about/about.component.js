@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom"
 import Header3Component from "../common/header3/header3.component";
 import classes from "./about.module.css";
 import Login from "../../assets/loginimg.png";
@@ -38,7 +39,11 @@ const AboutComponent = () => {
           <p>
             The systems in this lab is equipt with the intel Chipset, has 8GB on RAM and the operating system installed in them is macOS Monterey. 
           </p>
+          <div className="class.link">
+            <Link to="/cancellationpolicy">Cancellation Policy</Link>
+          </div>
         </div>
+        
         <div className={classes.right}>
           <img src={Img1} className={classes.image} />
           <div>

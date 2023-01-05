@@ -11,6 +11,7 @@ import GalleryPage from "../pages/gallery.page"
 import AboutPage from "../pages/about.page"
 import ReportPage from "../pages/report.page"
 import SignupPage from "../pages/signup.page"
+import TermsPage from "../pages/terms.page"
 
 export const PRIVATE_ROUTES = [
     {
@@ -62,6 +63,10 @@ export const PUBLIC_ROUTES = [
     {
         path:"/gallery",
         component:<GalleryPage />
+    },
+    {
+        path:"/terms",
+        component:<TermsPage />
     },
     {
         path:"/about",

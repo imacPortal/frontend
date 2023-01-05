@@ -35,6 +35,13 @@
     padding: 5px 5px;
     text-align: justify;
 }
+.link{
+    text-decoration: none;
+    color: #000000c5;
+    font-weight: 900;
+    font-size: 1.3em;
+    transition-duration: 0.2s;
+}
 .right{
     font-family: Quicksand;
     background-color:#FFB8300A;

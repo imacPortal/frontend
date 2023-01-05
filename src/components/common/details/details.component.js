@@ -101,11 +101,11 @@ function DetailComponent() {
           </div>
           <div className={classes.inputCtn}>
             <label>Department</label>
-            <input type="password" placeholder="Enter your password" onChange={(e) => setDepartment(e.target.value)} />
+            <input type="text" placeholder="Enter your password" onChange={(e) => setDepartment(e.target.value)} />
           </div>
           <div className={classes.inputCtn}>
             <label>Phone Number</label>
-            <input type="password" placeholder="Enter your password" onChange={(e) => setPhoneNumber(e.target.value)} />
+            <input type="text" placeholder="Enter your password" onChange={(e) => setPhoneNumber(e.target.value)} />
           </div>
         </div>
         <div className={classes.button}>

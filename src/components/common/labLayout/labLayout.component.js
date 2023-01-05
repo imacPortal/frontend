@@ -37,7 +37,21 @@ function LabLayout({ lab, date, slot, setSystem, system }) {
                         } else {
                             setSystemsBooked([])
                         }
-                        setDevices(res.data.data)
+                        axios.post(`${API_URI}/bookingReq/fetchSystems`, { lab, date, slots: slot })
+                            .then(statusReqRes => {
+                                if (statusReqRes.data.data && statusRes.data.data) {
+                                    setSystemsBooked((statusReqRes.data.data).concat(statusRes.data.data.system))
+                                } else if (statusReqRes.data.data && !statusRes.data.data) {
+                                    setSystemsBooked(statusReqRes.data.data)
+                                } else if (!statusReqRes.data.data && statusRes.data.data) {
+                                    setSystemsBooked(statusRes.data.data.system)
+                                } else {
+                                    setSystemsBooked([])
+                                }
+                                setDevices(res.data.data)
+                            }).catch(err => {
+                                console.log(err)
+                            })
                     }).catch(err => {
                         console.log(err)
                     })
@@ -124,7 +138,7 @@ function LabLayout({ lab, date, slot, setSystem, system }) {
             return (
                 systemsBooked.includes(serialNo) ?
                     <div className={classes.DeviceNotAvailable}>
-                        <HiOutlineDesktopComputer onClick={() => toast("already booked!", {
+                        <HiOutlineDesktopComputer onClick={() => toast("System Unavailable!", {
                             icon: '🖥️'
                         })} />
                     </div> : system ?
@@ -157,226 +171,244 @@ function LabLayout({ lab, date, slot, setSystem, system }) {
     return (
         (devices && systemsBooked) ?
             <div className={classes.labMain}>
-                <div className={classes.cubicleCtn}>
-                    <div className={classes.cubicle}>
-                        <div className={classes.devices}>
-                            <Device systemNo={1} />
-                            <Device systemNo={2} />
+                {
+                    lab === 3 &&
+                    <div className={classes.gateL3}>Entrance</div>
+                }
+                {
+                    lab === 4 &&
+                    <div className={classes.gateL4}>Entrance</div>
+                }
+                <div className={classes.masterCubicalCtn}>
+                    <div className={classes.cubicleCtn}>
+                        <div className={classes.cubicle}>
+                            <div className={classes.devices}>
+                                <Device systemNo={1} />
+                                <Device systemNo={2} />
+                            </div>
+                            <span className={classes.hL}></span>
+                            <div className={classes.devices}>
+                                <Device systemNo={3} />
+                                <Device systemNo={4} />
+                            </div>
                         </div>
-                        <span className={classes.hL}></span>
-                        <div className={classes.devices}>
-                            <Device systemNo={3} />
-                            <Device systemNo={4} />
+                        <div className={classes.cubicle}>
+                            <div className={classes.devices}>
+                                <Device systemNo={5} />
+                                <Device systemNo={6} />
+                            </div>
+                            <span className={classes.hL}></span>
+                            <div className={classes.devices}>
+                                <Device systemNo={7} />
+                                <Device systemNo={8} />
+                            </div>
+                        </div>
+                        <div className={classes.cubicleS}>
+                            <div className={classes.devices}>
+                                <Device systemNo={9} />
+                            </div>
+                            <span className={classes.hL}></span>
+                            <div className={classes.devices}>
+                                <Device systemNo={10} />
+                            </div>
+                        </div>
+                        <div className={classes.cubicle}>
+                            <div className={classes.devices}>
+                                <Device systemNo={11} />
+                                <Device systemNo={12} />
+                            </div>
+                            <span className={classes.hL}></span>
+                            <div className={classes.devices}>
+                                <Device systemNo={13} />
+                                <Device systemNo={14} />
+                            </div>
+                        </div>
+                        <div className={classes.cubicle}>
+                            <div className={classes.devices}>
+                                <Device systemNo={15} />
+                                <Device systemNo={16} />
+                            </div>
+                            <span className={classes.hL}></span>
+                            <div className={classes.devices}>
+                                <Device systemNo={17} />
+                                <Device systemNo={18} />
+                            </div>
                         </div>
                     </div>
-                    <div className={classes.cubicle}>
-                        <div className={classes.devices}>
-                            <Device systemNo={5} />
-                            <Device systemNo={6} />
+                    <div className={classes.cubicleCtn}>
+                        <div className={classes.cubicle}>
+                            <div className={classes.devices}>
+                                <Device systemNo={19} />
+                                <Device systemNo={20} />
+                            </div>
+                            <span className={classes.hL}></span>
+                            <div className={classes.devices}>
+                                <Device systemNo={21} />
+                                <Device systemNo={22} />
+                            </div>
                         </div>
-                        <span className={classes.hL}></span>
-                        <div className={classes.devices}>
-                            <Device systemNo={7} />
-                            <Device systemNo={8} />
+                        <div className={classes.cubicle}>
+                            <div className={classes.devices}>
+                                <Device systemNo={23} />
+                                <Device systemNo={24} />
+                            </div>
+                            <span className={classes.hL}></span>
+                            <div className={classes.devices}>
+                                <Device systemNo={25} />
+                                <Device systemNo={26} />
+                            </div>
+                        </div>
+                        <div className={classes.cubicleS}>
+                            <div className={classes.devices}>
+                                <Device systemNo={27} />
+                            </div>
+                            <span className={classes.hL}></span>
+                            <div className={classes.devices}>
+                                <Device systemNo={28} />
+                            </div>
+                        </div>
+                        <div className={classes.cubicle}>
+                            <div className={classes.devices}>
+                                <Device systemNo={29} />
+                                <Device systemNo={30} />
+                            </div>
+                            <span className={classes.hL}></span>
+                            <div className={classes.devices}>
+                                <Device systemNo={31} />
+                                <Device systemNo={32} />
+                            </div>
+                        </div>
+                        <div className={classes.cubicle}>
+                            <div className={classes.devices}>
+                                <Device systemNo={33} />
+                                <Device systemNo={34} />
+                            </div>
+                            <span className={classes.hL}></span>
+                            <div className={classes.devices}>
+                                <Device systemNo={35} />
+                                <Device systemNo={36} />
+                            </div>
                         </div>
                     </div>
-                    <div className={classes.cubicleS}>
-                        <div className={classes.devices}>
-                            <Device systemNo={9} />
+                    <div className={classes.cubicleCtn}>
+                        <div className={classes.cubicle}>
+                            <div className={classes.devices}>
+                                <Device systemNo={37} />
+                                <Device systemNo={38} />
+                            </div>
+                            <span className={classes.hL}></span>
+                            <div className={classes.devices}>
+                                <Device systemNo={39} />
+                                <Device systemNo={40} />
+                            </div>
                         </div>
-                        <span className={classes.hL}></span>
-                        <div className={classes.devices}>
-                            <Device systemNo={10} />
+                        <div className={classes.cubicle}>
+                            <div className={classes.devices}>
+                                <Device systemNo={41} />
+                                <Device systemNo={42} />
+                            </div>
+                            <span className={classes.hL}></span>
+                            <div className={classes.devices}>
+                                <Device systemNo={43} />
+                                <Device systemNo={44} />
+                            </div>
+                        </div>
+                        <div className={classes.cubicleS}>
+                            <div className={classes.devices}>
+                                <Device systemNo={45} />
+                            </div>
+                            <span className={classes.hL}></span>
+                            <div className={classes.devices}>
+                                <Device systemNo={46} />
+                            </div>
+                        </div>
+                        <div className={classes.cubicle}>
+                            <div className={classes.devices}>
+                                <Device systemNo={47} />
+                                <Device systemNo={48} />
+                            </div>
+                            <span className={classes.hL}></span>
+                            <div className={classes.devices}>
+                                <Device systemNo={49} />
+                                <Device systemNo={50} />
+                            </div>
+                        </div>
+                        <div className={classes.cubicle}>
+                            <div className={classes.devices}>
+                                <Device systemNo={51} />
+                                <Device systemNo={52} />
+                            </div>
+                            <span className={classes.hL}></span>
+                            <div className={classes.devices}>
+                                <Device systemNo={53} />
+                                <Device systemNo={54} />
+                            </div>
                         </div>
                     </div>
-                    <div className={classes.cubicle}>
-                        <div className={classes.devices}>
-                            <Device systemNo={11} />
-                            <Device systemNo={12} />
+                    <div className={classes.cubicleCtn}>
+                        <div className={classes.cubicle}>
+                            <div className={classes.devices}>
+                                <Device systemNo={55} />
+                                <Device systemNo={56} />
+                            </div>
+                            <span className={classes.hL}></span>
+                            <div className={classes.devices}>
+                                <Device systemNo={57} />
+                                <Device systemNo={58} />
+                            </div>
                         </div>
-                        <span className={classes.hL}></span>
-                        <div className={classes.devices}>
-                            <Device systemNo={13} />
-                            <Device systemNo={14} />
+                        <div className={classes.cubicle}>
+                            <div className={classes.devices}>
+                                <Device systemNo={59} />
+                                <Device systemNo={60} />
+                            </div>
+                            <span className={classes.hL}></span>
+                            <div className={classes.devices}>
+                                <Device systemNo={61} />
+                                <Device systemNo={62} />
+                            </div>
                         </div>
-                    </div>
-                    <div className={classes.cubicle}>
-                        <div className={classes.devices}>
-                            <Device systemNo={15} />
-                            <Device systemNo={16} />
+                        <div className={classes.cubicleS}>
+                            <div className={classes.devices}>
+                                <Device systemNo={63} />
+                            </div>
+                            <span className={classes.hL}></span>
+                            <div className={classes.devices}>
+                                <Device systemNo={64} />
+                            </div>
                         </div>
-                        <span className={classes.hL}></span>
-                        <div className={classes.devices}>
-                            <Device systemNo={17} />
-                            <Device systemNo={18} />
+                        <div className={classes.cubicle}>
+                            <div className={classes.devices}>
+                                <Device systemNo={65} />
+                                <Device systemNo={66} />
+                            </div>
+                            <span className={classes.hL}></span>
+                            <div className={classes.devices}>
+                                <Device systemNo={67} />
+                                <Device systemNo={68} />
+                            </div>
+                        </div>
+                        <div className={classes.cubicle}>
+                            <div className={classes.devices}>
+                                <Device systemNo={69} />
+                                <Device systemNo={70} />
+                            </div>
+                            <span className={classes.hL}></span>
+                            <div className={classes.devices}>
+                                <Device systemNo={61} />
+                                <Device systemNo={62} />
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div className={classes.cubicleCtn}>
-                    <div className={classes.cubicle}>
-                        <div className={classes.devices}>
-                            <Device systemNo={19} />
-                            <Device systemNo={20} />
-                        </div>
-                        <span className={classes.hL}></span>
-                        <div className={classes.devices}>
-                            <Device systemNo={21} />
-                            <Device systemNo={22} />
-                        </div>
-                    </div>
-                    <div className={classes.cubicle}>
-                        <div className={classes.devices}>
-                            <Device systemNo={23} />
-                            <Device systemNo={24} />
-                        </div>
-                        <span className={classes.hL}></span>
-                        <div className={classes.devices}>
-                            <Device systemNo={25} />
-                            <Device systemNo={26} />
-                        </div>
-                    </div>
-                    <div className={classes.cubicleS}>
-                        <div className={classes.devices}>
-                            <Device systemNo={27} />
-                        </div>
-                        <span className={classes.hL}></span>
-                        <div className={classes.devices}>
-                            <Device systemNo={28} />
-                        </div>
-                    </div>
-                    <div className={classes.cubicle}>
-                        <div className={classes.devices}>
-                            <Device systemNo={29} />
-                            <Device systemNo={30} />
-                        </div>
-                        <span className={classes.hL}></span>
-                        <div className={classes.devices}>
-                            <Device systemNo={31} />
-                            <Device systemNo={32} />
-                        </div>
-                    </div>
-                    <div className={classes.cubicle}>
-                        <div className={classes.devices}>
-                            <Device systemNo={33} />
-                            <Device systemNo={34} />
-                        </div>
-                        <span className={classes.hL}></span>
-                        <div className={classes.devices}>
-                            <Device systemNo={35} />
-                            <Device systemNo={36} />
-                        </div>
-                    </div>
-                </div>
-                <div className={classes.cubicleCtn}>
-                    <div className={classes.cubicle}>
-                        <div className={classes.devices}>
-                            <Device systemNo={37} />
-                            <Device systemNo={38} />
-                        </div>
-                        <span className={classes.hL}></span>
-                        <div className={classes.devices}>
-                            <Device systemNo={39} />
-                            <Device systemNo={40} />
-                        </div>
-                    </div>
-                    <div className={classes.cubicle}>
-                        <div className={classes.devices}>
-                            <Device systemNo={41} />
-                            <Device systemNo={42} />
-                        </div>
-                        <span className={classes.hL}></span>
-                        <div className={classes.devices}>
-                            <Device systemNo={43} />
-                            <Device systemNo={44} />
-                        </div>
-                    </div>
-                    <div className={classes.cubicleS}>
-                        <div className={classes.devices}>
-                            <Device systemNo={45} />
-                        </div>
-                        <span className={classes.hL}></span>
-                        <div className={classes.devices}>
-                            <Device systemNo={46} />
-                        </div>
-                    </div>
-                    <div className={classes.cubicle}>
-                        <div className={classes.devices}>
-                            <Device systemNo={47} />
-                            <Device systemNo={48} />
-                        </div>
-                        <span className={classes.hL}></span>
-                        <div className={classes.devices}>
-                            <Device systemNo={49} />
-                            <Device systemNo={50} />
-                        </div>
-                    </div>
-                    <div className={classes.cubicle}>
-                        <div className={classes.devices}>
-                            <Device systemNo={51} />
-                            <Device systemNo={52} />
-                        </div>
-                        <span className={classes.hL}></span>
-                        <div className={classes.devices}>
-                            <Device systemNo={53} />
-                            <Device systemNo={54} />
-                        </div>
-                    </div>
-                </div>
-                <div className={classes.cubicleCtn}>
-                    <div className={classes.cubicle}>
-                        <div className={classes.devices}>
-                            <Device systemNo={55} />
-                            <Device systemNo={56} />
-                        </div>
-                        <span className={classes.hL}></span>
-                        <div className={classes.devices}>
-                            <Device systemNo={57} />
-                            <Device systemNo={58} />
-                        </div>
-                    </div>
-                    <div className={classes.cubicle}>
-                        <div className={classes.devices}>
-                            <Device systemNo={59} />
-                            <Device systemNo={60} />
-                        </div>
-                        <span className={classes.hL}></span>
-                        <div className={classes.devices}>
-                            <Device systemNo={61} />
-                            <Device systemNo={62} />
-                        </div>
-                    </div>
-                    <div className={classes.cubicleS}>
-                        <div className={classes.devices}>
-                            <Device systemNo={63} />
-                        </div>
-                        <span className={classes.hL}></span>
-                        <div className={classes.devices}>
-                            <Device systemNo={64} />
-                        </div>
-                    </div>
-                    <div className={classes.cubicle}>
-                        <div className={classes.devices}>
-                            <Device systemNo={65} />
-                            <Device systemNo={66} />
-                        </div>
-                        <span className={classes.hL}></span>
-                        <div className={classes.devices}>
-                            <Device systemNo={67} />
-                            <Device systemNo={68} />
-                        </div>
-                    </div>
-                    <div className={classes.cubicle}>
-                        <div className={classes.devices}>
-                            <Device systemNo={69} />
-                            <Device systemNo={70} />
-                        </div>
-                        <span className={classes.hL}></span>
-                        <div className={classes.devices}>
-                            <Device systemNo={61} />
-                            <Device systemNo={62} />
-                        </div>
-                    </div>
-                </div>
+                {
+                    lab === 1 &&
+                    <div className={classes.gateL1}>Entrance</div>
+                }
+                {
+                    lab === 2 &&
+                    <div className={classes.gateL2}>Entrance</div>
+                }
             </div> :
             <div>
                 Loading...

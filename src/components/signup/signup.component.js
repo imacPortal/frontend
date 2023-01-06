@@ -63,6 +63,7 @@ function SignupComponent() {
             Designed and Developed by students of SRM
           </p>
         </div>
+        <div className={classes.copy}> &copy; Copyrights All Rights Reserved </div>
       </div>
       <div className={classes.half}>
         <h1>Sign Up</h1>

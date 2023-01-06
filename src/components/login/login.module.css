@@ -57,6 +57,10 @@
 .text p{
     opacity: 0.5;
 }
+.copy{
+    font-size: 0.96em;
+    opacity: 0.5;
+}
 .stu{
     font-size: 0.96em;
 }

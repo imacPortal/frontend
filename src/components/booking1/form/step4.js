@@ -1,5 +1,5 @@
 import React from 'react'
-
+import { Link } from "react-router-dom"
 import classes from "./formStyle.module.css"
 
 function Step4() {
@@ -14,7 +14,11 @@ function Step4() {
             <p>
                 For more info Contact Admin at <a href="Tele:8334026705">8334026705</a>
             </p>
+            <div className="class.link">
+        <Link to="/cancellationpolicy">Cancellation Policy</Link>
+      </div>
         </div>
+
     )
 }
 

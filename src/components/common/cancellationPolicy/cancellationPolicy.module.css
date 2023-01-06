@@ -1,8 +1,8 @@
 .content{
     font-family: 'Quicksand';
-    display: grid;
+    /* display: grid;
     grid-template-columns: 2fr 1fr;
-    height:calc(100vh - 50px);
+    height:calc(100vh - 50px); */
     
 }
 .txt{
@@ -34,19 +34,6 @@
     margin-right: 50px;
     padding: 5px 5px;
     text-align: justify;
-}
-.link{
-    text-decoration: none;
-    color: #000000c5;
-    font-weight: 900;
-    font-size: 1.3em;
-    transition-duration: 0.2s;
-}
-.link span{
-    text-decoration: none;
-    color: #000000c5;
-    font-weight: 900;
-    font-size: 1.3em;
 }
 .right{
     font-family: Quicksand;

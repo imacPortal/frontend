@@ -2,13 +2,18 @@
     margin: 0px auto;
     height:550px;
     width:1008px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
     align-items: center;
     gap:7px;
     background-color: #ffb73044;
     border-radius: 5px;
+}
+.masterCubicalCtn{
+    width:100%;
+    height:calc(100% - 20px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
 }
 
 .cubicleCtn{
@@ -91,4 +96,41 @@
     height: 2px;
     width: 80%;
     background-color: #BCBCBC;
+}
+
+.gateL1{
+    width: 120px;
+    height:20px;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 80%;
+}
+.gateL2{
+    width: 120px;
+    height:20px;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 10%;
+}
+.gateL3{
+    width: 120px;
+    height:20px;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 80%;
+}
+.gateL4{
+    width: 120px;
+    height:20px;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 10%;
 }

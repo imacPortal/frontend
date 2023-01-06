@@ -7,7 +7,6 @@ import toast from 'react-hot-toast';
 
 function AddUser() {
     const [email, setEmail] = useState(null)
-    const [password, setPassword] = useState(null)
     const [reqList, setReqList] = useState([])
 
     const fetchData = ()=>{
@@ -23,10 +22,9 @@ function AddUser() {
         fetchData()
     },[])
 
-    const confirmReq = (e, p, id)=>{
+    const confirmReq = (e, id)=>{
         const data = {
             email:e,
-            password:p
         }
         toast.custom((t) => (
             <span className='logoutToast'>
@@ -52,7 +50,7 @@ function AddUser() {
                                         axios.get(`${API_URI}/auth/deleteSignupReq/${id}/nope`)
                                             .then(req=>{
                                                 if(req.data.status === "deleted"){
-                                                    toast.error(res.data)
+                                                    toast.error(res.data.status)
                                                     fetchData()
                                                 }
                                             })
@@ -92,8 +90,7 @@ function AddUser() {
     const handleSubmit = (e) => {
         e.preventDefault()
         const data = {
-            email,
-            password
+            email
         }
         toast.custom((t) => (
             <span className='logoutToast'>
@@ -108,6 +105,8 @@ function AddUser() {
                                     console.log(res.data.status)
                                     if (res.data.status === "user added") {
                                         toast.success(res.data.status)
+                                    }else{
+                                        toast.error(res.data.status)
                                     }
 
                                 }).catch(err => {
@@ -133,10 +132,6 @@ function AddUser() {
                     <input value={email} placeholder="Ex. xyz@srmist.edu.in" onChange={e => setEmail(e.target.value)} />
                 </div>
                 <div className={classes.add_inputCtn}>
-                    <label>Password</label>
-                    <input type="password" value={password} placeholder="password" onChange={e => setPassword(e.target.value)} />
-                </div>
-                <div className={classes.add_inputCtn}>
                     <label>Designation</label>
                     <input placeholder="Staff/User" disabled />
                 </div>
@@ -154,10 +149,12 @@ function AddUser() {
                                 <h3>request #{index+1}</h3>
                                 <hr />
                                 <p>Email: {rL.email}</p>
+                                <p>Department: {rL.department}</p>
+                                <p>User: {rL.type}</p>
                                 <p>Reason:<br /><i>{rL.reason}</i></p>
                             </div>   
                             <div>
-                                <button onClick={()=>confirmReq(rL.email,rL.password,rL._id)}>confirm</button>
+                                <button onClick={()=>confirmReq(rL.email,rL._id)}>confirm</button>
                                 <button onClick={()=>rejectReq(rL._id)}>reject</button>
                             </div>
                         </div>                            

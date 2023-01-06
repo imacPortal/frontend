@@ -11,14 +11,16 @@ import toast from "react-hot-toast";
 function SignupComponent() {
 
   const [email, setEmail] = useState(null)
-  const [password, setPassword] = useState(null)
+  const [department, setDepartment] = useState(null)
+  const [type, setType] = useState('Staff')
   const [reason, setReason] = useState(null)
 
 
   const handleSignup = () => {
     const data = {
       email,
-      password,
+      department,
+      type,
       reason
     }
 
@@ -29,6 +31,7 @@ function SignupComponent() {
         console.log(res.data)
         if(res.data.success){
           toast.success(res.data.status)
+          toast.success("You will be recieving a mail with the password once the admin approves the request")
         }else{
           toast(res.data.status, { icon: "⚠️" })
         }
@@ -73,14 +76,21 @@ function SignupComponent() {
               <input type="email" placeholder="Ex. abc@gmail.com" onChange={(e) => setEmail(e.target.value)} />
             </div>
             <div className={classes.inputCtn}>
-              <label>Password</label>
-              <input type="password" placeholder="Enter your password" onChange={(e) => setPassword(e.target.value)} />
+              <label>Department</label>
+              <input type="String" placeholder="Ex. CTech, CSBS, etc" onChange={(e) => setDepartment(e.target.value)} />
+            </div>
+            <div className={classes.inputCtn}>
+              <label>User Type</label>
+              <select onChange={(e) => setType(e.target.value)}>
+                <option>Staff</option>
+                <option>Student</option>
+              </select>
             </div>
           </div>
           <div className={classes.row1}>
             <div className={classes.inputCtn}>
               <label>Reason</label>
-              <textarea type="text" placeholder="Specify the reason for your access" onChange={(e) => setReason(e.target.value)} />
+              <textarea type="text" placeholder="Specify the reason for your access(optional for staff, required for students)" onChange={(e) => setReason(e.target.value)} />
             </div>
           </div>
         </div>

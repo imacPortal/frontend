@@ -56,14 +56,14 @@ const Header3Component = () => {
         <p><Link to="/about">About</Link></p>
         <p><Link to="/gallery">Gallery</Link></p>
       </div>
-      <div className={classes.icons}>
+      {/* <div className={classes.icons}> */}
         {/* <TiClipboard className={classes.icon1} />
         <IoMdSettings className={classes.icon1} />
         <RiNotification4Fill className={classes.icon1} /> */}
         {/* <button className={classes.btn}> 
           <Link to="/login">Login</Link>
         </button> */}
-      </div>
+      {/* </div> */}
     </header>
   )
 };

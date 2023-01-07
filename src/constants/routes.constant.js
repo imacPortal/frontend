@@ -43,8 +43,16 @@ export const PRIVATE_ROUTES = [
         component:<AboutPage />
     },
     {
+        path:"/terms",
+        component:<TermsPage />
+    },
+    {
         path:"/cancellationpolicy",
         component:<CancellationPolicyPage />
+    },
+    {
+        path:"/report",
+        component:<ReportPage />
     },
     
 ]

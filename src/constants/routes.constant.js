@@ -12,7 +12,6 @@ import AboutPage from "../pages/about.page"
 import ReportPage from "../pages/report.page"
 import SignupPage from "../pages/signup.page"
 import TermsPage from "../pages/terms.page"
-import CancellationPolicyPage from "../pages/cancellationPolicy.page"
 export const PRIVATE_ROUTES = [
     {
         path:"/",
@@ -45,10 +44,6 @@ export const PRIVATE_ROUTES = [
     {
         path:"/terms",
         component:<TermsPage />
-    },
-    {
-        path:"/cancellationpolicy",
-        component:<CancellationPolicyPage />
     },
     {
         path:"/report",
@@ -84,10 +79,6 @@ export const PUBLIC_ROUTES = [
     {
         path:"/signup",
         component:<SignupPage />
-    },
-     {
-        path:"/cancellationpolicy",
-        component:<CancellationPolicyPage />
     }
    
 

@@ -40,9 +40,7 @@ const AboutComponent = () => {
           </p>
           <div className="class.link">
 
-            <Link to="/terms">Terms of Use   </Link> |
-
-            <Link to="/cancellationpolicy">  Cancellation Policy</Link>
+            <Link to="/terms">Terms of Use & Cancellation Policy</Link>
 
           </div>
         </div>

@@ -15,7 +15,7 @@ function Step4() {
                 For more info Contact Admin at <a href="Tele:8334026705">8334026705</a>
             </p>
             <div className="class.link">
-        <Link to="/cancellationpolicy">Cancellation Policy</Link>
+        <Link to="/terms">Terms of Use & Cancellation Policy</Link>
       </div>
         </div>
 

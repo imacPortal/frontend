@@ -8,41 +8,42 @@ import Header2Component from '../common/header2/header2.component'
 import RequestView from './requestView'
 import AddUser from './addUser'
 
+import CancelBooking from './CancelBooking'
 import classes from './settings.module.css';
 
 function SettingsComponent() {
-    const [compNo, setCompNo] = useState(1)
+  const [compNo, setCompNo] = useState(1)
 
   return (
     <div>
-      <HeaderComponent/>
+      <HeaderComponent />
       <div className={classes.mainCtn}>
-        <SidebarComponent/>
+        <SidebarComponent />
         <div>
-          <Header2Component content={'iLab Admin Panel'} showBtn={true}/>    
+          <Header2Component content={'iLab Admin Panel'} showBtn={true} />
           <div className={classes.mainArea}>
-              {
-                  compNo === 1? 
-                  <RequestView />
-                  : compNo === 2? 
-                  <RequestView />
+            {
+              compNo === 1 ?
+                <RequestView />
+                : compNo === 3 ?
+                  <CancelBooking />
                   :
                   <AddUser />
-              }
+            }
           </div>
           <div className={classes.BtnCtn}>
-            <button onClick={()=>setCompNo(1)}> Requests </button>
-            {/* <button onClick={()=>setCompNo(2)}> Update lab systems </button> */}
-            <button onClick={()=>setCompNo(3)}> Add users </button>
+            <button onClick={() => setCompNo(1)}> Requests </button>
+            <button onClick={() => setCompNo(2)}> Add users </button>
+            <button onClick={() => setCompNo(3)}> Cancel Booking </button>
           </div>
         </div>
-        <ReportComponent/>
+        <ReportComponent />
       </div>
-      <StatsComponent/>
+      <StatsComponent />
     </div>
- 
-    )
-  }
-  
-  export default SettingsComponent
+
+  )
+}
+
+export default SettingsComponent
 

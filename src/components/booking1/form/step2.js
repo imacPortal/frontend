@@ -4,6 +4,15 @@ import classes from "./formStyle.module.css"
 
 import LabMap from '../../common/labMap/labMap.component'
 
+import { Carousel } from 'react-responsive-carousel';
+
+import "react-responsive-carousel/lib/styles/carousel.min.css"; 
+
+import Img1 from '../../../assets/photos/img1.jpeg'
+import Img2 from '../../../assets/photos/img2.jpeg'
+import Img3 from '../../../assets/photos/img3.jpeg'
+import Img4 from '../../../assets/photos/img4.jpeg'
+
 function Step2({lab, setLab, slots, setSlots}) {
     return (
         <div className={classes.majorCtn}>
@@ -12,6 +21,24 @@ function Step2({lab, setLab, slots, setSlots}) {
                 <div className={classes.mapCtn}>
                     <div className={classes.mapM}>
                         <LabMap lab={lab} setLab={setLab} />
+
+                        <form className={classes.form}>
+                        <div>
+                            <div className={classes.inputCtn}>
+                                <label>Select Time Slot</label>
+                                <select onChange={(e)=>{setSlots(e.target.value)}}>
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                </select>
+                            </div>
+                        </div>
+                <div>
+                </div>
+                {/* <button className={classes.button}>Next</button> */}
+            </form>   
+
                     </div>
                     <div className={classes.info}>
                         <h5>
@@ -80,25 +107,29 @@ function Step2({lab, setLab, slots, setSlots}) {
                             </tr>
                         </table>
 
+                        <Carousel className={classes.Slide}>
+
+                            <div className={classes.img}>
+                            <img src={Img1} />
+                            </div>
+
+                            <div className={classes.img}>
+                            <img src={Img2}/>
+                            </div>
+
+                            <div className={classes.img}>
+                            <img src={Img3} />
+                            </div>
+
+                            <div className={classes.img}>
+                            <img src={Img4} />
+                            </div>
+
+                        
+                        </Carousel>
                     </div>
                 </div>
             </div>
-            <form className={classes.form}>
-                <div>
-                    <div className={classes.inputCtn}>
-                        <label>Select Time Slot</label>
-                        <select onChange={(e)=>{setSlots(e.target.value)}}>
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
-                        </select>
-                    </div>
-                </div>
-                <div>
-                </div>
-                {/* <button className={classes.button}>Next</button> */}
-            </form>
         </div>
     )
 }

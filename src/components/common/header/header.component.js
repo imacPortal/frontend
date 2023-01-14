@@ -50,7 +50,9 @@ const HeaderComponent = () => {
           </button>
         </div>
       </span>
-    ));
+    ), {
+      duration: 10000
+    });
   }
   const handleLogout = (e) => {
     e.preventDefault();

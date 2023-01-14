@@ -65,6 +65,7 @@ function App() {
             border: '1px solid #000000',
             padding: '16px',
             color: '#000000',
+            duration: 10000,
           },
         }} />
     </div>

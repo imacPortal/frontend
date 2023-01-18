@@ -14,6 +14,11 @@ function SignupComponent() {
   const [department, setDepartment] = useState(null)
   const [type, setType] = useState('Staff')
   const [reason, setReason] = useState(null)
+  const [ishidden, setIshidden] = useState(true)
+  const [empId, setEmpId] = useState(null)
+
+
+
 
 
   const handleSignup = () => {
@@ -21,18 +26,19 @@ function SignupComponent() {
       email,
       department,
       type,
-      reason
+      reason,
+      empId
     }
 
-    console.log('data ---',data)
+    console.log('data ---', data)
 
     axios.post(`${API_URI}/auth/signupReq`, data)
-      .then(res=>{
+      .then(res => {
         console.log(res.data)
-        if(res.data.success){
+        if (res.data.success) {
           toast.success(res.data.status)
           toast.success("You will be recieving a mail with the password once the admin approves the request")
-        }else{
+        } else {
           toast(res.data.status, { icon: "⚠️" })
         }
       })
@@ -82,10 +88,23 @@ function SignupComponent() {
             </div>
             <div className={classes.inputCtn}>
               <label>User Type</label>
-              <select onChange={(e) => setType(e.target.value)}>
+              <select onChange={(e) => {
+                setType(e.target.value);
+                if (e.target.value === 'Registered Staff') {
+                  setIshidden(false);
+                } else {
+                  setIshidden(true);
+                }
+              }
+              }>
                 <option>Staff</option>
                 <option>Student</option>
+                <option>Registered Staff</option>
               </select>
+            </div>
+            <div className={`${ishidden ? classes.hidden : classes.inputCtn}`}>
+              <label>Employe ID</label>
+              <input type="empId" placeholder="Enter your Emp Id" onChange={(e) => setEmpId(e.target.value)} />
             </div>
           </div>
           <div className={classes.row1}>
@@ -96,7 +115,7 @@ function SignupComponent() {
           </div>
         </div>
         <div className={classes.link}>
-              <Link to="/login">Already have Access? Login</Link>
+          <Link to="/login">Already have Access? Login</Link>
         </div>
         <div className={classes.button}>
           <button onClick={() => { handleSignup() }}>Sign Up</button>

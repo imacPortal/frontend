@@ -19,19 +19,16 @@ function LoginComponent() {
 
   const [email, setEmail] = useState(null)
   const [password, setPassword] = useState(null)
-  const [empId, setEmpId] = useState(null)
 
   const dispatch = useDispatch()
   const navigate = useNavigate()
 
   const { setUser } = bindActionCreators(actionCreators, dispatch);
-  const [ishidden, setIshidden] = useState(true)
 
   const handleLogin = () => {
     const data = {
       email,
       password,
-      empId
     }
     axios.post(`${API_URI}/auth/login`, data)
       .then(res => {
@@ -86,14 +83,10 @@ function LoginComponent() {
             <label>Password</label>
             <input type="password" placeholder="Enter your password" onChange={(e) => setPassword(e.target.value)} />
           </div>
-          <div className={classes.inputCheck}>
+          {/* <div className={classes.inputCheck}>
             <input type="checkbox" placeholder="Enter your Emp Id" onChange={(e) => setIshidden(!(e.target.checked))} />
             <label>Registered Employee</label>
-          </div>
-          <div className={`${ishidden ? classes.hidden : classes.inputCtn}`}>
-            <label>Employe ID</label>
-            <input type="empId" placeholder="Enter your Emp Id" onChange={(e) => setEmpId(e.target.value)} />
-          </div>
+          </div> */}
           <div className={classes.link}>
             <Link to="/forgotpassword">Forgot Password?</Link><br></br>
             <Link to="/signup">Request Access?</Link>

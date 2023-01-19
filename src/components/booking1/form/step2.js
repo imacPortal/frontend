@@ -8,10 +8,26 @@ import { Carousel } from 'react-responsive-carousel';
 
 import "react-responsive-carousel/lib/styles/carousel.min.css"; 
 
-import Img1 from '../../../assets/photos/img1.jpeg'
-import Img2 from '../../../assets/photos/img2.jpeg'
-import Img3 from '../../../assets/photos/img3.jpeg'
-import Img4 from '../../../assets/photos/img4.jpeg'
+import Lab11 from '../../../assets/photos/Lab 1.1.jpeg'
+import Lab12 from '../../../assets/photos/Lab 1.2.jpeg'
+import Lab13 from '../../../assets/photos/Lab 1.3.jpeg'
+import Lab14 from '../../../assets/photos/Lab 1.4.jpeg'
+import Lab21 from '../../../assets/photos/Lab 2.1.jpeg'
+import Lab22 from '../../../assets/photos/Lab 2.2.jpeg'
+import Lab23 from '../../../assets/photos/Lab 2.3.jpeg'
+import Lab24 from '../../../assets/photos/Lab 2.4.jpeg'
+import Lab25 from '../../../assets/photos/Lab 2.5.jpeg'
+import Lab31 from '../../../assets/photos/Lab 3.1.jpeg'
+import Lab32 from '../../../assets/photos/Lab 3.2.jpeg'
+import Lab33 from '../../../assets/photos/Lab 3.3.jpeg'
+import Lab34 from '../../../assets/photos/Lab 3.4.jpeg'
+import Lab41 from '../../../assets/photos/Lab 4.1.jpeg'
+import Lab42 from '../../../assets/photos/Lab 4.2.jpeg'
+import Lab43 from '../../../assets/photos/Lab 4.3.jpeg'
+import Lab44 from '../../../assets/photos/Lab 4.4.jpeg'
+import Lab45 from '../../../assets/photos/Lab 4.5.jpeg'
+
+
 
 function Step2({lab, setLab, slots, setSlots}) {
     return (
@@ -106,27 +122,110 @@ function Step2({lab, setLab, slots, setSlots}) {
                                 </td>
                             </tr>
                         </table>
-
-                        <Carousel className={classes.Slide}>
+                        {lab === 1 && 
+                        <div className={classes.Slide}>
+                        <Carousel> 
+                            {/* className={classes.Slide}> */}
 
                             <div className={classes.img}>
-                            <img src={Img1} />
+                            <img src={Lab11} />
                             </div>
 
                             <div className={classes.img}>
-                            <img src={Img2}/>
+                            <img src={Lab12}/>
                             </div>
 
                             <div className={classes.img}>
-                            <img src={Img3} />
+                            <img src={Lab13} />
                             </div>
 
                             <div className={classes.img}>
-                            <img src={Img4} />
-                            </div>
+                            <img src={Lab14} />
+                            </div> 
 
                         
                         </Carousel>
+                        </div>}
+                        {lab === 2 && 
+                        <div className={classes.Slide}>
+                        <Carousel>
+                        {/* //  className={classes.Slide}> */}
+
+                            <div className={classes.img}>
+                            <img src={Lab21} />
+                            </div>
+
+                            <div className={classes.img}>
+                            <img src={Lab22}/>
+                            </div>
+
+                            <div className={classes.img}>
+                            <img src={Lab23} />
+                            </div>
+
+                            <div className={classes.img}>
+                            <img src={Lab24} />
+                            </div> 
+
+                            <div className={classes.img}>
+                            <img src={Lab25} />
+                            </div> 
+
+                        
+                        </Carousel>
+                        </div>}
+                        {lab === 3 && 
+                        <div className={classes.Slide}>
+                        <Carousel>
+                        {/* //  className={classes.Slide}> */}
+
+                            <div className={classes.img}>
+                            <img src={Lab31} />
+                            </div>
+
+                            <div className={classes.img}>
+                            <img src={Lab32}/>
+                            </div>
+
+                            <div className={classes.img}>
+                            <img src={Lab33} />
+                            </div>
+
+                            <div className={classes.img}>
+                            <img src={Lab34} />
+                            </div> 
+
+                        
+                        </Carousel>
+                        </div>}
+                        {lab === 4 && 
+                        <div className={classes.Slide}>
+                        <Carousel>
+                        {/* //  className={classes.Slide}> */}
+
+                            <div className={classes.img}>
+                            <img src={Lab41} />
+                            </div>
+
+                            <div className={classes.img}>
+                            <img src={Lab42}/>
+                            </div>
+
+                            <div className={classes.img}>
+                            <img src={Lab43} />
+                            </div>
+
+                            <div className={classes.img}>
+                            <img src={Lab44} />
+                            </div> 
+
+                            <div className={classes.img}>
+                            <img src={Lab45} />
+                            </div> 
+
+                        
+                        </Carousel>
+                        </div>}
                     </div>
                 </div>
             </div>

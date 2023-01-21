@@ -124,8 +124,8 @@ function Step2({lab, setLab, slots, setSlots}) {
                         </table>
                         {lab === 1 && 
                         <div className={classes.Slide}>
-                        <Carousel> 
-                            {/* className={classes.Slide}> */}
+                        <Carousel showThumbs={false}> 
+               
 
                             <div className={classes.img}>
                             <img src={Lab11} />
@@ -148,8 +148,8 @@ function Step2({lab, setLab, slots, setSlots}) {
                         </div>}
                         {lab === 2 && 
                         <div className={classes.Slide}>
-                        <Carousel>
-                        {/* //  className={classes.Slide}> */}
+                        <Carousel showThumbs={false}>
+              
 
                             <div className={classes.img}>
                             <img src={Lab21} />
@@ -176,8 +176,8 @@ function Step2({lab, setLab, slots, setSlots}) {
                         </div>}
                         {lab === 3 && 
                         <div className={classes.Slide}>
-                        <Carousel>
-                        {/* //  className={classes.Slide}> */}
+                        <Carousel showThumbs={false}>
+                        
 
                             <div className={classes.img}>
                             <img src={Lab31} />
@@ -200,8 +200,8 @@ function Step2({lab, setLab, slots, setSlots}) {
                         </div>}
                         {lab === 4 && 
                         <div className={classes.Slide}>
-                        <Carousel>
-                        {/* //  className={classes.Slide}> */}
+                        <Carousel showThumbs={false}>
+                    
 
                             <div className={classes.img}>
                             <img src={Lab41} />

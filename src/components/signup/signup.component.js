@@ -14,6 +14,11 @@ function SignupComponent() {
   const [department, setDepartment] = useState(null)
   const [type, setType] = useState('Staff')
   const [reason, setReason] = useState(null)
+  const [ishidden, setIshidden] = useState(true)
+  const [empId, setEmpId] = useState(null)
+
+
+
 
 
   const handleSignup = () => {
@@ -21,21 +26,34 @@ function SignupComponent() {
       email,
       department,
       type,
-      reason
+      reason,
+      empId
     }
 
-    console.log('data ---',data)
-
-    axios.post(`${API_URI}/auth/signupReq`, data)
-      .then(res=>{
-        console.log(res.data)
-        if(res.data.success){
-          toast.success(res.data.status)
-          toast.success("You will be recieving a mail with the password once the admin approves the request")
-        }else{
-          toast(res.data.status, { icon: "⚠️" })
-        }
-      })
+    console.log('data ---', data)
+    if(ishidden){
+      axios.post(`${API_URI}/auth/signupReq`, data)
+        .then(res => {
+          console.log(res.data)
+          if (res.data.success) {
+            toast.success(res.data.status)
+            toast.success("You will be recieving a mail with the password once the admin approves the request")
+          } else {
+            toast(res.data.status, { icon: "⚠️" })
+          }
+        })
+    }else{
+      axios.get(`${API_URI}/auth/priorityLogin/${empId}`)
+        .then(res => {
+          console.log(res.data)
+          if (res.data.success) {
+            toast.success(res.data.status)
+            toast.success("In a few minutes, You will be recieving a mail with the generated password")
+          } else {
+            toast(res.data.status, { icon: "⚠️" })
+          }
+        })
+    }
 
   }
 
@@ -72,9 +90,13 @@ function SignupComponent() {
         </div>
         <div className={classes.allignment}>
           <div className={classes.row1}>
-            <div className={classes.inputCtn}>
+            <div className={`${!ishidden ? classes.hidden : classes.inputCtn}`}>
               <label>Email</label>
               <input type="email" placeholder="Ex. abc@gmail.com" onChange={(e) => setEmail(e.target.value)} />
+            </div>
+            <div className={`${ishidden ? classes.hidden : classes.inputCtn}`}>
+              <label>Employe ID</label>
+              <input type="empId" placeholder="Enter your Employee Id" onChange={(e) => setEmpId(e.target.value)} />
             </div>
             <div className={classes.inputCtn}>
               <label>Department</label>
@@ -82,21 +104,30 @@ function SignupComponent() {
             </div>
             <div className={classes.inputCtn}>
               <label>User Type</label>
-              <select onChange={(e) => setType(e.target.value)}>
+              <select onChange={(e) => {
+                setType(e.target.value);
+                if (e.target.value === 'Registered Staff') {
+                  setIshidden(false);
+                } else {
+                  setIshidden(true);
+                }
+              }
+              }>
                 <option>Staff</option>
                 <option>Student</option>
+                <option>Registered Staff</option>
               </select>
             </div>
           </div>
           <div className={classes.row1}>
-            <div className={classes.inputCtn}>
+            <div className={`${!ishidden ? classes.hidden : classes.inputCtn}`}>
               <label>Reason</label>
               <textarea type="text" placeholder="Specify the reason for your access(optional for staff, required for students)" onChange={(e) => setReason(e.target.value)} />
             </div>
           </div>
         </div>
         <div className={classes.link}>
-              <Link to="/login">Already have Access? Login</Link>
+          <Link to="/login">Already have Access? Login</Link>
         </div>
         <div className={classes.button}>
           <button onClick={() => { handleSignup() }}>Sign Up</button>

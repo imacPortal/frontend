@@ -28,7 +28,7 @@ function LoginComponent() {
   const handleLogin = () => {
     const data = {
       email,
-      password
+      password,
     }
     axios.post(`${API_URI}/auth/login`, data)
       .then(res => {

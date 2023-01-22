@@ -32,6 +32,9 @@ export class TableComponent extends Component {
                     <td>
                         System serial No.
                     </td>
+                    <td>
+                        Status
+                    </td>
                 </tr>
                 {
                     this.props.report.length !== 0 &&
@@ -53,7 +56,7 @@ export class TableComponent extends Component {
                                 {r.lab}
                             </td>
                             <td>
-                                {r.noOfStuds}
+                                {r.system.length}
                             </td>
                             <td>
                                 {r.subject}
@@ -63,6 +66,9 @@ export class TableComponent extends Component {
                             </td>
                             <td>
                                 {r.system.map(s=>`${s}, `)}
+                            </td>
+                            <td>
+                                {r.status}
                             </td>
                         </tr>
                     )

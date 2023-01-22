@@ -1,157 +1,130 @@
-.majorContainer {
+.majorContainer{
     font-family: 'Quicksand';
     display: grid;
     grid-template-columns: 1fr 2fr;
-    height: 100vh;
+    height:100vh;
 }
-
-.imgwrapper {
+.imgwrapper{
     text-align: left;
     width: 100%;
 }
 
-.logo {
-    width: 100px;
+.logo{
+    width:100px;
     /* float: left; */
 }
-
-.image {
-    width: 70%;
+.image{
+    width:70%;
     opacity: 0.7;
     text-align: left;
     margin-bottom: 40px;
 }
 
-.infoCtn {
+.infoCtn{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
     padding: 5px 0px;
-
+   
     /* background-color: black; */
 }
-
-.aboutLink {
+.aboutLink{
     text-decoration: none;
     color: #000000c5;
     font-weight: 900;
     font-size: 1.3em;
     transition-duration: 0.2s;
 }
-
-.aboutLink:hover {
+.aboutLink:hover{
     color: rgb(255, 123, 0);
     opacity: 1;
 }
 
-.infoCtn div {
+.infoCtn div{
     width: 100%;
 }
-
-.infoCtn h1 {
+.infoCtn h1{
     margin-top: 40px;
 }
-
-.text {
+.text{
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-direction: column;
     gap: 15px;
 }
-
-.text p {
+.text p{
     opacity: 0.5;
 }
-
-.copy {
+.copy{
     font-size: 0.96em;
     opacity: 0.5;
 }
-
-.stu {
+.stu{
     font-size: 0.96em;
 }
-
-.half {
+.half{
     font-family: Quicksand;
-    background-color: #FFB8300A;
+    background-color:#FFB8300A;
     width: 100%;
     align-items: center;
 }
-
-.half h1 {
-    /* padding: 110px; */
-    /* display:inline-block; */
-    /* margin-left: -400px; */
-    margin-left: 30px;
-    text-align: left;
-    margin-top: 120px;
+.half h1{
+     /* padding: 110px; */
+     /* display:inline-block; */
+        /* margin-left: -400px; */
+        margin-left: 30px;
+        text-align: left;
+        margin-top: 120px;
 }
-
-.half p {
+.half p{
     display: flex;
     align-items: center;
     justify-content: left;
     margin-left: 50px;
 }
-
-.sub p {
+.sub p{
     font-size: medium;
     display: flex;
     /* margin-top: -100px; */
     margin-left: 30px;
 }
-
-.entryText {
+ .entryText{
     /* margin-top: -10px; */
-    position: relative;
+    position:relative;
     margin-bottom: -12px;
     width: fit-content;
     justify-content: center;
     z-index: 10;
     background-color: #fffcf7;
 
+ } 
+.entry{
+  border:2px solid #FFB830;
+  float: left;
+  display: flex;
+  margin-left: 30px;
+  width: 450px;
+  height: 30px;
+  gap: 50px;
+  border-radius: 5px;
+  background-color:#FFB8300A ;
+  
+   /* border-top: #FFB830; */
 }
 
-.entry {
-    border: 2px solid #FFB830;
-    float: left;
-    display: flex;
-    margin-left: 30px;
-    width: 450px;
-    height: 30px;
-    gap: 50px;
-    border-radius: 5px;
-    background-color: #FFB8300A;
-
-    /* border-top: #FFB830; */
-}
-
-.inputCtn {
+.inputCtn{
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
     padding: 8px;
-    width: 500px;
+    width:500px;
     margin-left: 25px;
     margin-top: 15px;
 }
-
-.inputCheck {
-    display: flex;
-    /* flex-direction: column; */
-    justify-content: flex-start;
-    align-items: flex-start;
-    padding: 8px;
-    width: 500px;
-    margin-left: 25px;
-    margin-top: 15px;
-}
-
-.inputCtn label {
+.inputCtn label{
     background-color: #fffcf8;
     font-size: 16px;
     font-weight: 500;
@@ -160,9 +133,8 @@
     position: relative;
     margin-bottom: -23px;
 }
-
-.inputCtn textarea {
-    border: 2px solid #FFB830;
+.inputCtn textarea{
+    border:2px solid #FFB830;
     resize: none;
     border-radius: 5px;
     background-color: transparent;
@@ -173,9 +145,8 @@
     font-size: 14px;
     font-family: 'poppins';
 }
-
-.inputCtn input {
-    border: 2px solid #FFB830;
+.inputCtn input{
+    border:2px solid #FFB830;
     resize: none;
     border-radius: 5px;
     background-color: transparent;
@@ -185,9 +156,8 @@
     padding: 0px 14px;
     font-size: 14px;
 }
-
-.inputCtn select {
-    border: 2px solid #FFB830;
+.inputCtn select{
+    border:2px solid #FFB830;
     resize: none;
     border-radius: 5px;
     background-color: transparent;
@@ -197,67 +167,54 @@
     padding: 0px 14px;
     font-size: 14px;
 }
-
-.allignment p {
-    margin-top: 40px;
+.allignment p{
+  margin-top: 40px;
 }
-
-.link {
-    color: #C17F00;
+.link{
+    color:  #C17F00;
     font-family: Poppins;
     text-align: left;
     padding-left: 30px;
     cursor: pointer;
-    display: flex;
-    gap: 1vw;
-    padding-top: 2vh;
 }
-
-.button button {
+.button button{
     background-color: #FFB830;
     border-radius: 5px;
     margin-right: 90px;
     padding: 8px;
     width: 140px;
-    min-height: 30px;
+    min-height: 30px;   
     font-size: 18px;
-    border: none;
+    border:none;
     font-weight: 700;
     font-family: quicksand;
 }
 
-.button {
+.button{
     position: absolute;
     border-color: #FFB830;
     bottom: 2%;
     right: 0px;
 }
 
-.message {
-    display: none;
-}
-
-.hidden {
-    display: none;
+.message{
+    display:none;
 }
 
 
 @media screen and (max-width:730px) {
-    .majorContainer {
+    .majorContainer{
         display: flex;
         flex-direction: column;
         justify-content: center;
     }
-
-    .half {
+    .half{
         display: none;
     }
-
-    .infoCtn {
+    .infoCtn{
         display: none;
     }
-
-    .message {
+    .message{
         display: flex;
         flex-direction: column;
         justify-content: center;

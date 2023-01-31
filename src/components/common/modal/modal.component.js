@@ -26,8 +26,182 @@ const ModalComponent = ({lab,setShowModal}) => {
             <div className={classes.backdrop} onClick={()=>setShowModal(false)}>
 
             </div>
-            <h3>Photos for lab {lab}</h3>
-            {lab === 1 && 
+            <h3> Lab {lab}</h3>
+            <div className={classes.info}>
+                <div>
+                        <h5>
+                            Lab description:
+                        </h5>
+                        <table>
+                            <tr>
+                                <td>
+                                    <b>
+                                    Computer Model
+                                    </b>
+                                </td>
+                                <td>
+                                    Apple Imac {(lab < 3)?'M1 Chip':'intel Chip'}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <b>
+                                    Chipset
+                                    </b>
+                                </td>
+                                <td>
+                                    {(lab==1 || lab==2)?`Apple M1`:`intel`}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <b>
+                                    Computer OS
+                                    </b>
+                                </td>
+                                <td>
+                                    macOS Monterey
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <b>
+                                    Ram
+                                    </b>
+                                </td>
+                                <td>
+                                    {(lab==1)?`16 GB`:`8 GB`}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <b>
+                                    No of Devices
+                                    </b>
+                                </td>
+                                <td>
+                                    32
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <b>
+                                    Laboratory Coordinator
+                                    </b>
+                                </td>
+                                <td>
+                                    Faculty Name
+                                </td>
+                            </tr>
+                        </table>
+                </div>
+                        {lab === 1 && 
+                        <div className={classes.Slide}>
+                        <Carousel showThumbs={false}> 
+               
+
+                            <div className={classes.img}>
+                            <img src={Lab11} />
+                            </div>
+
+                            <div className={classes.img}>
+                            <img src={Lab12}/>
+                            </div>
+
+                            <div className={classes.img}>
+                            <img src={Lab13} />
+                            </div>
+
+                            <div className={classes.img}>
+                            <img src={Lab14} />
+                            </div> 
+
+                        
+                        </Carousel>
+                        </div>}
+                        {lab === 2 && 
+                        <div className={classes.Slide}>
+                        <Carousel showThumbs={false}>
+              
+
+                            <div className={classes.img}>
+                            <img src={Lab21} />
+                            </div>
+
+                            <div className={classes.img}>
+                            <img src={Lab22}/>
+                            </div>
+
+                            <div className={classes.img}>
+                            <img src={Lab23} />
+                            </div>
+
+                            <div className={classes.img}>
+                            <img src={Lab24} />
+                            </div> 
+
+                            <div className={classes.img}>
+                            <img src={Lab25} />
+                            </div> 
+
+                        
+                        </Carousel>
+                        </div>}
+                        {lab === 3 && 
+                        <div className={classes.Slide}>
+                        <Carousel showThumbs={false}>
+                        
+
+                            <div className={classes.img}>
+                            <img src={Lab31} />
+                            </div>
+
+                            <div className={classes.img}>
+                            <img src={Lab32}/>
+                            </div>
+
+                            <div className={classes.img}>
+                            <img src={Lab33} />
+                            </div>
+
+                            <div className={classes.img}>
+                            <img src={Lab34} />
+                            </div> 
+
+                        
+                        </Carousel>
+                        </div>}
+                        {lab === 4 && 
+                        <div className={classes.Slide}>
+                        <Carousel showThumbs={false}>
+                    
+
+                            <div className={classes.img}>
+                            <img src={Lab41} />
+                            </div>
+
+                            <div className={classes.img}>
+                            <img src={Lab42}/>
+                            </div>
+
+                            <div className={classes.img}>
+                            <img src={Lab43} />
+                            </div>
+
+                            <div className={classes.img}>
+                            <img src={Lab44} />
+                            </div> 
+
+                            <div className={classes.img}>
+                            <img src={Lab45} />
+                            </div> 
+
+                        
+                        </Carousel>
+                        </div>}
+                    </div>
+                    
+            {/* {lab === 1 && 
             <div className={classes.Slide}>
                 <Carousel showThumbs={false}> 
     
@@ -130,7 +304,7 @@ const ModalComponent = ({lab,setShowModal}) => {
 
             
             </Carousel>
-            </div>}
+            </div>} */}
         </div>
     )
 }

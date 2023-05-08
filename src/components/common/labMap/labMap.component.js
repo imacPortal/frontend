@@ -2,13 +2,14 @@ import React from 'react'
 
 import classes from './labMap.module.css'
 
-function LabMap({setLab,lab}) {
+function LabMap({setLab,lab,setShowModal}) {
     return (
-        <div className={classes.mapMain}> 
+        <div className={classes.mapMain} onClick={()=> (setShowModal && setShowModal(true))}> 
             {/* <div className={classes.door1}></div>
             <div className={classes.door2}></div>
             <div className={classes.door3}></div>
             <div className={classes.door4}></div> */}
+
             <div className={classes.labRow1}>
                 <div className={ lab == 1? classes.labSec : classes.lab} onClick={()=>{setLab(1)}}>
                     <h2>Lab 1</h2>

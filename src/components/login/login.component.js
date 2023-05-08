@@ -83,15 +83,10 @@ function LoginComponent() {
             <label>Password</label>
             <input type="password" placeholder="Enter your password" onChange={(e) => setPassword(e.target.value)} />
           </div>
-          {/* <div className={classes.inputCheck}>
-            <input type="checkbox" placeholder="Enter your Emp Id" onChange={(e) => setIshidden(!(e.target.checked))} />
-            <label>Registered Employee</label>
-          </div> */}
           <div className={classes.link}>
             <Link to="/forgotpassword">Forgot Password?</Link><br></br>
             <Link to="/signup">Request Access?</Link>
           </div>
-
         </div>
         <div className={classes.button}>
           <button type={'submit'}>Login</button>

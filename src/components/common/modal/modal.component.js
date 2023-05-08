@@ -1,15 +1,7 @@
 import React from 'react'
-
-import classes from "./formStyle.module.css"
-
-import LabMap from '../../common/labMap/labMap.component'
-
-import { Carousel } from 'react-responsive-carousel';
-
-import "react-responsive-carousel/lib/styles/carousel.min.css"; 
-
-import Lab11 from '../../../assets/photos/Lab 1.1.jpeg'
+import classes from './modal.module.css'
 import Lab12 from '../../../assets/photos/Lab 1.2.jpeg'
+import Lab11 from '../../../assets/photos/Lab 1.1.jpeg'
 import Lab13 from '../../../assets/photos/Lab 1.3.jpeg'
 import Lab14 from '../../../assets/photos/Lab 1.4.jpeg'
 import Lab21 from '../../../assets/photos/Lab 2.1.jpeg'
@@ -26,37 +18,17 @@ import Lab42 from '../../../assets/photos/Lab 4.2.jpeg'
 import Lab43 from '../../../assets/photos/Lab 4.3.jpeg'
 import Lab44 from '../../../assets/photos/Lab 4.4.jpeg'
 import Lab45 from '../../../assets/photos/Lab 4.5.jpeg'
+import { Carousel } from 'react-responsive-carousel'
 
-
-
-function Step2({lab, setLab, slots, setSlots}) {
+const ModalComponent = ({lab,setShowModal}) => {
     return (
-        <div className={classes.majorCtn}>
-            <h2>Select Lab</h2>
-            <div className={classes.labLayout}>
-                <div className={classes.mapCtn}>
-                    <div className={classes.mapM}>
-                        <LabMap lab={lab} setLab={setLab} />
+        <div className={classes.majorContainer}>
+            <div className={classes.backdrop} onClick={()=>setShowModal(false)}>
 
-                        <form className={classes.form}>
-                        <div>
-                            <div className={classes.inputCtn}>
-                                <label>Select Time Slot</label>
-                                <select onChange={(e)=>{setSlots(e.target.value)}}>
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                    <option>4</option>
-                                </select>
-                            </div>
-                        </div>
+            </div>
+            <h3> Lab {lab}</h3>
+            <div className={classes.info}>
                 <div>
-                </div>
-                {/* <button className={classes.button}>Next</button> */}
-            </form>   
-
-                    </div>
-                    <div className={classes.info}>
                         <h5>
                             Lab description:
                         </h5>
@@ -122,6 +94,7 @@ function Step2({lab, setLab, slots, setSlots}) {
                                 </td>
                             </tr>
                         </table>
+                </div>
                         {lab === 1 && 
                         <div className={classes.Slide}>
                         <Carousel showThumbs={false}> 
@@ -227,10 +200,113 @@ function Step2({lab, setLab, slots, setSlots}) {
                         </Carousel>
                         </div>}
                     </div>
+                    
+            {/* {lab === 1 && 
+            <div className={classes.Slide}>
+                <Carousel showThumbs={false}> 
+    
+
+                <div className={classes.img}>
+                <img src={Lab11} />
                 </div>
-            </div>
+
+                <div className={classes.img}>
+                <img src={Lab12}/>
+                </div>
+
+                <div className={classes.img}>
+                <img src={Lab13} />
+                </div>
+
+                <div className={classes.img}>
+                <img src={Lab14} />
+                </div> 
+
+            
+            </Carousel>
+            </div>}
+            {lab === 2 && 
+            <div className={classes.Slide}>
+            <Carousel showThumbs={false}>
+    
+
+                <div className={classes.img}>
+                <img src={Lab21} />
+                </div>
+
+                <div className={classes.img}>
+                <img src={Lab22}/>
+                </div>
+
+                <div className={classes.img}>
+                <img src={Lab23} />
+                </div>
+
+                <div className={classes.img}>
+                <img src={Lab24} />
+                </div> 
+
+                <div className={classes.img}>
+                <img src={Lab25} />
+                </div> 
+
+            
+            </Carousel>
+            </div>}
+            {lab === 3 && 
+            <div className={classes.Slide}>
+            <Carousel showThumbs={false}>
+            
+
+                <div className={classes.img}>
+                <img src={Lab31} />
+                </div>
+
+                <div className={classes.img}>
+                <img src={Lab32}/>
+                </div>
+
+                <div className={classes.img}>
+                <img src={Lab33} />
+                </div>
+
+                <div className={classes.img}>
+                <img src={Lab34} />
+                </div> 
+
+            
+            </Carousel>
+            </div>}
+            {lab === 4 && 
+            <div className={classes.Slide}>
+            <Carousel showThumbs={false}>
+        
+
+                <div className={classes.img}>
+                <img src={Lab41} />
+                </div>
+
+                <div className={classes.img}>
+                <img src={Lab42}/>
+                </div>
+
+                <div className={classes.img}>
+                <img src={Lab43} />
+                </div>
+
+                <div className={classes.img}>
+                <img src={Lab44} />
+                </div> 
+
+                <div className={classes.img}>
+                <img src={Lab45} />
+                </div> 
+
+            
+            </Carousel>
+            </div>} */}
         </div>
     )
 }
 
-export default Step2
+export default ModalComponent

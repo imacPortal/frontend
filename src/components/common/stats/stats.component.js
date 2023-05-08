@@ -5,7 +5,7 @@ import { HiOutlineDesktopComputer } from "react-icons/hi";
 const StatsComponent = () => {
   return (
  <div className={classes.slide}>
-  <h2>System Stats</h2>
+  <h2>System Status</h2>
   <div className={classes.allot}>
     <p>
     <HiOutlineDesktopComputer className={classes.i1} />
